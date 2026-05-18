@@ -1,1 +1,3 @@
 spacy
+python-dotenv
+google-genai
