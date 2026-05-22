@@ -1,18 +1,43 @@
 import json
 import os
 import sys
+import time
 import traceback
-from dotenv import load_dotenv
 from pathlib import Path
-from google import genai
-from google.genai import types
+from dotenv import load_dotenv
 
 load_dotenv()
-NER_KEY = os.getenv("NER_API")
-if not NER_KEY:
-    raise ValueError("API key missing!")
 
-client = genai.Client(api_key=NER_KEY)
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")  # fallback
+
+if not GROQ_API_KEY and not OPENROUTER_API_KEY:
+    raise ValueError("Set at least GROQ_API_KEY or OPENROUTER_API_KEY in your .env")
+
+
+PROVIDERS = []
+
+if GROQ_API_KEY:
+    PROVIDERS.append({
+        "name": "Groq",
+        "base_url": "https://api.groq.com/openai/v1/chat/completions",
+        "api_key": GROQ_API_KEY,
+        "model": "llama-3.3-70b-versatile",  
+        "rpm_limit": 28,        
+        "retry_delay": 62,      
+    })
+
+if OPENROUTER_API_KEY:
+    PROVIDERS.append({
+        "name": "OpenRouter",
+        "base_url": "https://openrouter.ai/api/v1/chat/completions",
+        "api_key": OPENROUTER_API_KEY,
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "rpm_limit": 15,        
+        "retry_delay": 65,
+    })
+
 
 FINRA_ENTITY_TYPES = [
     "REGULATION", "REPORT_TYPE", "THRESHOLD", "CUSTOMER_TYPE",
@@ -20,55 +45,139 @@ FINRA_ENTITY_TYPES = [
     "COMPLIANCE_ACTION", "SECURITY_TYPE", "DOCUMENT_TYPE",
 ]
 
+_request_times = {p["name"]: [] for p in PROVIDERS}
+
+def _check_rate_limit(provider: dict) -> bool:
+    """Returns True if we can make a request now."""
+    name = provider["name"]
+    now = time.time()
+    # Keep only requests in the last 60 seconds
+    _request_times[name] = [t for t in _request_times[name] if now - t < 60]
+    return len(_request_times[name]) < provider["rpm_limit"]
+
+def _record_request(provider: dict):
+    _request_times[provider["name"]].append(time.time())
+
+
+def _call_llm(provider: dict, prompt: str) -> list | None:
+    """
+    Call an OpenAI-compatible endpoint.
+    Returns parsed entity list or None on failure.
+    """
+    import urllib.request
+    import urllib.error
+
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {provider['api_key']}",
+    }
+    if provider["name"] == "OpenRouter":
+        headers["HTTP-Referer"] = "https://localhost"  # required by OpenRouter
+
+    payload = json.dumps({
+        "model": provider["model"],
+        "messages": [{"role": "user", "content": prompt}],
+        "response_format": {"type": "json_object"},
+        "max_tokens": 1000,
+        "temperature": 0,
+    }).encode("utf-8")
+
+    req = urllib.request.Request(
+        provider["base_url"], data=payload, headers=headers, method="POST"
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            text = data["choices"][0]["message"]["content"]
+            parsed = json.loads(text)
+            # Accept {"entities": [...]} or bare [...]
+            if isinstance(parsed, list):
+                return parsed
+            if isinstance(parsed, dict):
+                for key in ("entities", "result", "data"):
+                    if key in parsed and isinstance(parsed[key], list):
+                        return parsed[key]
+            return []
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        if e.code == 429:
+            print(f"  [{provider['name']}] Rate limited (429). Body: {body[:120]}", flush=True)
+            return None  # signal to try fallback / retry
+        print(f"  [{provider['name']}] HTTP {e.code}: {body[:200]}", flush=True)
+        return None
+    except Exception as e:
+        print(f"  [{provider['name']}] Error: {type(e).__name__}: {str(e)[:150]}", flush=True)
+        traceback.print_exc()
+        return None
+
+
 def llm_extract_entities(text: str, section_context: str = "") -> list:
     if not text or len(text.strip()) < 10:
         return []
+
     prompt = f"""You are a financial compliance expert specializing in FINRA AML regulations.
-Extract domain-specific entities from this text:
-"{text}"
-Section context: {section_context}
+Extract domain-specific named entities from this text.
+
+TEXT: "{text}"
+SECTION: {section_context}
+
 Extract ONLY these entity types:
-- REGULATION: Specific rules, laws, regulations
-- REPORT_TYPE: Types of reports firms must file
-- THRESHOLD: Monetary amounts, time periods, numerical thresholds
-- CUSTOMER_TYPE: Types of customers or entities
-- RISK_FACTOR: Risk indicators or geographic concerns
-- TRANSACTION_TYPE: Types of transactions or patterns
-- ACCOUNT_STATUS: Account conditions
-- COMPLIANCE_ACTION: Required compliance actions
-- SECURITY_TYPE: Types of securities
-- DOCUMENT_TYPE: Regulatory documents
-Return ONLY a JSON array. Example:
-[
+- REGULATION: Specific rules, laws, regulations (e.g., "FINRA Rule 3310", "Bank Secrecy Act")
+- REPORT_TYPE: Types of reports (e.g., "SAR", "Suspicious Activity Report")
+- THRESHOLD: Monetary amounts, time periods, numerical thresholds (e.g., "$5,000", "90 days")
+- CUSTOMER_TYPE: Types of customers or entities (e.g., "broker-dealer", "non-profit organization")
+- RISK_FACTOR: Risk indicators or geographic concerns (e.g., "high-risk jurisdiction", "tax haven")
+- TRANSACTION_TYPE: Types of transactions (e.g., "wire transfer", "structuring", "wash trade")
+- ACCOUNT_STATUS: Account conditions (e.g., "dormant account", "shell company")
+- COMPLIANCE_ACTION: Required compliance actions (e.g., "SAR filing", "customer due diligence")
+- SECURITY_TYPE: Types of securities (e.g., "penny stock", "bearer bond", "ADR")
+- DOCUMENT_TYPE: Regulatory documents (e.g., "Regulatory Notice", "Notice to Members")
+
+Return ONLY a JSON object with key "entities" containing an array. Example:
+{{"entities": [
   {{"text": "FINRA Rule 3310", "label": "REGULATION"}},
-  {{"text": "$5,000", "label": "THRESHOLD"}}
-]
-If no entities match, return []."""
-    try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
-        )
-        entities = json.loads(response.text)
-        return entities if isinstance(entities, list) else []
-    except Exception as e:
-        print(f"  LLM ERROR [{type(e).__name__}]: {str(e)[:150]}", flush=True)
-        traceback.print_exc()
-        return []
+  {{"text": "$5,000", "label": "THRESHOLD"}},
+  {{"text": "wire transfer", "label": "TRANSACTION_TYPE"}}
+]}}
+
+If no entities match, return {{"entities": []}}"""
+
+    for provider in PROVIDERS:
+        # Wait if needed to respect rate limit
+        attempts = 0
+        while not _check_rate_limit(provider) and attempts < 3:
+            wait = provider["retry_delay"]
+            print(f"  [{provider['name']}] Rate limit buffer full, waiting {wait}s...", flush=True)
+            time.sleep(wait)
+            attempts += 1
+
+        _record_request(provider)
+        result = _call_llm(provider, prompt)
+
+        if result is not None:
+            # Filter to only FINRA entity types
+            return [e for e in result if e.get("label") in FINRA_ENTITY_TYPES]
+
+        # If None (rate limit hit), try next provider
+        print(f"  Falling back from {provider['name']}...", flush=True)
+
+    print("  All providers failed for this item.", flush=True)
+    return []
 
 def merge_entities(spacy_entities: list, llm_entities: list) -> list:
     merged = {}
+    # spaCy entities go in first (lower priority for FINRA types)
     for ent in spacy_entities:
-        key = ent['text'].lower().strip()
+        key = ent["text"].lower().strip()
         merged[key] = ent
+    # LLM FINRA entities override spaCy (higher quality for domain labels)
     for ent in llm_entities:
-        key = ent['text'].lower().strip()
-        if ent['label'] in FINRA_ENTITY_TYPES:
+        key = ent["text"].lower().strip()
+        if ent["label"] in FINRA_ENTITY_TYPES:
             merged[key] = ent
     return list(merged.values())
+
 
 def collect_all_text_items(doc):
     items = []
@@ -95,6 +204,7 @@ def collect_all_text_items(doc):
                         items.append((sub_item, "entities", sub_item["text"], section_title, True))
     return items
 
+# ── Batch processing ──────────────────────────────────────────────────────────
 def process_batch(batch):
     results = []
     for target_dict, field_name, text, context, is_subitem in batch:
@@ -111,7 +221,7 @@ def process_json_document_batched(doc, batch_size=5):
     processed = 0
     for i in range(0, total, batch_size):
         batch = all_items[i:i + batch_size]
-        print(f"Batch {i//batch_size + 1}/{(total + batch_size - 1)//batch_size}...", flush=True)
+        print(f"\nBatch {i//batch_size + 1}/{(total + batch_size - 1)//batch_size}...", flush=True)
         results = process_batch(batch)
         for target_dict, field_name, merged, spacy_count, llm_count in results:
             target_dict[field_name] = merged
@@ -119,33 +229,40 @@ def process_json_document_batched(doc, batch_size=5):
                 target_dict["entity_sources"] = {
                     "spacy_count": spacy_count,
                     "llm_count": llm_count,
-                    "merged_count": len(merged)
+                    "merged_count": len(merged),
                 }
         processed += len(batch)
         print(f"  Processed {processed}/{total}", flush=True)
     return doc
 
-def main(input_path, output_path, batch_size=10):
-    print("DEBUG: Starting main()", flush=True)
+
+def main(input_path, output_path, batch_size=5):
+    print("Starting NER enrichment (Groq primary, OpenRouter fallback)...", flush=True)
+    active = [p["name"] for p in PROVIDERS]
+    print(f"Active providers: {active}", flush=True)
+
     input_path = Path(input_path)
     output_path = Path(output_path)
-    print(f"DEBUG: Input exists? {input_path.exists()}", flush=True)
+
     if not input_path.exists():
         print(f"ERROR: File not found: {input_path.absolute()}", flush=True)
         sys.exit(1)
+
     with open(input_path, "r", encoding="utf-8") as f:
         doc = json.load(f)
-    print(f"DEBUG: Loaded '{doc.get('title')}' with {len(doc.get('sections', []))} sections", flush=True)
+
+    print(f"Loaded '{doc.get('title')}' with {len(doc.get('sections', []))} sections", flush=True)
+
     enriched_doc = process_json_document_batched(doc, batch_size)
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(enriched_doc, f, indent=2, ensure_ascii=False)
+
     print(f"\nDONE: Saved to {output_path}", flush=True)
 
 if __name__ == "__main__":
-    print("DEBUG: Script started", flush=True)
     main(
         input_path="FINRA/policy_spacy_entities.json",
         output_path="FINRA/policy_hybrid_entities.json",
-        batch_size=10
-    )
+        batch_size=5)
