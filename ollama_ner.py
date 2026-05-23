@@ -18,7 +18,8 @@ log_connection_status(CONN_INFO)
 
 client = OpenAI(
     base_url=f"{OLLAMA_HOST}/v1",
-    api_key=OLLAMA_TOKEN
+    api_key=OLLAMA_TOKEN,
+    timeout=300
 )
 
 FINRA_ENTITY_TYPES = [
@@ -38,28 +39,46 @@ def llm_extract_entities(text: str, section_context: str = "") -> list:
         if not fresh["reachable"]:
             print("ERROR: Still unreachable. Skipping LLM call.", flush=True)
             return []
-    
-    prompt = f"""You are a financial compliance expert specializing in FINRA AML regulations.
-Extract domain-specific entities from this text:
+    prompt = f"""Extract domain-specific entities from the following text. Only extract entities that are EXPLICITLY MENTIONED in the text. Do not infer, generalize, or add labels that do not appear verbatim.
+
+Text:
 "{text}"
+
 Section context: {section_context}
-Extract ONLY these entity types:
-- REGULATION: Specific rules, laws, regulations
-- REPORT_TYPE: Types of reports firms must file
-- THRESHOLD: Monetary amounts, time periods, numerical thresholds
-- CUSTOMER_TYPE: Types of customers or entities
-- RISK_FACTOR: Risk indicators or geographic concerns
-- TRANSACTION_TYPE: Types of transactions or patterns
-- ACCOUNT_STATUS: Account conditions
-- COMPLIANCE_ACTION: Required compliance actions
-- SECURITY_TYPE: Types of securities
-- DOCUMENT_TYPE: Regulatory documents
-Return ONLY a JSON array. Example:
-[
+
+Allowed entity types and examples:
+- REGULATION: specific cited rules like "FINRA Rule 3310", "31 U.S.C. 5311", "Bank Secrecy Act", "31 CFR 1023.320"
+- REPORT_TYPE: "suspicious activity reports", "SARs", "continuing activity SAR filing"
+- THRESHOLD: "$5,000", "90 days", "120 days", "five years"
+- CUSTOMER_TYPE: "broker-dealer", "politically exposed person", "shell company", "non-profit organization"
+- RISK_FACTOR: "money laundering red flags", "high-risk geographic location", "structuring", "unregistered basis"
+- TRANSACTION_TYPE: "wire transfers", "deposits", "liquidation", "journal entries"
+- ACCOUNT_STATUS: "dormant account", "new account", "master/sub structure"
+- COMPLIANCE_ACTION: "file SARs", "notify by telephone", "customer due diligence"
+- SECURITY_TYPE: "penny stocks", "bearer bonds", "restricted securities", "American Depository Receipts"
+- DOCUMENT_TYPE: "Notice to Members 02-21", "Regulatory Notice 19-18"
+
+Rules:
+1. ONLY extract text that literally appears in the passage
+2. Do NOT extract "FINRA AML regulations" — this phrase never appears in the text
+3. Do NOT extract generic topic descriptions as regulations
+4. Do NOT extract phone numbers, email addresses, or footnote citation numbers
+5. Extract the COMPLETE phrase including all words, numbers, and punctuation that belong to the entity
+6. If the entity includes parentheses like "(PEP)" or "(NBBO)", include them
+7. Do NOT include trailing punctuation from the surrounding sentence
+8. Return ONLY a JSON object with key "entities" containing an array
+
+Example 1 — dense paragraph:
+{{"entities": [
   {{"text": "FINRA Rule 3310", "label": "REGULATION"}},
-  {{"text": "$5,000", "label": "THRESHOLD"}}
-]
-If no entities match, return []"""
+  {{"text": "$5,000", "label": "THRESHOLD"}},
+  {{"text": "wire transfer", "label": "TRANSACTION_TYPE"}}
+]}}
+
+Example 2 — no matching entities:
+{{"entities": []}}
+
+If no entities match, return {{"entities": []}}"""
     try: 
         response = client.chat.completions.create(model=OLLAMA_MODEL,
                 messages=[
@@ -183,6 +202,6 @@ def main(input_path, output_path, batch_size=5):
 if __name__ == "__main__":
     main(
         input_path="FINRA/policy_spacy_entities.json",
-        output_path="FINRA/policy_hybrid_entities.json",
+        output_path="FINRA/policy_hybrid_entities2.json",
         batch_size=5)
 
