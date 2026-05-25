@@ -95,15 +95,11 @@ If no entities match, return {{"entities": []}}"""
                 max_tokens=500
             )
 
-        result = response.choices[0].message.content.strip()
-        result = result.replace("```json", "").replace("```", "").strip()
-        parsed = json.loads(result)
-        if isinstance(parsed, dict):
-            parsed = next(iter(parsed.values()))
-        return parsed if isinstance(parsed, list) else []
+        raw = response.choices[0].message.content.strip()
+        return parse_llm_response(raw)
+        
     except Exception as e:
-        print(f"  LLM ERROR [{type(e).__name__}]: {str(e)[:150]}", flush=True)
-        traceback.print_exc()
+        print(f"  [FAIL] {type(e).__name__}: {str(e)[:100]}", flush=True)
         return []
 
 
