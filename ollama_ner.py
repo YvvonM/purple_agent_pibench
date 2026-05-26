@@ -6,6 +6,7 @@ import traceback
 from pathlib import Path 
 from dotenv import load_dotenv
 from openai import OpenAI
+from pydantic_models import parse_llm_response
 from connection_checker import check_connection, log_connection_status
 
 load_dotenv()
