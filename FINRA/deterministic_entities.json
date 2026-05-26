@@ -1,0 +1,941 @@
+{
+  "title": "Regulatory Notice 19-18",
+  "sections": [
+    {
+      "title": "Anti-Money Laundering (AML) Program",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "FINRA Provides Guidance to Firms Regarding Suspicious Activity Monitoring and Reporting Obligations"
+        },
+        {
+          "type": "paragraph",
+          "text": "May 6, 2019",
+          "entities": [
+            {
+              "type": "date",
+              "value": "May 6, 2019",
+              "start": 0,
+              "end": 11
+            }
+          ]
+        },
+        {
+          "type": "bullet",
+          "text": "Guidance"
+        },
+        {
+          "type": "bullet",
+          "text": "Compliance"
+        },
+        {
+          "type": "bullet",
+          "text": "Legal"
+        },
+        {
+          "type": "bullet",
+          "text": "Operations"
+        },
+        {
+          "type": "bullet",
+          "text": "Senior Management"
+        },
+        {
+          "type": "bullet",
+          "text": "Anti-Money Laundering"
+        },
+        {
+          "type": "bullet",
+          "text": "Compliance Programs"
+        },
+        {
+          "type": "bullet",
+          "text": "Bank Secrecy Act"
+        },
+        {
+          "type": "bullet",
+          "text": "FINRA Rule 3310",
+          "entities": [
+            {
+              "type": "finra_rule",
+              "value": "FINRA Rule 3310",
+              "start": 0,
+              "end": 15
+            }
+          ]
+        },
+        {
+          "type": "bullet",
+          "text": "Notice to Members 02-21",
+          "entities": [
+            {
+              "type": "notice",
+              "value": "Notice to Members 02-21",
+              "start": 0,
+              "end": 23
+            }
+          ]
+        }
+      ],
+      "subsections": [
+        {
+          "title": "Notice Type",
+          "content": []
+        },
+        {
+          "title": "Suggested Routing",
+          "content": []
+        },
+        {
+          "title": "Key Topics",
+          "content": []
+        },
+        {
+          "title": "Referenced Rules & Notices",
+          "content": []
+        }
+      ]
+    },
+    {
+      "title": "Summary",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "FINRA is issuing this Notice to provide guidance to member firms regarding suspicious activity monitoring and reporting obligations under FINRA Rule 3310 (Anti-Money Laundering Compliance Program).",
+          "entities": [
+            {
+              "type": "finra_rule",
+              "value": "FINRA Rule 3310",
+              "start": 138,
+              "end": 153
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Questions concerning this Notice should be directed to:"
+        },
+        {
+          "type": "bullet",
+          "text": "Victoria Crane, Associate General Counsel, Office of General Counsel, at (202) 728-8104 or victoria.crane@finra.org; or",
+          "entities": [
+            {
+              "type": "phone",
+              "value": "(202) 728-8104",
+              "start": 73,
+              "end": 87
+            },
+            {
+              "type": "email",
+              "value": "victoria.crane@finra.org",
+              "start": 91,
+              "end": 115
+            }
+          ]
+        },
+        {
+          "type": "bullet",
+          "text": "Blake Snyder, Senior Director, Member Regulation, at (561) 443-8051 or blake.snyder@finra.org.",
+          "entities": [
+            {
+              "type": "phone",
+              "value": "(561) 443-8051",
+              "start": 53,
+              "end": 67
+            },
+            {
+              "type": "email",
+              "value": "blake.snyder@finra.org",
+              "start": 71,
+              "end": 93
+            }
+          ]
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "Background and Discussion",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "FINRA Rule 3310 (Anti-Money Laundering Compliance Program) requires each member firm to develop and implement a written anti-money laundering (AML) program reasonably designed to achieve and monitor the firm\u2019s compliance with the requirements of the Bank Secrecy Act (BSA),1 and the implementing regulations promulgated thereunder by the Department of the Treasury (Treasury).",
+          "entities": [
+            {
+              "type": "finra_rule",
+              "value": "FINRA Rule 3310",
+              "start": 0,
+              "end": 15
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "FINRA Rule 3310(a) requires firms to \u201c[e]stablish and implement policies and procedures that can be reasonably expected to detect and cause the reporting of transactions required under [the BSA] and the implementing regulation thereunder.\u201d The BSA authorizes Treasury to require that financial institutions file suspicious activity reports (SARs).2",
+          "entities": [
+            {
+              "type": "finra_rule",
+              "value": "FINRA Rule 3310",
+              "start": 0,
+              "end": 15
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Under Treasury\u2019s SAR rule,3 a broker-dealer must report a transaction to the Financial Crimes Enforcement Network (FinCEN) if it is conducted or attempted by, at or through a broker-dealer, it involves or aggregates funds or other assets of at least $5,000, and the broker-dealer knows, suspects or has reason to suspect that the transaction (or a pattern of transactions of which the transaction is a part):",
+          "entities": [
+            {
+              "type": "money",
+              "value": "$5,000,",
+              "start": 250,
+              "end": 257
+            }
+          ]
+        },
+        {
+          "type": "bullet",
+          "text": "involves funds derived from illegal activity or is intended or conducted in order to hide or disguise funds or assets derived from illegal activity (including, without limitation, the ownership, nature, source, location or control of such funds or assets) as part of a plan to violate or evade any federal law or regulation or to avoid any transaction reporting requirement under federal law or regulation"
+        },
+        {
+          "type": "bullet",
+          "text": "is designed, whether through structuring or other means, to evade any regulations promulgated under the BSA"
+        },
+        {
+          "type": "bullet",
+          "text": "has no business or apparent lawful purpose or is not the sort in which the particular customer would normally be expected to engage, and the broker-dealer knows of no reasonable explanation for the transaction after examining the available facts, including the background and possible purpose of the transaction; or"
+        },
+        {
+          "type": "bullet",
+          "text": "involves use of the broker-dealer to facilitate criminal activity.4"
+        },
+        {
+          "type": "paragraph",
+          "text": "Broker-dealers must report the suspicious activity by completing a SAR and filing it in accordance with the requirements of Treasury\u2019s SAR rule.5 Broker-dealers must maintain a copy of any SAR filed and supporting documentation for a period of five years from the date of filing the SAR.6 FinCEN has provided guidance7 to the industry advising that if the activity that was the subject of a SAR filing continues, firms should review any continuing activity at least every 90 days to consider whether a continuing activity SAR filing is warranted, with the filing deadline being 120 days after the date of the previously related SAR filing."
+        },
+        {
+          "type": "paragraph",
+          "text": "In situations that require immediate attention, such as terrorist financing or ongoing money laundering schemes, broker-dealers must immediately notify by telephone an appropriate law enforcement authority in addition to filing timely a SAR. The firm may call FinCEN\u2019s Hotline at (866) 556-3974.",
+          "entities": [
+            {
+              "type": "phone",
+              "value": "(866) 556-3974",
+              "start": 280,
+              "end": 294
+            }
+          ]
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "Money Laundering Red Flags",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "FINRA published a list of \u201cmoney laundering red flags\u201d in Notice to Members 02-21 (NTM 02-21). Since NTM 02-21 was published, guidance detailing additional red flags that may be applicable to the securities industry have been published by a number of U.S. government agencies and international organizations.8 FINRA is issuing this Notice to provide examples of these additional money laundering red flags for firms to consider incorporating into their AML programs, as may be appropriate in implementing a risk-based approach to BSA/AML compliance. This could include, as applicable, incorporation into policies and procedures relating to suspicious activity monitoring or suspicious activity investigation and SAR reporting. Upon detection of red flags through monitoring, firms should consider whether additional investigation, customer due diligence measures or a SAR filing may be warranted.",
+          "entities": [
+            {
+              "type": "notice",
+              "value": "Notice to Members 02-21",
+              "start": 58,
+              "end": 81
+            },
+            {
+              "type": "notice",
+              "value": "NTM 02-21",
+              "start": 83,
+              "end": 92
+            },
+            {
+              "type": "notice",
+              "value": "NTM 02-21",
+              "start": 101,
+              "end": 110
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The following is not an exhaustive list and does not guarantee compliance with AML program requirements or provide a safe harbor from regulatory responsibility. Further, it is important to note that a red flag is not necessarily indicative of suspicious activity, and that not every item identified in this Notice will be relevant for every broker-dealer, every customer relationship or every business activity."
+        },
+        {
+          "type": "paragraph",
+          "text": "Firms should also be aware of emerging areas of risk, such as risks associated with activity in digital assets. Regardless of whether such assets are securities, BSA/AML requirements, including SAR filing requirements apply, and firms should thus consider the relevant risks, monitor for suspicious activity and, as applicable, report any such activity."
+        },
+        {
+          "type": "paragraph",
+          "text": "This Notice is intended to assist broker-dealers in complying with their existing obligations under BSA/AML requirements and does not create any new requirements or expectations. In addition, this Notice incorporates the red flags listed in NTM 02-21 so that firms can refer to this Notice only for examples of potential red flags.",
+          "entities": [
+            {
+              "type": "notice",
+              "value": "NTM 02-21",
+              "start": 241,
+              "end": 250
+            }
+          ]
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "I. Potential Red Flags in Customer Due Diligence and Interactions With Customers",
+      "content": [
+        {
+          "type": "numbered_item",
+          "number": 1,
+          "text": "The customer provides the firm with unusual or suspicious identification documents that cannot be readily verified or are inconsistent with other statements or documents that the customer has provided. Or, the customer provides information that is inconsistent with other available information about the customer. This indicator may apply to account openings and to interaction subsequent to account opening.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 2,
+          "text": "The customer is reluctant or refuses to provide the firm with complete customer due diligence information as required by the firm\u2019s procedures, which may include information regarding the nature and purpose of the customer\u2019s business, prior financial relationships, anticipated account activity, business location and, if applicable, the entity\u2019s officers and directors.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 3,
+          "text": "The customer refuses to identify a legitimate source of funds or information is false, misleading or substantially incorrect.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 4,
+          "text": "The customer is domiciled in, doing business in or regularly transacting with counterparties in a jurisdiction that is known as a bank secrecy haven, tax shelter, high-risk geographic location (e.g., known as a narcotics producing jurisdiction, known to have ineffective AML/Combating the Financing of Terrorism systems) or conflict zone, including those with an established threat of terrorism.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 5,
+          "text": "The customer has difficulty describing the nature of his or her business or lacks general knowledge of his or her industry.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 6,
+          "text": "The customer has no discernable reason for using the firm\u2019s service or the firm\u2019s location (e.g., the customer lacks roots to the local community or has gone out of his or her way to use the firm).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 7,
+          "text": "The customer has been rejected or has had its relationship terminated as a customer by other financial services firms.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 8,
+          "text": "The customer\u2019s legal or mailing address is associated with multiple other accounts or businesses that do not appear related.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 9,
+          "text": "The customer appears to be acting as an agent for an undisclosed principal, but is reluctant to provide information.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 10,
+          "text": "The customer is a trust, shell company or private investment company that is reluctant to provide information on controlling parties and underlying beneficiaries.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 11,
+          "text": "The customer is publicly known or known to the firm to have criminal, civil or regulatory proceedings against him or her for crime, corruption or misuse of public funds, or is known to associate with such persons. Sources for this information could include news items, the Internet or commercial database searches.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 12,
+          "text": "The customer\u2019s background is questionable or differs from expectations based on business activities.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 13,
+          "text": "The customer maintains multiple accounts, or maintains accounts in the names of family members or corporate entities, with no apparent business or other purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 14,
+          "text": "An account is opened by a politically exposed person (PEP),9 particularly in conjunction with one or more additional risk factors, such as the account being opened by a shell company10 beneficially owned or controlled by the PEP, the PEP is from a country which has been identified by FATF as having strategic AML regime deficiencies, or the PEP is from a country known to have a high level of corruption.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 15,
+          "text": "An account is opened by a non-profit organization that provides services in geographic locations known to be at higher risk for being an active terrorist threat.11",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 16,
+          "text": "An account is opened in the name of a legal entity that is involved in the activities of an association, organization or foundation whose aims are related to the claims or demands of a known terrorist entity.12",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 17,
+          "text": "An account is opened for a purported stock loan company, which may hold the restricted securities of corporate insiders who have pledged the securities as collateral for, and then defaulted on, purported loans, after which the securities are sold on an unregistered basis.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 18,
+          "text": "An account is opened in the name of a foreign financial institution, such as an offshore bank or broker-dealer, that sells shares of stock on an unregistered basis on behalf of customers.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 19,
+          "text": "An account is opened for a foreign financial institution that is affiliated with a U.S. broker-dealer, bypassing its U.S. affiliate, for no apparent business purpose. An apparent business purpose could include access to products or services the U.S. affiliate does not provide.",
+          "sub_items": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "II. Potential Red Flags in Deposits of Securities",
+      "content": [
+        {
+          "type": "numbered_item",
+          "number": 1,
+          "text": "A customer opens a new account and deposits physical certificates, or delivers in shares electronically, representing a large block of thinly traded or low-priced securities.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 2,
+          "text": "A customer has a pattern of depositing physical share certificates, or a pattern of delivering in shares electronically, immediately selling the shares and then wiring, or otherwise transferring out the proceeds of the sale(s).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 3,
+          "text": "A customer deposits into an account physical share certificates or electronically deposits or transfers shares that:",
+          "sub_items": [
+            {
+              "type": "bullet",
+              "text": "were recently issued or represent a large percentage of the float for the security"
+            },
+            {
+              "type": "bullet",
+              "text": "reference a company or customer name that has been changed or that does not match the name on the account"
+            },
+            {
+              "type": "bullet",
+              "text": "were issued by a shell company"
+            },
+            {
+              "type": "bullet",
+              "text": "were issued by a company that has no apparent business, revenues or products"
+            },
+            {
+              "type": "bullet",
+              "text": "were issued by a company whose SEC filings are not current, are incomplete, or nonexistent"
+            },
+            {
+              "type": "bullet",
+              "text": "were issued by a company that has been through several recent name changes or business combinations or recapitalizations"
+            },
+            {
+              "type": "bullet",
+              "text": "were issued by a company that has been the subject of a prior trading suspension; or"
+            },
+            {
+              "type": "bullet",
+              "text": "were issued by a company whose officers or insiders have a history of regulatory or criminal violations, or are associated with multiple low-priced stock issuers."
+            }
+          ]
+        },
+        {
+          "type": "numbered_item",
+          "number": 4,
+          "text": "The lack of a restrictive legend on deposited shares seems inconsistent with the date the customer acquired the securities, the nature of the transaction in which the securities were acquired, the history of the stock or the volume of shares trading.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 5,
+          "text": "A customer with limited or no other assets at the firm receives an electronic transfer or journal transfer of large amounts of low-priced, non-exchange-listed securities.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 6,
+          "text": "The customer\u2019s explanation or documents purporting to evidence how the customer acquired the shares does not make sense or changes upon questioning by the firm or other parties. Such documents could include questionable legal opinions or securities purchase agreements.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 7,
+          "text": "The customer deposits physical securities or delivers in shares electronically, and within a short time-frame, requests to journal the shares into multiple accounts that do not appear to be related, or to sell or otherwise transfer ownership of the shares.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 8,
+          "text": "Seemingly unrelated clients open accounts on or at about the same time, deposit the same low-priced security and subsequently liquidate the security in a manner that suggests coordination.",
+          "sub_items": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "III. Potential Red Flags in Securities Trading13",
+      "content": [
+        {
+          "type": "numbered_item",
+          "number": 1,
+          "text": "The customer, for no apparent reason or in conjunction with other \u201cred flags,\u201d engages in transactions involving certain types of securities, such as penny stocks, Regulation \u201cS\u201d stocks and bearer bonds, which although legitimate, have been used in connection with fraudulent schemes and money laundering activity. (Such transactions may warrant further due diligence to ensure the legitimacy of the customer\u2019s activity.)",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 2,
+          "text": "There is a sudden spike in investor demand for, coupled with a rising price in, a thinly traded or low-priced security.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 3,
+          "text": "The customer\u2019s activity represents a significant proportion of the daily trading volume in a thinly traded or low-priced security.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 4,
+          "text": "A customer buys and sells securities with no discernable purpose or circumstances that appear unusual.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 5,
+          "text": "Individuals known throughout the industry to be stock promoters sell securities through the broker-dealer.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 6,
+          "text": "A customer accumulates stock in small increments throughout the trading day to increase price.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 7,
+          "text": "A customer engages in pre-arranged or other non-competitive securities trading, including wash or cross trades, with no apparent business purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 8,
+          "text": "A customer attempts to influence the closing price of a stock by executing purchase or sale orders at or near the close of the market.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 9,
+          "text": "A customer engages in transactions suspected to be associated with cyber breaches of customer accounts, including potentially unauthorized disbursements of funds or trades.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 10,
+          "text": "A customer engages in a frequent pattern of placing orders on one side of the market, usually inside the existing National Best Bid or Offer (NBBO), followed by the customer entering orders on the other side of the market that execute against other market participants that joined the market at the improved NBBO (activity indicative of \u201cspoofing\u201d).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 11,
+          "text": "A customer engages in a frequent pattern of placing multiple limit orders on one side of the market at various price levels, followed by the customer entering orders on the opposite side of the market that are executed and the customer cancelling the original limit orders (activity indicative of \u201clayering\u201d).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 12,
+          "text": "Two or more unrelated customer accounts at the firm trade an illiquid or low-priced security suddenly and simultaneously.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 13,
+          "text": "The customer makes a large purchase or sale of a security, or option on a security, shortly before news or a significant announcement is issued that affects the price of the security.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 14,
+          "text": "The customer is known to have friends or family who work at or for the securities issuer, which may be a red flag for potential insider trading or unlawful sales of unregistered securities.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 15,
+          "text": "The customer\u2019s purchase of a security does not correspond to the customer\u2019s investment profile or history of transactions (e.g., the customer may never have invested in equity securities or may have never invested in a given industry, but does so at an opportune time) and there is no reasonable explanation for the change.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 16,
+          "text": "The account is using a master/sub structure, which enables trading anonymity with respect to the sub-accounts\u2019 activity, and engages in trading activity that raises red flags, such as the liquidation of microcap issuers or potentially manipulative trading activity.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 17,
+          "text": "The firm receives regulatory inquiries or grand jury or other subpoenas concerning the firm\u2019s customers\u2019 trading.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 18,
+          "text": "The customer engages in a pattern of transactions in securities indicating the customer is using securities to engage in currency conversion. For example, the customer delivers in and subsequently liquidates American Depository Receipts (ADRs) or dual currency bonds for U.S. dollar proceeds, where the securities were originally purchased in a different currency.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 19,
+          "text": "The customer engages in mirror trades or transactions involving securities used for currency conversions, potentially through the use of offsetting trades.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 20,
+          "text": "The customer appears to buy or sell securities based on advanced knowledge of pending customer orders.",
+          "sub_items": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "IV. Potential Red Flags in Money Movements",
+      "content": [
+        {
+          "type": "numbered_item",
+          "number": 1,
+          "text": "The customer attempts or makes frequent or large deposits of currency, insists on dealing only in cash equivalents, or asks for exemptions from the firm\u2019s policies and procedures relating to the deposit of cash and cash equivalents.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 2,
+          "text": "The customer \u201cstructures\u201d deposits, withdrawals or purchases of monetary instruments below a certain amount to avoid reporting or recordkeeping requirements, and may state directly that they are trying to avoid triggering a reporting obligation or to evade taxing authorities.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 3,
+          "text": "The customer seemingly breaks funds transfers into smaller transfers to avoid raising attention to a larger funds transfer. The smaller funds transfers do not appear to be based on payroll cycles, retirement needs, or other legitimate regular deposit and withdrawal strategies.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 4,
+          "text": "The customer\u2019s account shows numerous currency, money order (particularly sequentially numbered money orders) or cashier\u2019s check transactions aggregating to significant sums without any apparent business or lawful purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 5,
+          "text": "The customer frequently changes bank account details or information for redemption proceeds, in particular when followed by redemption requests.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 6,
+          "text": "The customer makes a funds deposit followed by an immediate request that the money be wired out or transferred to a third party, or to another firm, without any apparent business purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 7,
+          "text": "Wire transfers are made in small amounts in an apparent effort to avoid triggering identification or reporting requirements.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 8,
+          "text": "Incoming payments are made by third-party checks or checks with multiple endorsements.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 9,
+          "text": "Outgoing checks to third parties coincide with, or are close in time to, incoming checks from other third parties.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 10,
+          "text": "Payments are made by third party check or money transfer from a source that has no apparent connection to the customer.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 11,
+          "text": "Wire transfers are made to or from financial secrecy havens, tax havens, high-risk geographic locations or conflict zones, including those with an established presence of terrorism.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 12,
+          "text": "Wire transfers originate from jurisdictions that have been highlighted in relation to black market peso exchange activities.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 13,
+          "text": "The customer engages in transactions involving foreign currency exchanges that are followed within a short time by wire transfers to locations of specific concern (e.g., countries designated by national authorities, such as FATF, as non-cooperative countries and territories).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 14,
+          "text": "The parties to the transaction (e.g., originator or beneficiary) are from countries that are known to support terrorist activities and organizations.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 15,
+          "text": "Wire transfers or payments are made to or from unrelated third parties (foreign or domestic), or where the name or account number of the beneficiary or remitter has not been supplied.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 16,
+          "text": "There is wire transfer activity that is unexplained, repetitive, unusually large, shows unusual patterns or has no apparent business purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 17,
+          "text": "The securities account is used for payments or outgoing wire transfers with little or no securities activities (i.e., account appears to be used as a depository account or a conduit for transfers, which may be purported to be for business operating needs).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 18,
+          "text": "Funds are transferred to financial or depository institutions other than those from which the funds were initially received, specifically when different countries are involved.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 19,
+          "text": "The customer engages in excessive journal entries of funds between related or unrelated accounts without any apparent business purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 20,
+          "text": "The customer uses a personal/individual account for business purposes or vice versa.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 21,
+          "text": "A foreign import business with U.S. accounts receives payments from outside the area of its customer base.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 22,
+          "text": "There are frequent transactions involving round or whole dollar amounts purported to involve payments for goods or services.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 23,
+          "text": "Upon request, a customer is unable or unwilling to produce appropriate documentation (e.g., invoices) to support a transaction, or documentation appears doctored or fake (e.g., documents contain significant discrepancies between the descriptions on the transport document or bill of lading, the invoice, or other documents such as the certificate of origin or packing list).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 24,
+          "text": "The customer requests that certain payments be routed through nostro14 or correspondent accounts held by the financial intermediary instead of its own accounts, for no apparent business purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 25,
+          "text": "Funds are transferred into an account and are subsequently transferred out of the account in the same or nearly the same amounts, especially when the origin and destination locations are high-risk jurisdictions.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 26,
+          "text": "A dormant account suddenly becomes active without a plausible explanation (e.g., large deposits that are suddenly wired out).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 27,
+          "text": "Nonprofit or charitable organizations engage in financial transactions for which there appears to be no logical economic purpose or in which there appears to be no link between the stated activity of the organization and the other parties in the transaction.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 28,
+          "text": "There is unusually frequent domestic and international automated teller machine (ATM) activity.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 29,
+          "text": "A person customarily uses the ATM to make several deposits into a brokerage account below a specified BSA/AML reporting threshold.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 30,
+          "text": "Many small, incoming wire transfers or deposits are made using checks and money orders that are almost immediately withdrawn or wired out in a manner inconsistent with the customer\u2019s business or history; the checks or money orders may reference in a memo section \u201cinvestment\u201d or \u201cfor purchase of stock.\u201d This may be an indicator of a Ponzi scheme or potential funneling activity.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 31,
+          "text": "Wire transfer activity, when viewed over a period of time, reveals suspicious or unusual patterns, which could include round dollar, repetitive transactions or circuitous money movements.",
+          "sub_items": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "V. Potential Red Flags in Insurance Products",
+      "content": [
+        {
+          "type": "numbered_item",
+          "number": 1,
+          "text": "The customer cancels an insurance contract and directs that the funds be sent to a third party.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 2,
+          "text": "The customer deposits an insurance annuity check from a cancelled policy and immediately requests a withdrawal or transfer of funds.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 3,
+          "text": "The customer cancels an annuity product within the free-look period. This could be a red flag if accompanied with suspicious indicators, such as purchasing the annuity with several sequentially numbered money orders or having a history of cancelling annuity products during the free-look period.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 4,
+          "text": "The customer opens and closes accounts with one insurance company, then reopens a new account shortly thereafter with the same insurance company, each time with new ownership information.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 5,
+          "text": "The customer purchases an insurance product with no concern for the investment objective or performance.",
+          "sub_items": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "title": "VI. Other Potential Red Flags",
+      "content": [
+        {
+          "type": "numbered_item",
+          "number": 1,
+          "text": "The customer is reluctant to provide information needed to file reports to proceed with the transaction.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 2,
+          "text": "The customer exhibits unusual concern with the firm\u2019s compliance with government reporting requirements and the firm\u2019s AML policies.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 3,
+          "text": "The customer tries to persuade an employee not to file required reports or not to maintain the required records.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 4,
+          "text": "Notifications received from the broker-dealer\u2019s clearing firm that the clearing firm had identified potentially suspicious activity in customer accounts. Such notifications can take the form of alerts or other concern regarding negative news, money movements or activity involving certain securities.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 5,
+          "text": "Law enforcement has issued subpoenas or freeze letters regarding a customer or account at the securities firm.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 6,
+          "text": "The customer makes high-value transactions not commensurate with the customer\u2019s known income or financial resources.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 7,
+          "text": "The customer wishes to engage in transactions that lack business sense or an apparent investment strategy, or are inconsistent with the customer\u2019s stated business strategy.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 8,
+          "text": "The stated business, occupation or financial resources of the customer are not commensurate with the type or level of activity of the customer.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 9,
+          "text": "The customer engages in transactions that show the customer is acting on behalf of third parties with no apparent business or lawful purpose.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 10,
+          "text": "The customer engages in transactions that show a sudden change inconsistent with normal activities of the customer.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 11,
+          "text": "Securities transactions are unwound before maturity, absent volatile market conditions or other logical or apparent reason.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 12,
+          "text": "The customer does not exhibit a concern with the cost of the transaction or fees (e.g., surrender fees, or higher than necessary commissions).",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 13,
+          "text": "A borrower defaults on a cash-secured loan or any loan that is secured by assets that are readily convertible into currency.",
+          "sub_items": []
+        },
+        {
+          "type": "numbered_item",
+          "number": 14,
+          "text": "There is an unusual use of trust funds in business transactions or other financial activity.",
+          "sub_items": []
+        }
+      ],
+      "subsections": []
+    }
+  ],
+  "title_entities": [
+    {
+      "type": "regulatory_notice",
+      "value": "Regulatory Notice 19-18",
+      "start": 0,
+      "end": 23
+    }
+  ]
+}
