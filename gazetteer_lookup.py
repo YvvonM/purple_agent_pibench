@@ -71,6 +71,7 @@ def merge_entities(regex_entities, gazetteer_entities):
         clean = {
             "type": ent["type"],
             "value": ent["value"],
+            "canonical": ent.get("canonical", ent["value"]),
             "start": ent["start"],
             "end": ent["end"]
         }

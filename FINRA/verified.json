@@ -13,14 +13,30 @@
               "value": "FINRA",
               "canonical": "FINRA",
               "start": 0,
-              "end": 5
+              "end": 5,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "Suspicious Activity Monitoring",
               "canonical": "suspicious activity monitoring",
               "start": 43,
-              "end": 73
+              "end": 73,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -33,7 +49,15 @@
               "value": "May 6, 2019",
               "canonical": "May 6, 2019",
               "start": 0,
-              "end": 11
+              "end": 11,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -66,7 +90,15 @@
               "value": "Anti-Money Laundering",
               "canonical": "Anti-Money Laundering",
               "start": 0,
-              "end": 21
+              "end": 21,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -83,7 +115,15 @@
               "value": "Bank Secrecy Act",
               "canonical": "Bank Secrecy Act",
               "start": 0,
-              "end": 16
+              "end": 16,
+              "verified": false,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": false,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -96,7 +136,15 @@
               "value": "FINRA Rule 3310",
               "canonical": "FINRA Rule 3310",
               "start": 0,
-              "end": 15
+              "end": 15,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -109,7 +157,15 @@
               "value": "Notice to Members 02-21",
               "canonical": "Notice to Members 02-21",
               "start": 0,
-              "end": 23
+              "end": 23,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -138,14 +194,30 @@
           "value": "Anti-Money Laundering",
           "canonical": "Anti-Money Laundering",
           "start": 0,
-          "end": 21
+          "end": 21,
+          "verified": true,
+          "confidence": 1.0,
+          "verification": {
+            "structural_valid": true,
+            "canonical_valid": true,
+            "context_valid": true,
+            "type_valid": true
+          }
         },
         {
           "type": "regulatory_program",
           "value": "AML",
           "canonical": "Anti-Money Laundering",
           "start": 23,
-          "end": 26
+          "end": 26,
+          "verified": true,
+          "confidence": 1.0,
+          "verification": {
+            "structural_valid": true,
+            "canonical_valid": true,
+            "context_valid": true,
+            "type_valid": true
+          }
         }
       ]
     },
@@ -161,28 +233,60 @@
               "value": "FINRA",
               "canonical": "FINRA",
               "start": 0,
-              "end": 5
+              "end": 5,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "suspicious activity monitoring",
               "canonical": "suspicious activity monitoring",
               "start": 75,
-              "end": 105
+              "end": 105,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "finra_rule",
               "value": "FINRA Rule 3310",
               "canonical": "FINRA Rule 3310",
               "start": 138,
-              "end": 153
+              "end": 153,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "Anti-Money Laundering Compliance Program",
               "canonical": "Anti-Money Laundering Compliance Program",
               "start": 155,
-              "end": 195
+              "end": 195,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -199,21 +303,45 @@
               "value": "Victoria Crane",
               "canonical": "Victoria Crane",
               "start": 0,
-              "end": 14
+              "end": 14,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "phone",
               "value": "(202) 728-8104",
               "canonical": "(202) 728-8104",
               "start": 73,
-              "end": 87
+              "end": 87,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "email",
               "value": "victoria.crane@finra.org",
               "canonical": "victoria.crane@finra.org",
               "start": 91,
-              "end": 115
+              "end": 115,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -226,21 +354,45 @@
               "value": "Blake Snyder",
               "canonical": "Blake Snyder",
               "start": 0,
-              "end": 12
+              "end": 12,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "phone",
               "value": "(561) 443-8051",
               "canonical": "(561) 443-8051",
               "start": 53,
-              "end": 67
+              "end": 67,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "email",
               "value": "blake.snyder@finra.org",
               "canonical": "blake.snyder@finra.org",
               "start": 71,
-              "end": 93
+              "end": 93,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -252,173 +404,349 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "FINRA Rule 3310 (Anti-Money Laundering Compliance Program) requires each member firm to develop and implement a written anti-money laundering (AML) program reasonably designed to achieve and monitor the firm\u2019s compliance with the requirements of the Bank Secrecy Act (BSA),1 and the implementing regulations promulgated thereunder by the Department of the Treasury (Treasury).",
+          "text": "FINRA Rule 3310 (Anti-Money Laundering Compliance Program) requires each member firm to develop and implement a written anti-money laundering (AML) program reasonably designed to achieve and monitor the firm’s compliance with the requirements of the Bank Secrecy Act (BSA),1 and the implementing regulations promulgated thereunder by the Department of the Treasury (Treasury).",
           "entities": [
             {
               "type": "finra_rule",
               "value": "FINRA Rule 3310",
               "canonical": "FINRA Rule 3310",
               "start": 0,
-              "end": 15
+              "end": 15,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "Anti-Money Laundering Compliance Program",
               "canonical": "Anti-Money Laundering Compliance Program",
               "start": 17,
-              "end": 57
+              "end": 57,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "anti-money laundering",
               "canonical": "Anti-Money Laundering",
               "start": 120,
-              "end": 141
+              "end": 141,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 143,
-              "end": 146
+              "end": 146,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "Bank Secrecy Act",
               "canonical": "Bank Secrecy Act",
               "start": 250,
-              "end": 266
+              "end": 266,
+              "verified": false,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": false,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 268,
-              "end": 271
+              "end": 271,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "Department of the Treasury",
               "canonical": "Department of the Treasury",
               "start": 338,
-              "end": 364
+              "end": 364,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "Treasury",
               "canonical": "Department of the Treasury",
               "start": 366,
-              "end": 374
+              "end": 374,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "FINRA Rule 3310(a) requires firms to \u201c[e]stablish and implement policies and procedures that can be reasonably expected to detect and cause the reporting of transactions required under [the BSA] and the implementing regulation thereunder.\u201d The BSA authorizes Treasury to require that financial institutions file suspicious activity reports (SARs).2",
+          "text": "FINRA Rule 3310(a) requires firms to “[e]stablish and implement policies and procedures that can be reasonably expected to detect and cause the reporting of transactions required under [the BSA] and the implementing regulation thereunder.” The BSA authorizes Treasury to require that financial institutions file suspicious activity reports (SARs).2",
           "entities": [
             {
               "type": "finra_rule",
               "value": "FINRA Rule 3310",
               "canonical": "FINRA Rule 3310",
               "start": 0,
-              "end": 15
+              "end": 15,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 190,
-              "end": 193
+              "end": 193,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 244,
-              "end": 247
+              "end": 247,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "Treasury",
               "canonical": "Department of the Treasury",
               "start": 259,
-              "end": 267
+              "end": 267,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "suspicious activity reports",
               "canonical": "suspicious activity report",
               "start": 312,
-              "end": 339
+              "end": 339,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SARs",
               "canonical": "suspicious activity report",
               "start": 341,
-              "end": 345
+              "end": 345,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "Under Treasury\u2019s SAR rule,3 a broker-dealer must report a transaction to the Financial Crimes Enforcement Network (FinCEN) if it is conducted or attempted by, at or through a broker-dealer, it involves or aggregates funds or other assets of at least $5,000, and the broker-dealer knows, suspects or has reason to suspect that the transaction (or a pattern of transactions of which the transaction is a part):",
+          "text": "Under Treasury’s SAR rule,3 a broker-dealer must report a transaction to the Financial Crimes Enforcement Network (FinCEN) if it is conducted or attempted by, at or through a broker-dealer, it involves or aggregates funds or other assets of at least $5,000, and the broker-dealer knows, suspects or has reason to suspect that the transaction (or a pattern of transactions of which the transaction is a part):",
           "entities": [
             {
               "type": "organization",
               "value": "Treasury",
               "canonical": "Department of the Treasury",
               "start": 6,
-              "end": 14
+              "end": 14,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SAR",
               "canonical": "suspicious activity report",
               "start": 17,
-              "end": 20
+              "end": 20,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 30,
-              "end": 43
+              "end": 43,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "Financial Crimes Enforcement Network",
               "canonical": "Financial Crimes Enforcement Network",
               "start": 77,
-              "end": 113
+              "end": 113,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "FinCEN",
               "canonical": "Financial Crimes Enforcement Network",
               "start": 115,
-              "end": 121
+              "end": 121,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 175,
-              "end": 188
+              "end": 188,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "money",
               "value": "$5,000,",
               "canonical": "$5,000,",
               "start": 250,
-              "end": 257
+              "end": 257,
+              "verified": false,
+              "confidence": 0.4,
+              "verification": {
+                "structural_valid": false,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 266,
-              "end": 279
+              "end": 279,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -435,14 +763,30 @@
               "value": "structuring",
               "canonical": "structuring",
               "start": 29,
-              "end": 40
+              "end": 40,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 104,
-              "end": 107
+              "end": 107,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -455,7 +799,15 @@
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 141,
-              "end": 154
+              "end": 154,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -468,159 +820,327 @@
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 20,
-              "end": 33
+              "end": 33,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "Broker-dealers must report the suspicious activity by completing a SAR and filing it in accordance with the requirements of Treasury\u2019s SAR rule.5 Broker-dealers must maintain a copy of any SAR filed and supporting documentation for a period of five years from the date of filing the SAR.6 FinCEN has provided guidance7 to the industry advising that if the activity that was the subject of a SAR filing continues, firms should review any continuing activity at least every 90 days to consider whether a continuing activity SAR filing is warranted, with the filing deadline being 120 days after the date of the previously related SAR filing.",
+          "text": "Broker-dealers must report the suspicious activity by completing a SAR and filing it in accordance with the requirements of Treasury’s SAR rule.5 Broker-dealers must maintain a copy of any SAR filed and supporting documentation for a period of five years from the date of filing the SAR.6 FinCEN has provided guidance7 to the industry advising that if the activity that was the subject of a SAR filing continues, firms should review any continuing activity at least every 90 days to consider whether a continuing activity SAR filing is warranted, with the filing deadline being 120 days after the date of the previously related SAR filing.",
           "entities": [
             {
               "type": "customer_type",
               "value": "Broker-dealers",
               "canonical": "broker-dealer",
               "start": 0,
-              "end": 14
+              "end": 14,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SAR",
               "canonical": "suspicious activity report",
               "start": 67,
-              "end": 70
+              "end": 70,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "Treasury",
               "canonical": "Department of the Treasury",
               "start": 124,
-              "end": 132
+              "end": 132,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SAR",
               "canonical": "suspicious activity report",
               "start": 135,
-              "end": 138
+              "end": 138,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "Broker-dealers",
               "canonical": "broker-dealer",
               "start": 146,
-              "end": 160
+              "end": 160,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SAR",
               "canonical": "suspicious activity report",
               "start": 189,
-              "end": 192
+              "end": 192,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "threshold",
               "value": "five years",
               "canonical": "five years",
               "start": 244,
-              "end": 254
+              "end": 254,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SAR",
               "canonical": "suspicious activity report",
               "start": 283,
-              "end": 286
+              "end": 286,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "FinCEN",
               "canonical": "Financial Crimes Enforcement Network",
               "start": 289,
-              "end": 295
+              "end": 295,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "SAR filing",
               "canonical": "SAR filing requirement",
               "start": 391,
-              "end": 401
+              "end": 401,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "threshold",
               "value": "at least every 90 days",
               "canonical": "90 days",
               "start": 457,
-              "end": 479
+              "end": 479,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "SAR filing",
               "canonical": "SAR filing requirement",
               "start": 522,
-              "end": 532
+              "end": 532,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "threshold",
               "value": "120 days",
               "canonical": "120 days",
               "start": 578,
-              "end": 586
+              "end": 586,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "SAR filing",
               "canonical": "SAR filing requirement",
               "start": 628,
-              "end": 638
+              "end": 638,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "In situations that require immediate attention, such as terrorist financing or ongoing money laundering schemes, broker-dealers must immediately notify by telephone an appropriate law enforcement authority in addition to filing timely a SAR. The firm may call FinCEN\u2019s Hotline at (866) 556-3974.",
+          "text": "In situations that require immediate attention, such as terrorist financing or ongoing money laundering schemes, broker-dealers must immediately notify by telephone an appropriate law enforcement authority in addition to filing timely a SAR. The firm may call FinCEN’s Hotline at (866) 556-3974.",
           "entities": [
             {
               "type": "risk_factor",
               "value": "terrorist financing",
               "canonical": "terrorist financing",
               "start": 56,
-              "end": 75
+              "end": 75,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "money laundering",
               "canonical": "money laundering",
               "start": 87,
-              "end": 103
+              "end": 103,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "broker-dealers",
               "canonical": "broker-dealer",
               "start": 113,
-              "end": 127
+              "end": 127,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SAR",
               "canonical": "suspicious activity report",
               "start": 237,
-              "end": 240
+              "end": 240,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "FinCEN",
               "canonical": "Financial Crimes Enforcement Network",
               "start": 260,
-              "end": 266
+              "end": 266,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "phone",
               "value": "(866) 556-3974",
               "canonical": "(866) 556-3974",
               "start": 280,
-              "end": 294
+              "end": 294,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -632,112 +1152,232 @@
       "content": [
         {
           "type": "paragraph",
-          "text": "FINRA published a list of \u201cmoney laundering red flags\u201d in Notice to Members 02-21 (NTM 02-21). Since NTM 02-21 was published, guidance detailing additional red flags that may be applicable to the securities industry have been published by a number of U.S. government agencies and international organizations.8 FINRA is issuing this Notice to provide examples of these additional money laundering red flags for firms to consider incorporating into their AML programs, as may be appropriate in implementing a risk-based approach to BSA/AML compliance. This could include, as applicable, incorporation into policies and procedures relating to suspicious activity monitoring or suspicious activity investigation and SAR reporting. Upon detection of red flags through monitoring, firms should consider whether additional investigation, customer due diligence measures or a SAR filing may be warranted.",
+          "text": "FINRA published a list of “money laundering red flags” in Notice to Members 02-21 (NTM 02-21). Since NTM 02-21 was published, guidance detailing additional red flags that may be applicable to the securities industry have been published by a number of U.S. government agencies and international organizations.8 FINRA is issuing this Notice to provide examples of these additional money laundering red flags for firms to consider incorporating into their AML programs, as may be appropriate in implementing a risk-based approach to BSA/AML compliance. This could include, as applicable, incorporation into policies and procedures relating to suspicious activity monitoring or suspicious activity investigation and SAR reporting. Upon detection of red flags through monitoring, firms should consider whether additional investigation, customer due diligence measures or a SAR filing may be warranted.",
           "entities": [
             {
               "type": "organization",
               "value": "FINRA",
               "canonical": "FINRA",
               "start": 0,
-              "end": 5
+              "end": 5,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "money laundering",
               "canonical": "money laundering",
               "start": 27,
-              "end": 43
+              "end": 43,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "notice",
               "value": "Notice to Members 02-21",
               "canonical": "Notice to Members 02-21",
               "start": 58,
-              "end": 81
+              "end": 81,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "notice",
               "value": "NTM 02-21",
               "canonical": "NTM 02-21",
               "start": 83,
-              "end": 92
+              "end": 92,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "notice",
               "value": "NTM 02-21",
               "canonical": "NTM 02-21",
               "start": 101,
-              "end": 110
+              "end": 110,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "FINRA",
               "canonical": "FINRA",
               "start": 310,
-              "end": 315
+              "end": 315,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "money laundering",
               "canonical": "money laundering",
               "start": 379,
-              "end": 395
+              "end": 395,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 453,
-              "end": 456
+              "end": 456,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 530,
-              "end": 533
+              "end": 533,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 534,
-              "end": 537
+              "end": 537,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "suspicious activity monitoring",
               "canonical": "suspicious activity monitoring",
               "start": 640,
-              "end": 670
+              "end": 670,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "suspicious activity investigation",
               "canonical": "suspicious activity investigation",
               "start": 674,
-              "end": 707
+              "end": 707,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "report_type",
               "value": "SAR",
               "canonical": "suspicious activity report",
               "start": 712,
-              "end": 715
+              "end": 715,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "customer due diligence",
               "canonical": "customer due diligence",
               "start": 831,
-              "end": 853
+              "end": 853,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "SAR filing",
               "canonical": "SAR filing requirement",
               "start": 868,
-              "end": 878
+              "end": 878,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -750,14 +1390,30 @@
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 79,
-              "end": 82
+              "end": 82,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 341,
-              "end": 354
+              "end": 354,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -770,28 +1426,60 @@
               "value": "digital assets",
               "canonical": "digital asset",
               "start": 96,
-              "end": 110
+              "end": 110,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 162,
-              "end": 165
+              "end": 165,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 166,
-              "end": 169
+              "end": 169,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "compliance_action",
               "value": "SAR filing requirements",
               "canonical": "SAR filing requirement",
               "start": 194,
-              "end": 217
+              "end": 217,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -804,28 +1492,60 @@
               "value": "broker-dealers",
               "canonical": "broker-dealer",
               "start": 34,
-              "end": 48
+              "end": 48,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 100,
-              "end": 103
+              "end": 103,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 104,
-              "end": 107
+              "end": 107,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "notice",
               "value": "NTM 02-21",
               "canonical": "NTM 02-21",
               "start": 241,
-              "end": 250
+              "end": 250,
+              "verified": true,
+              "confidence": 0.7,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": false,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -837,7 +1557,15 @@
           "value": "Money Laundering",
           "canonical": "money laundering",
           "start": 0,
-          "end": 16
+          "end": 16,
+          "verified": true,
+          "confidence": 1.0,
+          "verification": {
+            "structural_valid": true,
+            "canonical_valid": true,
+            "context_valid": true,
+            "type_valid": true
+          }
         }
       ]
     },
@@ -853,7 +1581,7 @@
         {
           "type": "numbered_item",
           "number": 2,
-          "text": "The customer is reluctant or refuses to provide the firm with complete customer due diligence information as required by the firm\u2019s procedures, which may include information regarding the nature and purpose of the customer\u2019s business, prior financial relationships, anticipated account activity, business location and, if applicable, the entity\u2019s officers and directors.",
+          "text": "The customer is reluctant or refuses to provide the firm with complete customer due diligence information as required by the firm’s procedures, which may include information regarding the nature and purpose of the customer’s business, prior financial relationships, anticipated account activity, business location and, if applicable, the entity’s officers and directors.",
           "sub_items": [],
           "entities": [
             {
@@ -861,7 +1589,15 @@
               "value": "customer due diligence",
               "canonical": "customer due diligence",
               "start": 71,
-              "end": 93
+              "end": 93,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -882,28 +1618,60 @@
               "value": "tax shelter",
               "canonical": "tax haven",
               "start": 150,
-              "end": 161
+              "end": 161,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "high-risk geographic location",
               "canonical": "high-risk geographic location",
               "start": 163,
-              "end": 192
+              "end": 192,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 271,
-              "end": 274
+              "end": 274,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "conflict zone",
               "canonical": "conflict zone",
               "start": 324,
-              "end": 337
+              "end": 337,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -916,7 +1684,7 @@
         {
           "type": "numbered_item",
           "number": 6,
-          "text": "The customer has no discernable reason for using the firm\u2019s service or the firm\u2019s location (e.g., the customer lacks roots to the local community or has gone out of his or her way to use the firm).",
+          "text": "The customer has no discernable reason for using the firm’s service or the firm’s location (e.g., the customer lacks roots to the local community or has gone out of his or her way to use the firm).",
           "sub_items": []
         },
         {
@@ -928,7 +1696,7 @@
         {
           "type": "numbered_item",
           "number": 8,
-          "text": "The customer\u2019s legal or mailing address is associated with multiple other accounts or businesses that do not appear related.",
+          "text": "The customer’s legal or mailing address is associated with multiple other accounts or businesses that do not appear related.",
           "sub_items": []
         },
         {
@@ -948,21 +1716,45 @@
               "value": "trust",
               "canonical": "trust",
               "start": 18,
-              "end": 23
+              "end": 23,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "shell company",
               "canonical": "shell company",
               "start": 25,
-              "end": 38
+              "end": 38,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "private investment company",
               "canonical": "private investment company",
               "start": 42,
-              "end": 68
+              "end": 68,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -975,7 +1767,7 @@
         {
           "type": "numbered_item",
           "number": 12,
-          "text": "The customer\u2019s background is questionable or differs from expectations based on business activities.",
+          "text": "The customer’s background is questionable or differs from expectations based on business activities.",
           "sub_items": []
         },
         {
@@ -989,7 +1781,15 @@
               "value": "multiple accounts",
               "canonical": "multiple accounts",
               "start": 23,
-              "end": 40
+              "end": 40,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1004,49 +1804,105 @@
               "value": "politically exposed person",
               "canonical": "politically exposed person",
               "start": 26,
-              "end": 52
+              "end": 52,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "PEP",
               "canonical": "politically exposed person",
               "start": 54,
-              "end": 57
+              "end": 57,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "PEP",
               "canonical": "politically exposed person",
               "start": 225,
-              "end": 228
+              "end": 228,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "PEP",
               "canonical": "politically exposed person",
               "start": 234,
-              "end": 237
+              "end": 237,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "FATF",
               "canonical": "Financial Action Task Force",
               "start": 285,
-              "end": 289
+              "end": 289,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 310,
-              "end": 313
+              "end": 313,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "PEP",
               "canonical": "politically exposed person",
               "start": 342,
-              "end": 345
+              "end": 345,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1061,7 +1917,15 @@
               "value": "non-profit organization",
               "canonical": "non-profit organization",
               "start": 26,
-              "end": 49
+              "end": 49,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1082,14 +1946,30 @@
               "value": "stock loan company",
               "canonical": "stock loan company",
               "start": 37,
-              "end": 55
+              "end": 55,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "restricted securities",
               "canonical": "restricted security",
               "start": 76,
-              "end": 97
+              "end": 97,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1104,21 +1984,45 @@
               "value": "foreign financial institution",
               "canonical": "foreign financial institution",
               "start": 38,
-              "end": 67
+              "end": 67,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "offshore bank",
               "canonical": "offshore bank",
               "start": 80,
-              "end": 93
+              "end": 93,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 97,
-              "end": 110
+              "end": 110,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1133,14 +2037,30 @@
               "value": "foreign financial institution",
               "canonical": "foreign financial institution",
               "start": 27,
-              "end": 56
+              "end": 56,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 88,
-              "end": 101
+              "end": 101,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -1152,7 +2072,15 @@
           "value": "Customer Due Diligence",
           "canonical": "customer due diligence",
           "start": 26,
-          "end": 48
+          "end": 48,
+          "verified": true,
+          "confidence": 1.0,
+          "verification": {
+            "structural_valid": true,
+            "canonical_valid": true,
+            "context_valid": true,
+            "type_valid": true
+          }
         }
       ]
     },
@@ -1170,21 +2098,45 @@
               "value": "new account",
               "canonical": "new account",
               "start": 19,
-              "end": 30
+              "end": 30,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "deposits",
               "canonical": "deposit",
               "start": 35,
-              "end": 43
+              "end": 43,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "low-priced securities",
               "canonical": "low-priced security",
               "start": 152,
-              "end": 173
+              "end": 173,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1208,7 +2160,15 @@
                   "value": "percentage of the float",
                   "canonical": "float",
                   "start": 42,
-                  "end": 65
+                  "end": 65,
+                  "verified": true,
+                  "confidence": 1.0,
+                  "verification": {
+                    "structural_valid": true,
+                    "canonical_valid": true,
+                    "context_valid": true,
+                    "type_valid": true
+                  }
                 }
               ]
             },
@@ -1225,7 +2185,15 @@
                   "value": "shell company",
                   "canonical": "shell company",
                   "start": 17,
-                  "end": 30
+                  "end": 30,
+                  "verified": true,
+                  "confidence": 1.0,
+                  "verification": {
+                    "structural_valid": true,
+                    "canonical_valid": true,
+                    "context_valid": true,
+                    "type_valid": true
+                  }
                 }
               ]
             },
@@ -1242,7 +2210,15 @@
                   "value": "SEC",
                   "canonical": "Securities and Exchange Commission",
                   "start": 31,
-                  "end": 34
+                  "end": 34,
+                  "verified": true,
+                  "confidence": 1.0,
+                  "verification": {
+                    "structural_valid": true,
+                    "canonical_valid": true,
+                    "context_valid": true,
+                    "type_valid": true
+                  }
                 }
               ]
             },
@@ -1265,14 +2241,30 @@
               "value": "deposits",
               "canonical": "deposit",
               "start": 11,
-              "end": 19
+              "end": 19,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "deposits",
               "canonical": "deposit",
               "start": 82,
-              "end": 90
+              "end": 90,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1293,28 +2285,52 @@
               "value": "electronic transfer",
               "canonical": "electronic transfer",
               "start": 67,
-              "end": 86
+              "end": 86,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "journal transfer",
               "canonical": "journal transfer",
               "start": 90,
-              "end": 106
+              "end": 106,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "low-priced, non-exchange-listed securities",
               "canonical": "low-priced security",
               "start": 127,
-              "end": 169
+              "end": 169,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 6,
-          "text": "The customer\u2019s explanation or documents purporting to evidence how the customer acquired the shares does not make sense or changes upon questioning by the firm or other parties. Such documents could include questionable legal opinions or securities purchase agreements.",
+          "text": "The customer’s explanation or documents purporting to evidence how the customer acquired the shares does not make sense or changes upon questioning by the firm or other parties. Such documents could include questionable legal opinions or securities purchase agreements.",
           "sub_items": []
         },
         {
@@ -1328,14 +2344,30 @@
               "value": "deposits",
               "canonical": "deposit",
               "start": 13,
-              "end": 21
+              "end": 21,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "account_status",
               "value": "multiple accounts",
               "canonical": "multiple accounts",
               "start": 147,
-              "end": 164
+              "end": 164,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1350,14 +2382,30 @@
               "value": "deposit",
               "canonical": "deposit",
               "start": 72,
-              "end": 79
+              "end": 79,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "liquidate",
               "canonical": "liquidation",
               "start": 126,
-              "end": 135
+              "end": 135,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -1369,7 +2417,15 @@
           "value": "Deposits",
           "canonical": "deposit",
           "start": 27,
-          "end": 35
+          "end": 35,
+          "verified": true,
+          "confidence": 1.0,
+          "verification": {
+            "structural_valid": true,
+            "canonical_valid": true,
+            "context_valid": true,
+            "type_valid": true
+          }
         }
       ]
     },
@@ -1379,7 +2435,7 @@
         {
           "type": "numbered_item",
           "number": 1,
-          "text": "The customer, for no apparent reason or in conjunction with other \u201cred flags,\u201d engages in transactions involving certain types of securities, such as penny stocks, Regulation \u201cS\u201d stocks and bearer bonds, which although legitimate, have been used in connection with fraudulent schemes and money laundering activity. (Such transactions may warrant further due diligence to ensure the legitimacy of the customer\u2019s activity.)",
+          "text": "The customer, for no apparent reason or in conjunction with other “red flags,” engages in transactions involving certain types of securities, such as penny stocks, Regulation “S” stocks and bearer bonds, which although legitimate, have been used in connection with fraudulent schemes and money laundering activity. (Such transactions may warrant further due diligence to ensure the legitimacy of the customer’s activity.)",
           "sub_items": [],
           "entities": [
             {
@@ -1387,21 +2443,45 @@
               "value": "penny stocks",
               "canonical": "penny stock",
               "start": 150,
-              "end": 162
+              "end": 162,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "bearer bonds",
               "canonical": "bearer bond",
               "start": 190,
-              "end": 202
+              "end": 202,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "money laundering",
               "canonical": "money laundering",
               "start": 288,
-              "end": 304
+              "end": 304,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1416,14 +2496,22 @@
               "value": "thinly traded or low-priced security",
               "canonical": "thinly traded security",
               "start": 82,
-              "end": 118
+              "end": 118,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 3,
-          "text": "The customer\u2019s activity represents a significant proportion of the daily trading volume in a thinly traded or low-priced security.",
+          "text": "The customer’s activity represents a significant proportion of the daily trading volume in a thinly traded or low-priced security.",
           "sub_items": [],
           "entities": [
             {
@@ -1431,7 +2519,15 @@
               "value": "thinly traded or low-priced security",
               "canonical": "thinly traded security",
               "start": 93,
-              "end": 129
+              "end": 129,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1452,7 +2548,15 @@
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 92,
-              "end": 105
+              "end": 105,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1473,7 +2577,15 @@
               "value": "wash or cross trades",
               "canonical": "wash trade",
               "start": 90,
-              "end": 110
+              "end": 110,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1492,7 +2604,7 @@
         {
           "type": "numbered_item",
           "number": 10,
-          "text": "A customer engages in a frequent pattern of placing orders on one side of the market, usually inside the existing National Best Bid or Offer (NBBO), followed by the customer entering orders on the other side of the market that execute against other market participants that joined the market at the improved NBBO (activity indicative of \u201cspoofing\u201d).",
+          "text": "A customer engages in a frequent pattern of placing orders on one side of the market, usually inside the existing National Best Bid or Offer (NBBO), followed by the customer entering orders on the other side of the market that execute against other market participants that joined the market at the improved NBBO (activity indicative of “spoofing”).",
           "sub_items": [],
           "entities": [
             {
@@ -1500,35 +2612,67 @@
               "value": "National Best Bid or Offer",
               "canonical": "National Best Bid or Offer",
               "start": 114,
-              "end": 140
+              "end": 140,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "financial_concept",
               "value": "NBBO",
               "canonical": "National Best Bid or Offer",
               "start": 142,
-              "end": 146
+              "end": 146,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "financial_concept",
               "value": "NBBO",
               "canonical": "National Best Bid or Offer",
               "start": 308,
-              "end": 312
+              "end": 312,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "spoofing",
               "canonical": "spoofing",
               "start": 338,
-              "end": 346
+              "end": 346,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 11,
-          "text": "A customer engages in a frequent pattern of placing multiple limit orders on one side of the market at various price levels, followed by the customer entering orders on the opposite side of the market that are executed and the customer cancelling the original limit orders (activity indicative of \u201clayering\u201d).",
+          "text": "A customer engages in a frequent pattern of placing multiple limit orders on one side of the market at various price levels, followed by the customer entering orders on the opposite side of the market that are executed and the customer cancelling the original limit orders (activity indicative of “layering”).",
           "sub_items": [],
           "entities": [
             {
@@ -1536,7 +2680,15 @@
               "value": "layering",
               "canonical": "layering",
               "start": 298,
-              "end": 306
+              "end": 306,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1563,27 +2715,43 @@
               "value": "potential insider trading",
               "canonical": "insider trading",
               "start": 118,
-              "end": 143
+              "end": 143,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "unregistered securities",
               "canonical": "unregistered security",
               "start": 165,
-              "end": 188
+              "end": 188,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 15,
-          "text": "The customer\u2019s purchase of a security does not correspond to the customer\u2019s investment profile or history of transactions (e.g., the customer may never have invested in equity securities or may have never invested in a given industry, but does so at an opportune time) and there is no reasonable explanation for the change.",
+          "text": "The customer’s purchase of a security does not correspond to the customer’s investment profile or history of transactions (e.g., the customer may never have invested in equity securities or may have never invested in a given industry, but does so at an opportune time) and there is no reasonable explanation for the change.",
           "sub_items": []
         },
         {
           "type": "numbered_item",
           "number": 16,
-          "text": "The account is using a master/sub structure, which enables trading anonymity with respect to the sub-accounts\u2019 activity, and engages in trading activity that raises red flags, such as the liquidation of microcap issuers or potentially manipulative trading activity.",
+          "text": "The account is using a master/sub structure, which enables trading anonymity with respect to the sub-accounts’ activity, and engages in trading activity that raises red flags, such as the liquidation of microcap issuers or potentially manipulative trading activity.",
           "sub_items": [],
           "entities": [
             {
@@ -1591,28 +2759,52 @@
               "value": "master/sub structure",
               "canonical": "master/sub structure",
               "start": 23,
-              "end": 43
+              "end": 43,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "liquidation",
               "canonical": "liquidation",
               "start": 188,
-              "end": 199
+              "end": 199,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "microcap issuers",
               "canonical": "microcap issuer",
               "start": 203,
-              "end": 219
+              "end": 219,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 17,
-          "text": "The firm receives regulatory inquiries or grand jury or other subpoenas concerning the firm\u2019s customers\u2019 trading.",
+          "text": "The firm receives regulatory inquiries or grand jury or other subpoenas concerning the firm’s customers’ trading.",
           "sub_items": []
         },
         {
@@ -1626,28 +2818,60 @@
               "value": "currency conversion",
               "canonical": "currency conversion",
               "start": 121,
-              "end": 140
+              "end": 140,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "American Depository Receipts",
               "canonical": "American Depository Receipt",
               "start": 208,
-              "end": 236
+              "end": 236,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "ADRs",
               "canonical": "American Depository Receipt",
               "start": 238,
-              "end": 242
+              "end": 242,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "security_type",
               "value": "dual currency bonds",
               "canonical": "dual currency bond",
               "start": 247,
-              "end": 266
+              "end": 266,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1662,21 +2886,45 @@
               "value": "mirror trades",
               "canonical": "mirror trade",
               "start": 24,
-              "end": 37
+              "end": 37,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "currency conversions",
               "canonical": "currency conversion",
               "start": 84,
-              "end": 104
+              "end": 104,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "offsetting trades",
               "canonical": "offsetting trade",
               "start": 137,
-              "end": 154
+              "end": 154,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1695,7 +2943,7 @@
         {
           "type": "numbered_item",
           "number": 1,
-          "text": "The customer attempts or makes frequent or large deposits of currency, insists on dealing only in cash equivalents, or asks for exemptions from the firm\u2019s policies and procedures relating to the deposit of cash and cash equivalents.",
+          "text": "The customer attempts or makes frequent or large deposits of currency, insists on dealing only in cash equivalents, or asks for exemptions from the firm’s policies and procedures relating to the deposit of cash and cash equivalents.",
           "sub_items": [],
           "entities": [
             {
@@ -1703,21 +2951,37 @@
               "value": "deposits",
               "canonical": "deposit",
               "start": 49,
-              "end": 57
+              "end": 57,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "deposit",
               "canonical": "deposit",
               "start": 195,
-              "end": 202
+              "end": 202,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 2,
-          "text": "The customer \u201cstructures\u201d deposits, withdrawals or purchases of monetary instruments below a certain amount to avoid reporting or recordkeeping requirements, and may state directly that they are trying to avoid triggering a reporting obligation or to evade taxing authorities.",
+          "text": "The customer “structures” deposits, withdrawals or purchases of monetary instruments below a certain amount to avoid reporting or recordkeeping requirements, and may state directly that they are trying to avoid triggering a reporting obligation or to evade taxing authorities.",
           "sub_items": [],
           "entities": [
             {
@@ -1725,7 +2989,15 @@
               "value": "deposits",
               "canonical": "deposit",
               "start": 26,
-              "end": 34
+              "end": 34,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1740,14 +3012,22 @@
               "value": "deposit",
               "canonical": "deposit",
               "start": 243,
-              "end": 250
+              "end": 250,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 4,
-          "text": "The customer\u2019s account shows numerous currency, money order (particularly sequentially numbered money orders) or cashier\u2019s check transactions aggregating to significant sums without any apparent business or lawful purpose.",
+          "text": "The customer’s account shows numerous currency, money order (particularly sequentially numbered money orders) or cashier’s check transactions aggregating to significant sums without any apparent business or lawful purpose.",
           "sub_items": []
         },
         {
@@ -1767,7 +3047,15 @@
               "value": "deposit",
               "canonical": "deposit",
               "start": 27,
-              "end": 34
+              "end": 34,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1782,7 +3070,15 @@
               "value": "Wire transfers",
               "canonical": "wire transfer",
               "start": 0,
-              "end": 14
+              "end": 14,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1815,42 +3111,90 @@
               "value": "Wire transfers",
               "canonical": "wire transfer",
               "start": 0,
-              "end": 14
+              "end": 14,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "financial secrecy havens",
               "canonical": "financial secrecy haven",
               "start": 35,
-              "end": 59
+              "end": 59,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "tax havens",
               "canonical": "tax haven",
               "start": 61,
-              "end": 71
+              "end": 71,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "high-risk geographic locations",
               "canonical": "high-risk geographic location",
               "start": 73,
-              "end": 103
+              "end": 103,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "conflict zones",
               "canonical": "conflict zone",
               "start": 107,
-              "end": 121
+              "end": 121,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "established presence of terrorism",
               "canonical": "established terrorism presence",
               "start": 147,
-              "end": 180
+              "end": 180,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1865,14 +3209,30 @@
               "value": "Wire transfers",
               "canonical": "wire transfer",
               "start": 0,
-              "end": 14
+              "end": 14,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "black market peso exchange",
               "canonical": "black market peso exchange",
               "start": 86,
-              "end": 112
+              "end": 112,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1887,21 +3247,45 @@
               "value": "wire transfers",
               "canonical": "wire transfer",
               "start": 115,
-              "end": 129
+              "end": 129,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "organization",
               "value": "FATF",
               "canonical": "Financial Action Task Force",
               "start": 224,
-              "end": 228
+              "end": 228,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "non-cooperative countries and territories",
               "canonical": "non-cooperative country",
               "start": 233,
-              "end": 274
+              "end": 274,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1922,7 +3306,15 @@
               "value": "Wire transfers",
               "canonical": "wire transfer",
               "start": 0,
-              "end": 14
+              "end": 14,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1937,7 +3329,15 @@
               "value": "wire transfer",
               "canonical": "wire transfer",
               "start": 9,
-              "end": 22
+              "end": 22,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1952,7 +3352,15 @@
               "value": "wire transfers",
               "canonical": "wire transfer",
               "start": 56,
-              "end": 70
+              "end": 70,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -1973,7 +3381,15 @@
               "value": "journal entries",
               "canonical": "journal entry",
               "start": 34,
-              "end": 49
+              "end": 49,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2012,7 +3428,15 @@
               "value": "correspondent accounts",
               "canonical": "nostro account",
               "start": 74,
-              "end": 96
+              "end": 96,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2027,7 +3451,15 @@
               "value": "high-risk jurisdictions",
               "canonical": "high-risk geographic location",
               "start": 187,
-              "end": 210
+              "end": 210,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2042,14 +3474,30 @@
               "value": "dormant account",
               "canonical": "dormant account",
               "start": 2,
-              "end": 17
+              "end": 17,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "deposits",
               "canonical": "deposit",
               "start": 87,
-              "end": 95
+              "end": 95,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2064,7 +3512,15 @@
               "value": "Nonprofit or charitable organizations",
               "canonical": "non-profit organization",
               "start": 0,
-              "end": 37
+              "end": 37,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2079,14 +3535,30 @@
               "value": "automated teller machine",
               "canonical": "ATM activity",
               "start": 55,
-              "end": 79
+              "end": 79,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "ATM",
               "canonical": "ATM activity",
               "start": 81,
-              "end": 84
+              "end": 84,
+              "verified": true,
+              "confidence": 0.8,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": false,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2101,35 +3573,67 @@
               "value": "ATM",
               "canonical": "ATM activity",
               "start": 30,
-              "end": 33
+              "end": 33,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "deposits",
               "canonical": "deposit",
               "start": 50,
-              "end": 58
+              "end": 58,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulation",
               "value": "BSA",
               "canonical": "Bank Secrecy Act",
               "start": 102,
-              "end": 105
+              "end": 105,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "regulatory_program",
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 106,
-              "end": 109
+              "end": 109,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
         {
           "type": "numbered_item",
           "number": 30,
-          "text": "Many small, incoming wire transfers or deposits are made using checks and money orders that are almost immediately withdrawn or wired out in a manner inconsistent with the customer\u2019s business or history; the checks or money orders may reference in a memo section \u201cinvestment\u201d or \u201cfor purchase of stock.\u201d This may be an indicator of a Ponzi scheme or potential funneling activity.",
+          "text": "Many small, incoming wire transfers or deposits are made using checks and money orders that are almost immediately withdrawn or wired out in a manner inconsistent with the customer’s business or history; the checks or money orders may reference in a memo section “investment” or “for purchase of stock.” This may be an indicator of a Ponzi scheme or potential funneling activity.",
           "sub_items": [],
           "entities": [
             {
@@ -2137,21 +3641,45 @@
               "value": "wire transfers",
               "canonical": "wire transfer",
               "start": 21,
-              "end": 35
+              "end": 35,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "transaction_type",
               "value": "deposits",
               "canonical": "deposit",
               "start": 39,
-              "end": 47
+              "end": 47,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "risk_factor",
               "value": "Ponzi scheme",
               "canonical": "Ponzi scheme",
               "start": 334,
-              "end": 346
+              "end": 346,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2166,7 +3694,15 @@
               "value": "Wire transfer",
               "canonical": "wire transfer",
               "start": 0,
-              "end": 13
+              "end": 13,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -2193,7 +3729,15 @@
               "value": "deposits",
               "canonical": "deposit",
               "start": 13,
-              "end": 21
+              "end": 21,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2208,14 +3752,30 @@
               "value": "free-look period",
               "canonical": "free-look period",
               "start": 51,
-              "end": 67
+              "end": 67,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "financial_concept",
               "value": "free-look period",
               "canonical": "free-look period",
               "start": 278,
-              "end": 294
+              "end": 294,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2230,7 +3790,15 @@
               "value": "new account",
               "canonical": "new account",
               "start": 82,
-              "end": 93
+              "end": 93,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2255,7 +3823,7 @@
         {
           "type": "numbered_item",
           "number": 2,
-          "text": "The customer exhibits unusual concern with the firm\u2019s compliance with government reporting requirements and the firm\u2019s AML policies.",
+          "text": "The customer exhibits unusual concern with the firm’s compliance with government reporting requirements and the firm’s AML policies.",
           "sub_items": [],
           "entities": [
             {
@@ -2263,7 +3831,15 @@
               "value": "AML",
               "canonical": "Anti-Money Laundering",
               "start": 119,
-              "end": 122
+              "end": 122,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2276,7 +3852,7 @@
         {
           "type": "numbered_item",
           "number": 4,
-          "text": "Notifications received from the broker-dealer\u2019s clearing firm that the clearing firm had identified potentially suspicious activity in customer accounts. Such notifications can take the form of alerts or other concern regarding negative news, money movements or activity involving certain securities.",
+          "text": "Notifications received from the broker-dealer’s clearing firm that the clearing firm had identified potentially suspicious activity in customer accounts. Such notifications can take the form of alerts or other concern regarding negative news, money movements or activity involving certain securities.",
           "sub_items": [],
           "entities": [
             {
@@ -2284,21 +3860,45 @@
               "value": "broker-dealer",
               "canonical": "broker-dealer",
               "start": 32,
-              "end": 45
+              "end": 45,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "clearing firm",
               "canonical": "clearing firm",
               "start": 48,
-              "end": 61
+              "end": 61,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             },
             {
               "type": "customer_type",
               "value": "clearing firm",
               "canonical": "clearing firm",
               "start": 71,
-              "end": 84
+              "end": 84,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         },
@@ -2311,13 +3911,13 @@
         {
           "type": "numbered_item",
           "number": 6,
-          "text": "The customer makes high-value transactions not commensurate with the customer\u2019s known income or financial resources.",
+          "text": "The customer makes high-value transactions not commensurate with the customer’s known income or financial resources.",
           "sub_items": []
         },
         {
           "type": "numbered_item",
           "number": 7,
-          "text": "The customer wishes to engage in transactions that lack business sense or an apparent investment strategy, or are inconsistent with the customer\u2019s stated business strategy.",
+          "text": "The customer wishes to engage in transactions that lack business sense or an apparent investment strategy, or are inconsistent with the customer’s stated business strategy.",
           "sub_items": []
         },
         {
@@ -2367,7 +3967,15 @@
               "value": "trust",
               "canonical": "trust",
               "start": 27,
-              "end": 32
+              "end": 32,
+              "verified": true,
+              "confidence": 1.0,
+              "verification": {
+                "structural_valid": true,
+                "canonical_valid": true,
+                "context_valid": true,
+                "type_valid": true
+              }
             }
           ]
         }
@@ -2381,7 +3989,48 @@
       "value": "Regulatory Notice 19-18",
       "canonical": "Regulatory Notice 19-18",
       "start": 0,
-      "end": 23
+      "end": 23,
+      "verified": false,
+      "confidence": 0.8,
+      "verification": {
+        "structural_valid": true,
+        "canonical_valid": true,
+        "context_valid": true,
+        "type_valid": false
+      }
     }
-  ]
+  ],
+  "_verification_summary": {
+    "total": 202,
+    "verified": 198,
+    "rejected": 4,
+    "verification_rate": 0.9802,
+    "entity_counts": {
+      "regulatory_notice": 1,
+      "regulatory_program": 16,
+      "organization": 16,
+      "compliance_action": 12,
+      "date": 1,
+      "regulation": 10,
+      "finra_rule": 4,
+      "notice": 5,
+      "person": 2,
+      "phone": 3,
+      "email": 2,
+      "report_type": 9,
+      "customer_type": 32,
+      "money": 1,
+      "transaction_type": 38,
+      "threshold": 3,
+      "risk_factor": 21,
+      "security_type": 13,
+      "account_status": 6,
+      "financial_concept": 7
+    },
+    "rejection_reasons": {
+      "invalid_type": 1,
+      "structural_fail": 3,
+      "unknown_canonical": 1
+    }
+  }
 }

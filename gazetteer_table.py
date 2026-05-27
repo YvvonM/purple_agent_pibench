@@ -1,3 +1,22 @@
+import re
+VALID_ENTITY_TYPES = {
+    "organization", "regulation", "finra_rule", "notice", "report_type",
+    "regulatory_program", "customer_type", "security_type", "transaction_type",
+    "risk_factor", "account_status", "compliance_action", "financial_concept",
+    "threshold", "person", "date", "phone", "email", "money"
+}
+
+REGULATION_PATTERNS = [
+    re.compile(r"FINRA Rule \d{4}(?:\(a\))?"),
+    re.compile(r"\d+\s+CFR\s+\d+\.\d+"),
+    re.compile(r"\d+\s+U\.S\.C\.\s+\d+"),
+    re.compile(r"Regulation\s+[A-Z]"),
+]
+EMAIL_PATTERN = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
+PHONE_PATTERN = re.compile(r"\(\d{3}\)\s\d{3}-\d{4}")
+MONEY_PATTERN = re.compile(r"\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?")
+
+
 GAZETTEER = {
     # REGULATIONS & LAWS
     "Bank Secrecy Act": ("regulation", ["Bank Secrecy Act", "BSA"]),
