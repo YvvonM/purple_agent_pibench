@@ -1,0 +1,763 @@
+"""
+ID PREFIXES:
+  REG_    = Regulation / Rule
+  ORG_    = Organization
+  REPORT_ = Report type
+  COMP_   = Compliance action / process
+  CUST_   = Customer type / entity
+  RISK_   = Risk factor
+  SEC_    = Security type
+  TXN_    = Transaction type
+  ACCT_   = Account status / structure
+  FIN_    = Financial concept
+  THR_    = Threshold / time period
+  NOTICE_ = Regulatory notice
+  PROG_   = Regulatory program
+  PERSON_ = Person
+  CONTACT_= Contact info (phone/email)
+  DATE_   = Date
+
+RELATIONSHIP KEYS:
+  requires, governed_by, enforced_by, regulates, issues, filed_with,
+  collects, administers, promulgates, oversees, produces, may_produce,
+  related_to, risk_level, identified_by, defined_by, affiliated_with,
+  authorizes, applies_to, regulated_by, subject_to, must_file,
+  must_implement, detects, detected_by, reported_via, red_flags_issued_by,
+  parent_organization, staff, contact, belongs_to, associated_with,
+  incorporated_into, provides_guidance_on, recommended_by, threshold,
+  retention_period, review_period, filing_deadline, role, purpose,
+  date, risk_context, used_by, used_with, includes, promulgated_by,
+  defines, registers, issues_guidance
+"""
+
+ONTOLOGY = {
+    # ========================================================
+    # REGULATIONS
+    # ========================================================
+    "REG_001": {
+        "canonical_name": "Bank Secrecy Act",
+        "aliases": ["BSA", "Bank Secrecy Act"],
+        "ontology_type": "federal_regulation",
+        "domain": "AML",
+        "description": "Federal anti-money laundering law; 31 U.S.C. 5311 et seq.",
+        "promulgated_by": ["ORG_002"],
+        "authorizes": ["REPORT_001"],
+        "required_by": ["REG_002"],
+        "related_regulations": ["REG_003"],
+        "requires": ["PROG_001"]
+    },
+    "REG_002": {
+        "canonical_name": "FINRA Rule 3310",
+        "aliases": ["FINRA Rule 3310", "Rule 3310"],
+        "ontology_type": "finra_rule",
+        "domain": "AML",
+        "description": "FINRA rule requiring member firms to establish AML compliance programs",
+        "requires": ["PROG_001", "PROG_002", "COMP_001", "COMP_002", "COMP_003"],
+        "enforced_by": ["ORG_001"],
+        "related_regulations": ["REG_001", "REG_003"],
+        "applies_to": ["CUST_001"]
+    },
+    "REG_003": {
+        "canonical_name": "31 CFR 1023.320",
+        "aliases": ["Treasury's SAR rule", "SAR rule", "31 CFR 1023.320"],
+        "ontology_type": "treasury_regulation",
+        "domain": "AML",
+        "description": "Treasury regulation requiring broker-dealers to file SARs with FinCEN",
+        "requires": ["REPORT_001"],
+        "enforced_by": ["ORG_003"],
+        "promulgated_by": ["ORG_002"],
+        "related_regulations": ["REG_001", "REG_002"],
+        "applies_to": ["CUST_001"],
+        "threshold": ["THR_001"],
+        "retention_period": ["THR_002"]
+    },
+
+    # ========================================================
+    # ORGANIZATIONS
+    # ========================================================
+    "ORG_001": {
+        "canonical_name": "Financial Industry Regulatory Authority",
+        "aliases": ["FINRA", "Financial Industry Regulatory Authority"],
+        "ontology_type": "self_regulatory_organization",
+        "domain": "Securities",
+        "description": "Self-regulatory organization for the U.S. securities industry",
+        "issues": ["NOTICE_001", "NOTICE_002"],
+        "enforces": ["REG_002"],
+        "regulates": ["CUST_001"],
+        "staff": ["PERSON_001", "PERSON_002"]
+    },
+    "ORG_002": {
+        "canonical_name": "Department of the Treasury",
+        "aliases": ["Department of the Treasury", "Treasury", "U.S. Treasury"],
+        "ontology_type": "government_agency",
+        "domain": "Federal",
+        "description": "U.S. federal department; promulgates BSA implementing regulations",
+        "promulgates": ["REG_001", "REG_003"],
+        "authorizes": ["REPORT_001"],
+        "oversees": ["ORG_003"]
+    },
+    "ORG_003": {
+        "canonical_name": "Financial Crimes Enforcement Network",
+        "aliases": ["FinCEN", "Financial Crimes Enforcement Network"],
+        "ontology_type": "government_agency",
+        "domain": "AML",
+        "description": "Treasury bureau that collects SARs and administers BSA regulations",
+        "collects": ["REPORT_001"],
+        "issues_guidance": ["REPORT_001"],
+        "administers": ["REG_001", "REG_003"],
+        "contact": ["CONTACT_005"],
+        "parent_organization": ["ORG_002"]
+    },
+    "ORG_004": {
+        "canonical_name": "Financial Action Task Force",
+        "aliases": ["FATF", "Financial Action Task Force"],
+        "ontology_type": "international_organization",
+        "domain": "AML",
+        "description": "Inter-governmental body setting AML/CFT standards",
+        "identifies": ["RISK_013"],
+        "defines": ["CUST_002"]
+    },
+    "ORG_005": {
+        "canonical_name": "Securities and Exchange Commission",
+        "aliases": ["SEC", "Securities and Exchange Commission"],
+        "ontology_type": "government_agency",
+        "domain": "Securities",
+        "description": "U.S. federal agency enforcing securities laws",
+        "registers": ["CUST_003"],
+        "regulates": ["CUST_001"]
+    },
+
+    # ========================================================
+    # REPORTS
+    # ========================================================
+    "REPORT_001": {
+        "canonical_name": "Suspicious Activity Report",
+        "aliases": ["SAR", "SARs", "suspicious activity report", "suspicious activity reports"],
+        "ontology_type": "regulatory_report",
+        "domain": "AML",
+        "description": "Report filed by broker-dealers regarding suspicious transactions",
+        "required_by": ["REG_001", "REG_003"],
+        "filed_with": ["ORG_003"],
+        "produced_by": ["COMP_002"],
+        "threshold": ["THR_001"],
+        "retention_period": ["THR_002"],
+        "review_period": ["THR_003"],
+        "filing_deadline": ["THR_004"],
+        "related_to": ["COMP_001", "RISK_001", "RISK_002"]
+    },
+
+    # ========================================================
+    # COMPLIANCE ACTIONS / PROCESSES
+    # ========================================================
+    "COMP_001": {
+        "canonical_name": "suspicious activity monitoring",
+        "aliases": ["suspicious activity monitoring", "Suspicious Activity Monitoring"],
+        "ontology_type": "compliance_process",
+        "domain": "AML",
+        "description": "Process of monitoring transactions for suspicious activity",
+        "required_by": ["REG_002"],
+        "produces": ["REPORT_001"],
+        "detects": ["RISK_001", "RISK_002"]
+    },
+    "COMP_002": {
+        "canonical_name": "SAR filing requirement",
+        "aliases": ["SAR filing", "SAR filing requirements", "SAR filing requirement"],
+        "ontology_type": "compliance_obligation",
+        "domain": "AML",
+        "description": "Obligation to file suspicious activity reports with FinCEN",
+        "required_by": ["REG_002", "REG_003"],
+        "filed_with": ["ORG_003"],
+        "produces": ["REPORT_001"]
+    },
+    "COMP_003": {
+        "canonical_name": "customer due diligence",
+        "aliases": ["customer due diligence", "Customer Due Diligence", "CDD"],
+        "ontology_type": "compliance_process",
+        "domain": "AML",
+        "description": "Process of verifying customer identity and assessing risk",
+        "required_by": ["REG_002"],
+        "may_produce": ["REPORT_001"]
+    },
+    "COMP_004": {
+        "canonical_name": "suspicious activity investigation",
+        "aliases": ["suspicious activity investigation"],
+        "ontology_type": "compliance_process",
+        "domain": "AML",
+        "description": "Investigation of potentially suspicious transactions",
+        "required_by": ["REG_002"],
+        "may_produce": ["REPORT_001"]
+    },
+
+    # ========================================================
+    # CUSTOMER TYPES / ENTITIES
+    # ========================================================
+    "CUST_001": {
+        "canonical_name": "broker-dealer",
+        "aliases": ["broker-dealer", "Broker-dealers", "broker-dealers"],
+        "ontology_type": "regulated_entity",
+        "domain": "Securities",
+        "description": "Member firm regulated by FINRA and SEC; subject to AML requirements",
+        "regulated_by": ["ORG_001", "ORG_005"],
+        "subject_to": ["REG_002", "REG_003"],
+        "must_file": ["REPORT_001"],
+        "must_implement": ["PROG_001", "PROG_002"]
+    },
+    "CUST_002": {
+        "canonical_name": "politically exposed person",
+        "aliases": ["politically exposed person", "PEP"],
+        "ontology_type": "customer_risk_category",
+        "domain": "AML",
+        "description": "Individual entrusted with prominent public function; higher risk",
+        "defined_by": ["ORG_004"],
+        "risk_level": "high",
+        "associated_with": ["CUST_003"]
+    },
+    "CUST_003": {
+        "canonical_name": "shell company",
+        "aliases": ["shell company", "Shell company"],
+        "ontology_type": "customer_risk_category",
+        "domain": "AML",
+        "description": "Issuer with no/nominal operations; defined by SEC in 17 CFR 230.504",
+        "defined_by": ["ORG_005"],
+        "risk_level": "high",
+        "used_by": ["CUST_002"]
+    },
+    "CUST_004": {
+        "canonical_name": "non-profit organization",
+        "aliases": ["non-profit organization", "Nonprofit or charitable organizations"],
+        "ontology_type": "customer_type",
+        "domain": "General",
+        "description": "Organization operating for charitable or social purposes",
+        "risk_context": ["RISK_002"]
+    },
+    "CUST_005": {
+        "canonical_name": "trust",
+        "aliases": ["trust", "Trust"],
+        "ontology_type": "legal_entity",
+        "domain": "General",
+        "description": "Legal arrangement where trustee holds property for beneficiary",
+        "risk_context": ["RISK_001"]
+    },
+    "CUST_006": {
+        "canonical_name": "foreign financial institution",
+        "aliases": ["foreign financial institution", "offshore bank"],
+        "ontology_type": "regulated_entity",
+        "domain": "AML",
+        "description": "Financial institution operating outside the U.S.; elevated risk",
+        "risk_level": "elevated"
+    },
+    "CUST_007": {
+        "canonical_name": "private investment company",
+        "aliases": ["private investment company"],
+        "ontology_type": "customer_type",
+        "domain": "General",
+        "description": "Investment vehicle often used for privacy planning",
+        "risk_level": "elevated"
+    },
+    "CUST_008": {
+        "canonical_name": "stock loan company",
+        "aliases": ["stock loan company"],
+        "ontology_type": "customer_type",
+        "domain": "Securities",
+        "description": "Company facilitating securities lending transactions",
+        "risk_level": "elevated"
+    },
+    "CUST_009": {
+        "canonical_name": "clearing firm",
+        "aliases": ["clearing firm"],
+        "ontology_type": "regulated_entity",
+        "domain": "Securities",
+        "description": "Financial institution handling trade settlement and custody",
+        "affiliated_with": ["CUST_001"],
+        "regulated_by": ["ORG_001", "ORG_005"]
+    },
+
+    # ========================================================
+    # RISK FACTORS
+    # ========================================================
+    "RISK_001": {
+        "canonical_name": "money laundering",
+        "aliases": ["money laundering", "Money Laundering"],
+        "ontology_type": "financial_crime",
+        "domain": "AML",
+        "description": "Process of concealing origins of illegally obtained money",
+        "detected_by": ["COMP_001"],
+        "reported_via": ["REPORT_001"],
+        "red_flags_issued_by": ["ORG_001"]
+    },
+    "RISK_002": {
+        "canonical_name": "terrorist financing",
+        "aliases": ["terrorist financing"],
+        "ontology_type": "financial_crime",
+        "domain": "AML",
+        "description": "Provision of funds or financial support to terrorist activities",
+        "detected_by": ["COMP_001"],
+        "reported_via": ["REPORT_001"],
+        "requires_immediate_notification": True
+    },
+    "RISK_003": {
+        "canonical_name": "tax haven",
+        "aliases": ["tax haven", "tax shelter", "tax havens", "financial secrecy havens"],
+        "ontology_type": "jurisdiction_risk",
+        "domain": "AML",
+        "description": "Jurisdiction with low/no tax rates; used to avoid taxation",
+        "risk_level": "high"
+    },
+    "RISK_004": {
+        "canonical_name": "high-risk geographic location",
+        "aliases": ["high-risk geographic location", "high-risk jurisdictions", "high-risk geographic locations"],
+        "ontology_type": "jurisdiction_risk",
+        "domain": "AML",
+        "description": "Area with elevated money laundering or terrorism risks",
+        "risk_level": "high"
+    },
+    "RISK_005": {
+        "canonical_name": "conflict zone",
+        "aliases": ["conflict zone", "conflict zones"],
+        "ontology_type": "jurisdiction_risk",
+        "domain": "AML",
+        "description": "Area experiencing armed conflict or political instability",
+        "risk_level": "high"
+    },
+    "RISK_006": {
+        "canonical_name": "spoofing",
+        "aliases": ["spoofing"],
+        "ontology_type": "market_manipulation",
+        "domain": "Securities",
+        "description": "Placing orders with intent to cancel before execution to manipulate prices"
+    },
+    "RISK_007": {
+        "canonical_name": "layering",
+        "aliases": ["layering"],
+        "ontology_type": "market_manipulation",
+        "domain": "Securities",
+        "description": "Placing multiple non-bona fide orders to create false market depth"
+    },
+    "RISK_008": {
+        "canonical_name": "insider trading",
+        "aliases": ["insider trading", "potential insider trading"],
+        "ontology_type": "securities_violation",
+        "domain": "Securities",
+        "description": "Trading based on material non-public information"
+    },
+    "RISK_009": {
+        "canonical_name": "Ponzi scheme",
+        "aliases": ["Ponzi scheme"],
+        "ontology_type": "fraud_scheme",
+        "domain": "Securities",
+        "description": "Investment fraud paying returns from new investors' capital"
+    },
+    "RISK_010": {
+        "canonical_name": "structuring",
+        "aliases": ["structuring"],
+        "ontology_type": "transaction_pattern",
+        "domain": "AML",
+        "description": "Breaking transactions into smaller amounts to evade reporting thresholds"
+    },
+    "RISK_011": {
+        "canonical_name": "established terrorism presence",
+        "aliases": ["established presence of terrorism", "established terrorism presence"],
+        "ontology_type": "jurisdiction_risk",
+        "domain": "AML",
+        "description": "Geographic area with known terrorist organization activity",
+        "risk_level": "high"
+    },
+    "RISK_012": {
+        "canonical_name": "black market peso exchange",
+        "aliases": ["black market peso exchange"],
+        "ontology_type": "transaction_pattern",
+        "domain": "AML",
+        "description": "Informal currency exchange system used for money laundering",
+        "risk_level": "high"
+    },
+    "RISK_013": {
+        "canonical_name": "non-cooperative country",
+        "aliases": ["non-cooperative country", "non-cooperative countries and territories"],
+        "ontology_type": "jurisdiction_risk",
+        "domain": "AML",
+        "description": "Jurisdiction identified by FATF as deficient in AML controls",
+        "risk_level": "high",
+        "identified_by": ["ORG_004"]
+    },
+
+    # ========================================================
+    # SECURITY TYPES
+    # ========================================================
+    "SEC_001": {
+        "canonical_name": "penny stock",
+        "aliases": ["penny stock", "penny stocks"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "Low-priced speculative security; often under $5 per share",
+        "risk_level": "high"
+    },
+    "SEC_002": {
+        "canonical_name": "American Depository Receipt",
+        "aliases": ["American Depository Receipt", "ADRs", "ADR"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "U.S. traded certificate representing foreign company shares"
+    },
+    "SEC_003": {
+        "canonical_name": "restricted security",
+        "aliases": ["restricted security", "restricted securities"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "Security subject to resale restrictions under SEC rules"
+    },
+    "SEC_004": {
+        "canonical_name": "unregistered security",
+        "aliases": ["unregistered security", "unregistered securities"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "Security not registered with SEC; often sold in private placements"
+    },
+    "SEC_005": {
+        "canonical_name": "digital asset",
+        "aliases": ["digital asset", "digital assets"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "Digital representation of value using distributed ledger technology",
+        "subject_to": ["REG_001", "REG_002"]
+    },
+    "SEC_006": {
+        "canonical_name": "bearer bond",
+        "aliases": ["bearer bond", "bearer bonds"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "Bond owned by whoever holds the physical certificate"
+    },
+    "SEC_007": {
+        "canonical_name": "dual currency bond",
+        "aliases": ["dual currency bond", "dual currency bonds"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "Bond denominated in one currency but payable in another"
+    },
+    "SEC_008": {
+        "canonical_name": "microcap issuer",
+        "aliases": ["microcap issuer", "microcap issuers"],
+        "ontology_type": "issuer_category",
+        "domain": "Securities",
+        "description": "Company with very low market capitalization",
+        "risk_level": "high"
+    },
+    "SEC_009": {
+        "canonical_name": "low-priced security",
+        "aliases": ["low-priced security", "low-priced securities", "thinly traded or low-priced security", "low-priced, non-exchange-listed securities"],
+        "ontology_type": "security_instrument",
+        "domain": "Securities",
+        "description": "Security trading at low price; susceptible to manipulation",
+        "risk_level": "high"
+    },
+
+    # ========================================================
+    # TRANSACTION TYPES
+    # ========================================================
+    "TXN_001": {
+        "canonical_name": "deposit",
+        "aliases": ["deposit", "deposits", "Deposits"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Transfer of funds or securities into an account"
+    },
+    "TXN_002": {
+        "canonical_name": "wire transfer",
+        "aliases": ["wire transfer", "wire transfers", "Wire transfers", "Wire transfer"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Electronic transfer of funds between financial institutions"
+    },
+    "TXN_003": {
+        "canonical_name": "journal entry",
+        "aliases": ["journal entry", "journal entries"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Internal transfer of funds or securities between accounts"
+    },
+    "TXN_004": {
+        "canonical_name": "electronic transfer",
+        "aliases": ["electronic transfer"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Non-physical transfer via electronic means"
+    },
+    "TXN_005": {
+        "canonical_name": "journal transfer",
+        "aliases": ["journal transfer"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Transfer between accounts within the same firm"
+    },
+    "TXN_006": {
+        "canonical_name": "liquidation",
+        "aliases": ["liquidation", "liquidate"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Conversion of securities or assets into cash"
+    },
+    "TXN_007": {
+        "canonical_name": "wash trade",
+        "aliases": ["wash trade", "wash or cross trades"],
+        "ontology_type": "transaction_type",
+        "domain": "Securities",
+        "description": "Simultaneous buy/sell to create artificial activity"
+    },
+    "TXN_008": {
+        "canonical_name": "mirror trade",
+        "aliases": ["mirror trade", "mirror trades"],
+        "ontology_type": "transaction_type",
+        "domain": "AML",
+        "description": "Matching buy/sell orders in different markets for potential laundering"
+    },
+    "TXN_009": {
+        "canonical_name": "currency conversion",
+        "aliases": ["currency conversion", "currency conversions"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Exchange of one currency for another"
+    },
+    "TXN_010": {
+        "canonical_name": "offsetting trade",
+        "aliases": ["offsetting trade", "offsetting trades"],
+        "ontology_type": "transaction_type",
+        "domain": "Securities",
+        "description": "Trade that neutralizes risk of another position"
+    },
+    "TXN_011": {
+        "canonical_name": "ATM activity",
+        "aliases": ["ATM activity", "automated teller machine", "ATM"],
+        "ontology_type": "transaction_type",
+        "domain": "General",
+        "description": "Transactions conducted through automated teller machines"
+    },
+
+    # ========================================================
+    # ACCOUNT STATUS / STRUCTURE
+    # ========================================================
+    "ACCT_001": {
+        "canonical_name": "new account",
+        "aliases": ["new account"],
+        "ontology_type": "account_status",
+        "domain": "General",
+        "description": "Recently opened customer account"
+    },
+    "ACCT_002": {
+        "canonical_name": "multiple accounts",
+        "aliases": ["multiple accounts"],
+        "ontology_type": "account_status",
+        "domain": "General",
+        "description": "Customer maintaining more than one account"
+    },
+    "ACCT_003": {
+        "canonical_name": "dormant account",
+        "aliases": ["dormant account"],
+        "ontology_type": "account_status",
+        "domain": "General",
+        "description": "Account with no recent activity that suddenly becomes active"
+    },
+    "ACCT_004": {
+        "canonical_name": "master/sub structure",
+        "aliases": ["master/sub structure"],
+        "ontology_type": "account_structure",
+        "domain": "Securities",
+        "description": "Account structure with master account and multiple sub-accounts"
+    },
+
+    # ========================================================
+    # FINANCIAL CONCEPTS
+    # ========================================================
+    "FIN_001": {
+        "canonical_name": "National Best Bid or Offer",
+        "aliases": ["National Best Bid or Offer", "NBBO"],
+        "ontology_type": "market_data",
+        "domain": "Securities",
+        "description": "Best available bid and ask prices across all exchanges"
+    },
+    "FIN_002": {
+        "canonical_name": "float",
+        "aliases": ["float", "percentage of the float"],
+        "ontology_type": "market_data",
+        "domain": "Securities",
+        "description": "Number of shares available for public trading"
+    },
+    "FIN_003": {
+        "canonical_name": "free-look period",
+        "aliases": ["free-look period"],
+        "ontology_type": "contract_term",
+        "domain": "Insurance",
+        "description": "Period during which insurance contract can be cancelled for full refund"
+    },
+    "FIN_004": {
+        "canonical_name": "nostro account",
+        "aliases": ["nostro account", "correspondent accounts"],
+        "ontology_type": "banking_concept",
+        "domain": "General",
+        "description": "Account held by bank in foreign currency at another bank to facilitate FX transactions"
+    },
+
+    # ========================================================
+    # THRESHOLDS / TIME PERIODS
+    # ========================================================
+    "THR_001": {
+        "canonical_name": "$5,000",
+        "aliases": ["$5,000,", "$5,000"],
+        "ontology_type": "reporting_threshold",
+        "domain": "AML",
+        "description": "Minimum transaction amount triggering SAR filing requirement",
+        "defined_in": ["REG_003"]
+    },
+    "THR_002": {
+        "canonical_name": "five years",
+        "aliases": ["five years"],
+        "ontology_type": "retention_period",
+        "domain": "AML",
+        "description": "Period for which SAR records must be retained",
+        "required_by": ["REG_003"]
+    },
+    "THR_003": {
+        "canonical_name": "90 days",
+        "aliases": ["at least every 90 days", "90 days"],
+        "ontology_type": "review_period",
+        "domain": "AML",
+        "description": "Interval for reviewing continuing suspicious activity",
+        "recommended_by": ["ORG_003"]
+    },
+    "THR_004": {
+        "canonical_name": "120 days",
+        "aliases": ["120 days"],
+        "ontology_type": "filing_deadline",
+        "domain": "AML",
+        "description": "Deadline for filing continuing activity SAR",
+        "recommended_by": ["ORG_003"]
+    },
+
+    # ========================================================
+    # NOTICES
+    # ========================================================
+    "NOTICE_001": {
+        "canonical_name": "Regulatory Notice 19-18",
+        "aliases": ["Regulatory Notice 19-18"],
+        "ontology_type": "regulatory_notice",
+        "domain": "AML",
+        "description": "FINRA notice providing guidance on suspicious activity monitoring (May 6, 2019)",
+        "issued_by": ["ORG_001"],
+        "date": ["DATE_001"],
+        "references": ["REG_002", "REG_001", "NOTICE_002"],
+        "provides_guidance_on": ["COMP_001", "COMP_002"]
+    },
+    "NOTICE_002": {
+        "canonical_name": "Notice to Members 02-21",
+        "aliases": ["Notice to Members 02-21", "NTM 02-21"],
+        "ontology_type": "regulatory_notice",
+        "domain": "AML",
+        "description": "FINRA notice on money laundering red flags",
+        "issued_by": ["ORG_001"],
+        "incorporated_into": ["NOTICE_001"]
+    },
+
+    # ========================================================
+    # REGULATORY PROGRAMS
+    # ========================================================
+    "PROG_001": {
+        "canonical_name": "Anti-Money Laundering",
+        "aliases": ["Anti-Money Laundering", "AML", "anti-money laundering", "BSA/AML"],
+        "ontology_type": "regulatory_program",
+        "domain": "AML",
+        "description": "Comprehensive program to detect and prevent money laundering",
+        "governed_by": ["REG_001", "REG_002"],
+        "requires": ["COMP_001", "COMP_002", "COMP_003"],
+        "applies_to": ["CUST_001"]
+    },
+    "PROG_002": {
+        "canonical_name": "Anti-Money Laundering Compliance Program",
+        "aliases": ["Anti-Money Laundering Compliance Program"],
+        "ontology_type": "regulatory_program",
+        "domain": "AML",
+        "description": "Written AML program required by FINRA Rule 3310",
+        "required_by": ["REG_002"],
+        "includes": ["COMP_001", "COMP_002", "COMP_003"],
+        "applies_to": ["CUST_001"]
+    },
+
+    # ========================================================
+    # PERSONS
+    # ========================================================
+    "PERSON_001": {
+        "canonical_name": "Victoria Crane",
+        "aliases": ["Victoria Crane"],
+        "ontology_type": "person",
+        "domain": "General",
+        "description": "FINRA Associate General Counsel, Office of General Counsel",
+        "affiliation": ["ORG_001"],
+        "role": "Associate General Counsel",
+        "contact": ["CONTACT_001", "CONTACT_002"]
+    },
+    "PERSON_002": {
+        "canonical_name": "Blake Snyder",
+        "aliases": ["Blake Snyder"],
+        "ontology_type": "person",
+        "domain": "General",
+        "description": "FINRA Senior Director, Member Regulation",
+        "affiliation": ["ORG_001"],
+        "role": "Senior Director, Member Regulation",
+        "contact": ["CONTACT_003", "CONTACT_004"]
+    },
+
+    # ========================================================
+    # CONTACT INFO
+    # ========================================================
+    "CONTACT_001": {
+        "canonical_name": "(202) 728-8104",
+        "aliases": ["(202) 728-8104"],
+        "ontology_type": "phone",
+        "domain": "General",
+        "description": "Victoria Crane direct phone",
+        "belongs_to": ["PERSON_001"]
+    },
+    "CONTACT_002": {
+        "canonical_name": "victoria.crane@finra.org",
+        "aliases": ["victoria.crane@finra.org"],
+        "ontology_type": "email",
+        "domain": "General",
+        "description": "Victoria Crane email",
+        "belongs_to": ["PERSON_001"]
+    },
+    "CONTACT_003": {
+        "canonical_name": "(561) 443-8051",
+        "aliases": ["(561) 443-8051"],
+        "ontology_type": "phone",
+        "domain": "General",
+        "description": "Blake Snyder direct phone",
+        "belongs_to": ["PERSON_002"]
+    },
+    "CONTACT_004": {
+        "canonical_name": "blake.snyder@finra.org",
+        "aliases": ["blake.snyder@finra.org"],
+        "ontology_type": "email",
+        "domain": "General",
+        "description": "Blake Snyder email",
+        "belongs_to": ["PERSON_002"]
+    },
+    "CONTACT_005": {
+        "canonical_name": "(866) 556-3974",
+        "aliases": ["(866) 556-3974"],
+        "ontology_type": "phone",
+        "domain": "General",
+        "description": "FinCEN Hotline for immediate suspicious activity reporting",
+        "belongs_to": ["ORG_003"],
+        "purpose": "urgent_sar_reporting"
+    },
+
+    # ========================================================
+    # DATES
+    # ========================================================
+    "DATE_001": {
+        "canonical_name": "May 6, 2019",
+        "aliases": ["May 6, 2019"],
+        "ontology_type": "date",
+        "domain": "General",
+        "description": "Publication date of Regulatory Notice 19-18",
+        "associated_with": ["NOTICE_001"]
+    }
+}

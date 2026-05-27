@@ -1,0 +1,541 @@
+{
+  "ORG_001": {
+    "canonical_name": "FINRA",
+    "ontology_type": "self_regulatory_organization",
+    "domain": "Securities",
+    "value_found": "FINRA",
+    "type": "organization"
+  },
+  "COMP_001": {
+    "canonical_name": "suspicious activity monitoring",
+    "ontology_type": "compliance_process",
+    "domain": "AML",
+    "value_found": "suspicious activity monitoring",
+    "type": "compliance_action"
+  },
+  "DATE_001": {
+    "canonical_name": "May 6, 2019",
+    "ontology_type": "date",
+    "domain": "General",
+    "value_found": "May 6, 2019",
+    "type": "date"
+  },
+  "PROG_001": {
+    "canonical_name": "Anti-Money Laundering",
+    "ontology_type": "regulatory_program",
+    "domain": "AML",
+    "value_found": "AML",
+    "type": "regulatory_program"
+  },
+  "REG_001": {
+    "canonical_name": "Bank Secrecy Act",
+    "ontology_type": "federal_regulation",
+    "domain": "AML",
+    "value_found": "BSA",
+    "type": "regulation"
+  },
+  "REG_002": {
+    "canonical_name": "FINRA Rule 3310",
+    "ontology_type": "finra_rule",
+    "domain": "AML",
+    "value_found": "FINRA Rule 3310",
+    "type": "finra_rule"
+  },
+  "NOTICE_002": {
+    "canonical_name": "NTM 02-21",
+    "ontology_type": "regulatory_notice",
+    "domain": "AML",
+    "value_found": "NTM 02-21",
+    "type": "notice"
+  },
+  "PROG_002": {
+    "canonical_name": "Anti-Money Laundering Compliance Program",
+    "ontology_type": "regulatory_program",
+    "domain": "AML",
+    "value_found": "Anti-Money Laundering Compliance Program",
+    "type": "regulatory_program"
+  },
+  "PERSON_001": {
+    "canonical_name": "Victoria Crane",
+    "ontology_type": "person",
+    "domain": "General",
+    "value_found": "Victoria Crane",
+    "type": "person"
+  },
+  "CONTACT_001": {
+    "canonical_name": "(202) 728-8104",
+    "ontology_type": "phone",
+    "domain": "General",
+    "value_found": "(202) 728-8104",
+    "type": "phone"
+  },
+  "CONTACT_002": {
+    "canonical_name": "victoria.crane@finra.org",
+    "ontology_type": "email",
+    "domain": "General",
+    "value_found": "victoria.crane@finra.org",
+    "type": "email"
+  },
+  "PERSON_002": {
+    "canonical_name": "Blake Snyder",
+    "ontology_type": "person",
+    "domain": "General",
+    "value_found": "Blake Snyder",
+    "type": "person"
+  },
+  "CONTACT_003": {
+    "canonical_name": "(561) 443-8051",
+    "ontology_type": "phone",
+    "domain": "General",
+    "value_found": "(561) 443-8051",
+    "type": "phone"
+  },
+  "CONTACT_004": {
+    "canonical_name": "blake.snyder@finra.org",
+    "ontology_type": "email",
+    "domain": "General",
+    "value_found": "blake.snyder@finra.org",
+    "type": "email"
+  },
+  "ORG_002": {
+    "canonical_name": "Department of the Treasury",
+    "ontology_type": "government_agency",
+    "domain": "Federal",
+    "value_found": "Treasury",
+    "type": "organization"
+  },
+  "REPORT_001": {
+    "canonical_name": "suspicious activity report",
+    "ontology_type": "regulatory_report",
+    "domain": "AML",
+    "value_found": "SAR",
+    "type": "report_type"
+  },
+  "CUST_001": {
+    "canonical_name": "broker-dealer",
+    "ontology_type": "regulated_entity",
+    "domain": "Securities",
+    "value_found": "broker-dealer",
+    "type": "customer_type"
+  },
+  "ORG_003": {
+    "canonical_name": "Financial Crimes Enforcement Network",
+    "ontology_type": "government_agency",
+    "domain": "AML",
+    "value_found": "FinCEN",
+    "type": "organization"
+  },
+  "THR_001": {
+    "canonical_name": "$5,000,",
+    "ontology_type": "reporting_threshold",
+    "domain": "AML",
+    "value_found": "$5,000,",
+    "type": "money"
+  },
+  "RISK_010": {
+    "canonical_name": "structuring",
+    "ontology_type": "transaction_pattern",
+    "domain": "AML",
+    "value_found": "structuring",
+    "type": "transaction_type"
+  },
+  "THR_002": {
+    "canonical_name": "five years",
+    "ontology_type": "retention_period",
+    "domain": "AML",
+    "value_found": "five years",
+    "type": "threshold"
+  },
+  "COMP_002": {
+    "canonical_name": "SAR filing requirement",
+    "ontology_type": "compliance_obligation",
+    "domain": "AML",
+    "value_found": "SAR filing requirements",
+    "type": "compliance_action"
+  },
+  "THR_003": {
+    "canonical_name": "90 days",
+    "ontology_type": "review_period",
+    "domain": "AML",
+    "value_found": "at least every 90 days",
+    "type": "threshold"
+  },
+  "THR_004": {
+    "canonical_name": "120 days",
+    "ontology_type": "filing_deadline",
+    "domain": "AML",
+    "value_found": "120 days",
+    "type": "threshold"
+  },
+  "RISK_002": {
+    "canonical_name": "terrorist financing",
+    "ontology_type": "financial_crime",
+    "domain": "AML",
+    "value_found": "terrorist financing",
+    "type": "risk_factor"
+  },
+  "RISK_001": {
+    "canonical_name": "money laundering",
+    "ontology_type": "financial_crime",
+    "domain": "AML",
+    "value_found": "money laundering",
+    "type": "risk_factor"
+  },
+  "CONTACT_005": {
+    "canonical_name": "(866) 556-3974",
+    "ontology_type": "phone",
+    "domain": "General",
+    "value_found": "(866) 556-3974",
+    "type": "phone"
+  },
+  "COMP_004": {
+    "canonical_name": "suspicious activity investigation",
+    "ontology_type": "compliance_process",
+    "domain": "AML",
+    "value_found": "suspicious activity investigation",
+    "type": "compliance_action"
+  },
+  "COMP_003": {
+    "canonical_name": "customer due diligence",
+    "ontology_type": "compliance_process",
+    "domain": "AML",
+    "value_found": "customer due diligence",
+    "type": "compliance_action"
+  },
+  "SEC_005": {
+    "canonical_name": "digital asset",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "digital assets",
+    "type": "security_type"
+  },
+  "RISK_003": {
+    "canonical_name": "tax haven",
+    "ontology_type": "jurisdiction_risk",
+    "domain": "AML",
+    "value_found": "tax havens",
+    "type": "risk_factor"
+  },
+  "RISK_004": {
+    "canonical_name": "high-risk geographic location",
+    "ontology_type": "jurisdiction_risk",
+    "domain": "AML",
+    "value_found": "high-risk jurisdictions",
+    "type": "risk_factor"
+  },
+  "RISK_005": {
+    "canonical_name": "conflict zone",
+    "ontology_type": "jurisdiction_risk",
+    "domain": "AML",
+    "value_found": "conflict zones",
+    "type": "risk_factor"
+  },
+  "CUST_005": {
+    "canonical_name": "trust",
+    "ontology_type": "legal_entity",
+    "domain": "General",
+    "value_found": "trust",
+    "type": "customer_type"
+  },
+  "CUST_003": {
+    "canonical_name": "shell company",
+    "ontology_type": "customer_risk_category",
+    "domain": "AML",
+    "value_found": "shell company",
+    "type": "customer_type"
+  },
+  "CUST_007": {
+    "canonical_name": "private investment company",
+    "ontology_type": "customer_type",
+    "domain": "General",
+    "value_found": "private investment company",
+    "type": "customer_type"
+  },
+  "ACCT_002": {
+    "canonical_name": "multiple accounts",
+    "ontology_type": "account_status",
+    "domain": "General",
+    "value_found": "multiple accounts",
+    "type": "account_status"
+  },
+  "CUST_002": {
+    "canonical_name": "politically exposed person",
+    "ontology_type": "customer_risk_category",
+    "domain": "AML",
+    "value_found": "PEP",
+    "type": "customer_type"
+  },
+  "ORG_004": {
+    "canonical_name": "Financial Action Task Force",
+    "ontology_type": "international_organization",
+    "domain": "AML",
+    "value_found": "FATF",
+    "type": "organization"
+  },
+  "CUST_004": {
+    "canonical_name": "non-profit organization",
+    "ontology_type": "customer_type",
+    "domain": "General",
+    "value_found": "Nonprofit or charitable organizations",
+    "type": "customer_type"
+  },
+  "CUST_008": {
+    "canonical_name": "stock loan company",
+    "ontology_type": "customer_type",
+    "domain": "Securities",
+    "value_found": "stock loan company",
+    "type": "customer_type"
+  },
+  "SEC_003": {
+    "canonical_name": "restricted security",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "restricted securities",
+    "type": "security_type"
+  },
+  "CUST_006": {
+    "canonical_name": "foreign financial institution",
+    "ontology_type": "regulated_entity",
+    "domain": "AML",
+    "value_found": "foreign financial institution",
+    "type": "customer_type"
+  },
+  "ACCT_001": {
+    "canonical_name": "new account",
+    "ontology_type": "account_status",
+    "domain": "General",
+    "value_found": "new account",
+    "type": "account_status"
+  },
+  "TXN_001": {
+    "canonical_name": "deposit",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "deposits",
+    "type": "transaction_type"
+  },
+  "SEC_009": {
+    "canonical_name": "thinly traded security",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "thinly traded or low-priced security",
+    "type": "security_type"
+  },
+  "FIN_002": {
+    "canonical_name": "float",
+    "ontology_type": "market_data",
+    "domain": "Securities",
+    "value_found": "percentage of the float",
+    "type": "financial_concept"
+  },
+  "ORG_005": {
+    "canonical_name": "Securities and Exchange Commission",
+    "ontology_type": "government_agency",
+    "domain": "Securities",
+    "value_found": "SEC",
+    "type": "organization"
+  },
+  "TXN_004": {
+    "canonical_name": "electronic transfer",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "electronic transfer",
+    "type": "transaction_type"
+  },
+  "TXN_005": {
+    "canonical_name": "journal transfer",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "journal transfer",
+    "type": "transaction_type"
+  },
+  "TXN_006": {
+    "canonical_name": "liquidation",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "liquidation",
+    "type": "transaction_type"
+  },
+  "SEC_001": {
+    "canonical_name": "penny stock",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "penny stocks",
+    "type": "security_type"
+  },
+  "SEC_006": {
+    "canonical_name": "bearer bond",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "bearer bonds",
+    "type": "security_type"
+  },
+  "TXN_007": {
+    "canonical_name": "wash trade",
+    "ontology_type": "transaction_type",
+    "domain": "Securities",
+    "value_found": "wash or cross trades",
+    "type": "transaction_type"
+  },
+  "FIN_001": {
+    "canonical_name": "National Best Bid or Offer",
+    "ontology_type": "market_data",
+    "domain": "Securities",
+    "value_found": "NBBO",
+    "type": "financial_concept"
+  },
+  "RISK_006": {
+    "canonical_name": "spoofing",
+    "ontology_type": "market_manipulation",
+    "domain": "Securities",
+    "value_found": "spoofing",
+    "type": "risk_factor"
+  },
+  "RISK_007": {
+    "canonical_name": "layering",
+    "ontology_type": "market_manipulation",
+    "domain": "Securities",
+    "value_found": "layering",
+    "type": "risk_factor"
+  },
+  "RISK_008": {
+    "canonical_name": "insider trading",
+    "ontology_type": "securities_violation",
+    "domain": "Securities",
+    "value_found": "potential insider trading",
+    "type": "risk_factor"
+  },
+  "SEC_004": {
+    "canonical_name": "unregistered security",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "unregistered securities",
+    "type": "security_type"
+  },
+  "ACCT_004": {
+    "canonical_name": "master/sub structure",
+    "ontology_type": "account_structure",
+    "domain": "Securities",
+    "value_found": "master/sub structure",
+    "type": "account_status"
+  },
+  "SEC_008": {
+    "canonical_name": "microcap issuer",
+    "ontology_type": "issuer_category",
+    "domain": "Securities",
+    "value_found": "microcap issuers",
+    "type": "security_type"
+  },
+  "TXN_009": {
+    "canonical_name": "currency conversion",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "currency conversions",
+    "type": "transaction_type"
+  },
+  "SEC_002": {
+    "canonical_name": "American Depository Receipt",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "ADRs",
+    "type": "security_type"
+  },
+  "SEC_007": {
+    "canonical_name": "dual currency bond",
+    "ontology_type": "security_instrument",
+    "domain": "Securities",
+    "value_found": "dual currency bonds",
+    "type": "security_type"
+  },
+  "TXN_008": {
+    "canonical_name": "mirror trade",
+    "ontology_type": "transaction_type",
+    "domain": "AML",
+    "value_found": "mirror trades",
+    "type": "transaction_type"
+  },
+  "TXN_010": {
+    "canonical_name": "offsetting trade",
+    "ontology_type": "transaction_type",
+    "domain": "Securities",
+    "value_found": "offsetting trades",
+    "type": "transaction_type"
+  },
+  "TXN_002": {
+    "canonical_name": "wire transfer",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "Wire transfer",
+    "type": "transaction_type"
+  },
+  "RISK_011": {
+    "canonical_name": "established terrorism presence",
+    "ontology_type": "jurisdiction_risk",
+    "domain": "AML",
+    "value_found": "established presence of terrorism",
+    "type": "risk_factor"
+  },
+  "RISK_012": {
+    "canonical_name": "black market peso exchange",
+    "ontology_type": "transaction_pattern",
+    "domain": "AML",
+    "value_found": "black market peso exchange",
+    "type": "risk_factor"
+  },
+  "RISK_013": {
+    "canonical_name": "non-cooperative country",
+    "ontology_type": "jurisdiction_risk",
+    "domain": "AML",
+    "value_found": "non-cooperative countries and territories",
+    "type": "risk_factor"
+  },
+  "TXN_003": {
+    "canonical_name": "journal entry",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "journal entries",
+    "type": "transaction_type"
+  },
+  "FIN_004": {
+    "canonical_name": "nostro account",
+    "ontology_type": "banking_concept",
+    "domain": "General",
+    "value_found": "correspondent accounts",
+    "type": "financial_concept"
+  },
+  "ACCT_003": {
+    "canonical_name": "dormant account",
+    "ontology_type": "account_status",
+    "domain": "General",
+    "value_found": "dormant account",
+    "type": "account_status"
+  },
+  "TXN_011": {
+    "canonical_name": "ATM activity",
+    "ontology_type": "transaction_type",
+    "domain": "General",
+    "value_found": "ATM",
+    "type": "transaction_type"
+  },
+  "RISK_009": {
+    "canonical_name": "Ponzi scheme",
+    "ontology_type": "fraud_scheme",
+    "domain": "Securities",
+    "value_found": "Ponzi scheme",
+    "type": "risk_factor"
+  },
+  "FIN_003": {
+    "canonical_name": "free-look period",
+    "ontology_type": "contract_term",
+    "domain": "Insurance",
+    "value_found": "free-look period",
+    "type": "financial_concept"
+  },
+  "CUST_009": {
+    "canonical_name": "clearing firm",
+    "ontology_type": "regulated_entity",
+    "domain": "Securities",
+    "value_found": "clearing firm",
+    "type": "customer_type"
+  }
+}
