@@ -1,4 +1,21 @@
 import re
+# ontology relationships
+REL_KEYS = [
+    "requires", "governed_by", "enforced_by", "regulates", "issues",
+    "filed_with", "collects", "administers", "promulgates", "oversees",
+    "produces", "may_produce", "related_to", "identified_by",
+    "defined_by", "affiliated_with", "authorizes", "applies_to",
+    "regulated_by", "subject_to", "must_file", "must_implement",
+    "detects", "detected_by", "reported_via", "red_flags_issued_by",
+    "parent_organization", "staff", "contact", "belongs_to",
+    "associated_with", "incorporated_into", "provides_guidance_on",
+    "recommended_by", "threshold", "retention_period", "review_period",
+    "filing_deadline", "role", "purpose", "date", "risk_context",
+    "used_by", "used_with", "includes", "promulgated_by", "defines",
+    "registers", "issues_guidance", "enforces", "promulgates",
+    "oversees", "authorizes", "applies_to", "detects", "related_regulations"
+]
+
 VALID_ENTITY_TYPES = {
     "organization", "regulation", "finra_rule", "notice", "report_type",
     "regulatory_program", "customer_type", "security_type", "transaction_type",

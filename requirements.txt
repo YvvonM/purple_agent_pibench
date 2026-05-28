@@ -2,3 +2,4 @@ spacy
 python-dotenv
 google-genai
 openai
+neo4j
