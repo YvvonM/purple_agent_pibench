@@ -1,0 +1,12 @@
+[config]
+ai_provider = "google"
+model = "gemini/gemini-2.0-flash"
+
+[pr_reviewer]
+require_security_review = true
+require_tests_review = true
+num_code_suggestions = 3
+
+[pr_description]
+generate_ai_title = true
+publish_labels = true
