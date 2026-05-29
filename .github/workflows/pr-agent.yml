@@ -19,8 +19,8 @@ jobs:
         uses: the-pr-agent/pr-agent@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI_API_KEY: "na"                          # ← prevents dummy_key fallback
+          GEMINI_API_KEY: ${{ secrets.PR_REVIEW_KEY  }}
+          OPENAI_API_KEY: "na"                          
           config.ai_provider: "google"
           config.model: "gemini/gemini-2.0-flash"
           github_action_config.auto_review: "true"
