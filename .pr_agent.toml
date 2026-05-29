@@ -1,6 +1,7 @@
 [config]
 ai_provider = "google"
 model = "gemini/gemini-2.0-flash"
+fallback_models = []
 
 [pr_reviewer]
 require_security_review = true
@@ -10,3 +11,6 @@ num_code_suggestions = 3
 [pr_description]
 generate_ai_title = true
 publish_labels = true
+
+[pr_code_suggestions]
+num_code_suggestions = 3
