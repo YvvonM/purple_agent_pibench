@@ -9,3 +9,5 @@ langchain-community
 sentence-transformers
 chromadb
 langchain-chroma
+langchain-classic
+rank_bm25

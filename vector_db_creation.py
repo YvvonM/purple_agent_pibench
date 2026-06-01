@@ -3,6 +3,7 @@ from langchain_core.documents import Document
 from langchain_chroma import Chroma
 from langchain_core.embeddings import Embeddings
 from sentence_transformers  import SentenceTransformer, util 
+import pickle
 
 with open("Data_cleaning/FINRA/ontology_output.json", "r") as f:
     main_json = json.load(f)
@@ -92,6 +93,9 @@ vectorstore = Chroma.from_documents(
     persist_directory= "./chroma"
 )
 
- 
+with open("./chroma/bm25_chunks.pkl", "wb") as f:
+    pickle.dump(all_chunks, f)
+
+
 print(f"Persisted {len(all_chunks)} chunks with metadata to ./chroma_db")
 print(f"Collection count after load: {vectorstore._collection.count()}")
