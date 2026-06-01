@@ -10,4 +10,5 @@ sentence-transformers
 chromadb
 langchain-chroma
 langchain-classic
+langchain-groq
 rank_bm25

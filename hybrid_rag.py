@@ -9,6 +9,14 @@ from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 from langchain_classic.retrievers.document_compressors import CrossEncoderReranker
 from langchain_classic.retrievers.contextual_compression import ContextualCompressionRetriever
 from langchain_classic.retrievers.ensemble import EnsembleRetriever   
+from langchain_core.prompts import ChatPromptTemplate
+from prompts import VECTOR_DB_RETRIEVER_PROMPT
+from langchain_core.runnables import RunnablePassthrough
+from langchain_groq import ChatGroq
+from langchain_core.output_parsers import StrOutputParser
+load_dotenv()
+
+VDB_API_KEY = os.getenv("GROQ_API_KEY")
 with open("./chroma/bm25_chunks.pkl", "rb") as f:
     all_chunks = pickle.load(f)
 
@@ -57,12 +65,47 @@ final_retriever = ContextualCompressionRetriever(
     base_retriever = ensemble_retriever,
     base_compressor=reranker_compressor
 )
-query = "What obligations does FINRA Rule 3310 impose on broker-dealers for AML compliance?"
 
-top_docs = final_retriever.invoke(query)
 
-for i, doc in enumerate(top_docs):
-    print(f"\n{'='*60}")
-    print(f"Rank {i+1} | Section: {doc.metadata.get('section')}")
-    print(f"Entities : {doc.metadata.get('entity_names')}")
-    print(f"Content  :\n{doc.page_content}")
+llm = ChatGroq(
+    model = "qwen/qwen3-32b",
+    api_key = VDB_API_KEY,
+    temperature = 0.1
+)
+
+prompt = ChatPromptTemplate.from_messages(
+    [("system", VECTOR_DB_RETRIEVER_PROMPT),
+    ("human", "{question}")]
+)
+
+def format_context(docs):
+    chunks = []
+    for i, doc in enumerate(docs):
+        chunk = (
+            f"[Rank {i+1} | Section: {doc.metadata.get('section', 'N/A')} | "
+            f"Item: {doc.metadata.get('item_number', 'N/A')}]\n"
+            f"Entities: {doc.metadata.get('entity_names', 'N/A')}\n"
+            f"{doc.page_content}"
+        )
+        chunks.append(chunk)
+    return "\n\n".join(chunks)
+
+rag_chain = (
+    {"context": final_retriever | format_context,
+    "question": RunnablePassthrough()}
+    | prompt
+    | llm
+    | StrOutputParser()
+)
+
+response = rag_chain.invoke("What are a firm's SAR filing obligations?")
+print(response)
+
+# query = "What obligations does FINRA Rule 3310 impose on broker-dealers for AML compliance?"
+# top_docs = final_retriever.invoke(query)
+
+# for i, doc in enumerate(top_docs):
+#     print(f"\n{'='*60}")
+#     print(f"Rank {i+1} | Section: {doc.metadata.get('section')}")
+#     print(f"Entities : {doc.metadata.get('entity_names')}")
+#     print(f"Content  :\n{doc.page_content}")
