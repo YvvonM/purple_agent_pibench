@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "question": "What is the title of FINRA Regulatory Notice 19-18?",
+    "answer": "FINRA Provides Guidance to Firms Regarding Suspicious Activity Monitoring and Reporting Obligations",
+    "category": "general",
+    "difficulty": "easy",
+    "entity_ids": ["NOTICE_001", "ORG_001"]
+  },
+  {
+    "id": 2,
+    "question": "When was FINRA Regulatory Notice 19-18 published?",
+    "answer": "May 6, 2019",
+    "category": "general",
+    "difficulty": "easy",
+    "entity_ids": ["DATE_001"]
+  },
+  {
+    "id": 3,
+    "question": "What FINRA rule governs Anti-Money Laundering Compliance Programs?",
+    "answer": "FINRA Rule 3310",
+    "category": "regulatory",
+    "difficulty": "easy",
+    "entity_ids": ["REG_002"]
+  },
+  {
+    "id": 4,
+    "question": "What does FINRA Rule 3310 require member firms to develop?",
+    "answer": "FINRA Rule 3310 requires each member firm to develop and implement a written anti-money laundering (AML) program reasonably designed to achieve and monitor the firm's compliance with the requirements of the Bank Secrecy Act and its implementing regulations.",
+    "category": "regulatory",
+    "difficulty": "medium",
+    "entity_ids": ["REG_002", "PROG_002", "REG_001"]
+  },
+  {
+    "id": 5,
+    "question": "What is the minimum transaction amount that triggers a SAR filing requirement for broker-dealers?",
+    "answer": "$5,000",
+    "category": "thresholds",
+    "difficulty": "easy",
+    "entity_ids": ["THR_001"]
+  },
+  {
+    "id": 6,
+    "question": "What agency do broker-dealers file Suspicious Activity Reports (SARs) with?",
+    "answer": "The Financial Crimes Enforcement Network (FinCEN)",
+    "category": "regulatory",
+    "difficulty": "easy",
+    "entity_ids": ["ORG_003", "REPORT_001"]
+  },
+  {
+    "id": 7,
+    "question": "How long must broker-dealers retain a copy of any SAR filed and its supporting documentation?",
+    "answer": "Five years from the date of filing the SAR",
+    "category": "thresholds",
+    "difficulty": "easy",
+    "entity_ids": ["THR_002"]
+  },
+  {
+    "id": 8,
+    "question": "According to FinCEN guidance, how frequently should firms review continuing suspicious activity?",
+    "answer": "At least every 90 days",
+    "category": "thresholds",
+    "difficulty": "medium",
+    "entity_ids": ["THR_003", "ORG_003"]
+  },
+  {
+    "id": 9,
+    "question": "What is the filing deadline for a continuing activity SAR?",
+    "answer": "120 days after the date of the previously related SAR filing",
+    "category": "thresholds",
+    "difficulty": "medium",
+    "entity_ids": ["THR_004"]
+  },
+  {
+    "id": 10,
+    "question": "What must broker-dealers do in situations requiring immediate attention, such as terrorist financing or ongoing money laundering?",
+    "answer": "Broker-dealers must immediately notify by telephone an appropriate law enforcement authority in addition to filing a timely SAR.",
+    "category": "regulatory",
+    "difficulty": "medium",
+    "entity_ids": ["CUST_001", "RISK_002", "RISK_001", "REPORT_001"]
+  },
+  {
+    "id": 11,
+    "question": "What is FinCEN's Hotline number for immediate suspicious activity reporting?",
+    "answer": "(866) 556-3974",
+    "category": "general",
+    "difficulty": "easy",
+    "entity_ids": ["CONTACT_005"]
+  },
+  {
+    "id": 12,
+    "question": "Which earlier FINRA notice originally published money laundering red flags that are incorporated into Notice 19-18?",
+    "answer": "Notice to Members 02-21 (NTM 02-21)",
+    "category": "general",
+    "difficulty": "medium",
+    "entity_ids": ["NOTICE_002"]
+  },
+  {
+    "id": 13,
+    "question": "What federal law authorizes Treasury to require financial institutions to file SARs?",
+    "answer": "The Bank Secrecy Act (BSA)",
+    "category": "regulatory",
+    "difficulty": "easy",
+    "entity_ids": ["REG_001", "ORG_002"]
+  },
+  {
+    "id": 14,
+    "question": "What does FINRA Rule 3310(a) specifically require firms to establish?",
+    "answer": "Policies and procedures that can be reasonably expected to detect and cause the reporting of transactions required under the Bank Secrecy Act and its implementing regulations.",
+    "category": "regulatory",
+    "difficulty": "medium",
+    "entity_ids": ["REG_002"]
+  },
+  {
+    "id": 15,
+    "question": "Who should questions about FINRA Notice 19-18 be directed to?",
+    "answer": "Victoria Crane, Associate General Counsel, Office of General Counsel, at (202) 728-8104 or victoria.crane@finra.org; or Blake Snyder, Senior Director, Member Regulation, at (561) 443-8051 or blake.snyder@finra.org.",
+    "category": "general",
+    "difficulty": "easy",
+    "entity_ids": ["PERSON_001", "PERSON_002"]
+  },
+  {
+    "id": 16,
+    "question": "What is the ontology type of FinCEN?",
+    "answer": "Government agency (Treasury bureau that collects SARs and administers BSA regulations)",
+    "category": "entity",
+    "difficulty": "easy",
+    "entity_ids": ["ORG_003"]
+  },
+  {
+    "id": 17,
+    "question": "What is 'structuring' in the context of AML?",
+    "answer": "Breaking transactions into smaller amounts to evade reporting thresholds",
+    "category": "aml_concepts",
+    "difficulty": "medium",
+    "entity_ids": ["RISK_010"]
+  },
+  {
+    "id": 18,
+    "question": "What is a 'politically exposed person' (PEP) and what is their risk level?",
+    "answer": "A PEP is an individual entrusted with a prominent public function. They are considered high risk.",
+    "category": "aml_concepts",
+    "difficulty": "medium",
+    "entity_ids": ["CUST_002"]
+  },
+  {
+    "id": 19,
+    "question": "According to Section I, what should firms do upon detection of red flags through monitoring?",
+    "answer": "Firms should consider whether additional investigation, customer due diligence measures, or a SAR filing may be warranted.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["COMP_003", "COMP_002", "COMP_001"]
+  },
+  {
+    "id": 20,
+    "question": "Does this Notice create any new requirements or expectations for broker-dealers?",
+    "answer": "No. This Notice is intended to assist broker-dealers in complying with their existing obligations under BSA/AML requirements and does not create any new requirements or expectations.",
+    "category": "general",
+    "difficulty": "easy",
+    "entity_ids": ["NOTICE_001"]
+  },
+  {
+    "id": 21,
+    "question": "What emerging area of risk does Notice 19-18 specifically call out for firms to be aware of?",
+    "answer": "Risks associated with activity in digital assets",
+    "category": "aml_concepts",
+    "difficulty": "medium",
+    "entity_ids": ["SEC_005"]
+  },
+  {
+    "id": 22,
+    "question": "Do BSA/AML requirements, including SAR filing requirements, apply to digital assets regardless of whether they are securities?",
+    "answer": "Yes. Regardless of whether such assets are securities, BSA/AML requirements including SAR filing requirements apply.",
+    "category": "regulatory",
+    "difficulty": "medium",
+    "entity_ids": ["SEC_005", "REG_001", "COMP_002"]
+  },
+  {
+    "id": 23,
+    "question": "What types of customer entities are flagged as red flags in Section I if they are reluctant to provide information on controlling parties and underlying beneficiaries?",
+    "answer": "A trust, shell company, or private investment company",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["CUST_005", "CUST_003", "CUST_007"]
+  },
+  {
+    "id": 24,
+    "question": "What red flag in Section I relates to a customer from a jurisdiction with AML regime deficiencies identified by FATF?",
+    "answer": "An account opened by a politically exposed person (PEP), particularly when the PEP is from a country which has been identified by FATF as having strategic AML regime deficiencies.",
+    "category": "red_flags",
+    "difficulty": "hard",
+    "entity_ids": ["CUST_002", "ORG_004", "PROG_001"]
+  },
+  {
+    "id": 25,
+    "question": "What international organization sets AML/CFT standards and is referenced in Notice 19-18?",
+    "answer": "The Financial Action Task Force (FATF)",
+    "category": "regulatory",
+    "difficulty": "easy",
+    "entity_ids": ["ORG_004"]
+  },
+  {
+    "id": 26,
+    "question": "According to Section II, what is a red flag when a customer deposits physical share certificates or electronically deposits shares that were issued by a company?",
+    "answer": "Multiple sub-flags apply, including: the shares were recently issued or represent a large percentage of the float, reference a changed name inconsistent with the account, were issued by a shell company, by a company with no apparent business/revenues/products, by a company with incomplete or non-current SEC filings, by a company with recent name changes or recapitalizations, by a company subject to a prior trading suspension, or by a company whose officers have a history of regulatory or criminal violations.",
+    "category": "red_flags",
+    "difficulty": "hard",
+    "entity_ids": ["TXN_001", "CUST_003", "ORG_005"]
+  },
+  {
+    "id": 27,
+    "question": "What pattern of depositing and selling securities is flagged in Section II?",
+    "answer": "A customer who has a pattern of depositing physical share certificates or delivering shares electronically, immediately selling the shares, and then wiring or otherwise transferring out the proceeds.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["TXN_001"]
+  },
+  {
+    "id": 28,
+    "question": "What is 'spoofing' as described in Section III of Notice 19-18?",
+    "answer": "Placing orders with intent to cancel before execution to manipulate prices. Specifically, a frequent pattern of placing orders on one side of the market inside the NBBO, followed by entering orders on the other side that execute against market participants who joined at the improved NBBO.",
+    "category": "aml_concepts",
+    "difficulty": "hard",
+    "entity_ids": ["RISK_006", "FIN_001"]
+  },
+  {
+    "id": 29,
+    "question": "What is 'layering' as described in Section III of Notice 19-18?",
+    "answer": "Placing multiple non-bona fide orders to create false market depth. Specifically, a frequent pattern of placing multiple limit orders on one side of the market at various price levels, followed by entering orders on the opposite side that execute, then cancelling the original limit orders.",
+    "category": "aml_concepts",
+    "difficulty": "hard",
+    "entity_ids": ["RISK_007"]
+  },
+  {
+    "id": 30,
+    "question": "What are 'mirror trades' as referenced in Section III?",
+    "answer": "Matching buy/sell orders in different markets, potentially used for money laundering through currency conversion",
+    "category": "aml_concepts",
+    "difficulty": "medium",
+    "entity_ids": ["TXN_008"]
+  },
+  {
+    "id": 31,
+    "question": "What transaction types involving securities are described as sometimes being used in fraudulent schemes and money laundering in Section III?",
+    "answer": "Penny stocks, Regulation 'S' stocks, and bearer bonds",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["SEC_001", "SEC_006"]
+  },
+  {
+    "id": 32,
+    "question": "What is an 'American Depository Receipt (ADR)' in the context of potential currency conversion red flags?",
+    "answer": "A U.S.-traded certificate representing foreign company shares. It is flagged when a customer delivers in and subsequently liquidates ADRs for U.S. dollar proceeds where the securities were originally purchased in a different currency, indicating possible use of securities for currency conversion.",
+    "category": "aml_concepts",
+    "difficulty": "medium",
+    "entity_ids": ["SEC_002"]
+  },
+  {
+    "id": 33,
+    "question": "What is the red flag in Section IV related to 'structuring' deposits?",
+    "answer": "A customer 'structures' deposits, withdrawals, or purchases of monetary instruments below a certain amount to avoid reporting or recordkeeping requirements, and may even directly state they are trying to avoid triggering a reporting obligation or evade taxing authorities.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["TXN_001"]
+  },
+  {
+    "id": 34,
+    "question": "What money movement pattern involving wire transfers to certain jurisdictions is flagged in Section IV?",
+    "answer": "Wire transfers made to or from financial secrecy havens, tax havens, high-risk geographic locations, or conflict zones, including those with an established presence of terrorism.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["TXN_002", "RISK_003", "RISK_004", "RISK_005"]
+  },
+  {
+    "id": 35,
+    "question": "What is the 'black market peso exchange' referenced as a risk in Section IV?",
+    "answer": "An informal currency exchange system used for money laundering. It is flagged when wire transfers originate from jurisdictions highlighted in relation to black market peso exchange activities.",
+    "category": "aml_concepts",
+    "difficulty": "hard",
+    "entity_ids": ["RISK_012"]
+  },
+  {
+    "id": 36,
+    "question": "What does it indicate when a dormant account suddenly becomes active?",
+    "answer": "It is a red flag for potential suspicious activity, for example when accompanied by large deposits that are suddenly wired out without a plausible explanation.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["ACCT_003"]
+  },
+  {
+    "id": 37,
+    "question": "What Section IV red flag involves Ponzi schemes?",
+    "answer": "Many small incoming wire transfers or deposits made using checks and money orders that are almost immediately withdrawn or wired out in a manner inconsistent with the customer's business or history; the checks or money orders may reference 'investment' or 'for purchase of stock' in a memo section. This may be an indicator of a Ponzi scheme or potential funneling activity.",
+    "category": "red_flags",
+    "difficulty": "hard",
+    "entity_ids": ["TXN_002", "TXN_001", "RISK_009"]
+  },
+  {
+    "id": 38,
+    "question": "What insurance product red flag involves cancellation within the 'free-look period'?",
+    "answer": "A customer cancels an annuity product within the free-look period, especially if accompanied by suspicious indicators such as purchasing the annuity with sequentially numbered money orders or having a history of cancelling annuity products during the free-look period.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["FIN_003"]
+  },
+  {
+    "id": 39,
+    "question": "What is the 'free-look period' in the context of insurance products?",
+    "answer": "A period during which an insurance contract can be cancelled for a full refund",
+    "category": "aml_concepts",
+    "difficulty": "easy",
+    "entity_ids": ["FIN_003"]
+  },
+  {
+    "id": 40,
+    "question": "What red flag in Section VI relates to notifications from a clearing firm?",
+    "answer": "Notifications received from the broker-dealer's clearing firm indicating it had identified potentially suspicious activity in customer accounts, which can take the form of alerts or concerns regarding negative news, money movements, or activity involving certain securities.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["CUST_009", "CUST_001"]
+  },
+  {
+    "id": 41,
+    "question": "What does the Notice say about the list of red flags provided — is it exhaustive?",
+    "answer": "No. The list is explicitly stated to not be exhaustive and does not guarantee compliance with AML program requirements or provide a safe harbor from regulatory responsibility.",
+    "category": "general",
+    "difficulty": "easy",
+    "entity_ids": ["PROG_001"]
+  },
+  {
+    "id": 42,
+    "question": "Can a red flag by itself confirm suspicious activity?",
+    "answer": "No. A red flag is not necessarily indicative of suspicious activity, and not every item identified in the Notice will be relevant for every broker-dealer, every customer relationship, or every business activity.",
+    "category": "general",
+    "difficulty": "medium",
+    "entity_ids": ["NOTICE_001"]
+  },
+  {
+    "id": 43,
+    "question": "What is a 'shell company' as defined in the context of Notice 19-18?",
+    "answer": "An issuer with no or nominal operations, defined by the SEC. It is considered a high-risk customer category in the AML domain.",
+    "category": "entity",
+    "difficulty": "medium",
+    "entity_ids": ["CUST_003", "ORG_005"]
+  },
+  {
+    "id": 44,
+    "question": "What Section I red flag applies to non-profit organizations?",
+    "answer": "An account opened by a non-profit organization that provides services in geographic locations known to be at higher risk for being an active terrorist threat.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": ["CUST_004", "RISK_002"]
+  },
+  {
+    "id": 45,
+    "question": "What is a 'master/sub structure' account and why is it flagged?",
+    "answer": "An account structure with a master account and multiple sub-accounts that enables trading anonymity with respect to the sub-accounts' activity. It is flagged when it engages in trading activity that raises red flags, such as the liquidation of microcap issuers or potentially manipulative trading activity.",
+    "category": "red_flags",
+    "difficulty": "hard",
+    "entity_ids": ["ACCT_004", "SEC_008"]
+  },
+  {
+    "id": 46,
+    "question": "What is the role of the Department of the Treasury in the AML regulatory framework described in Notice 19-18?",
+    "answer": "The Department of the Treasury promulgates implementing regulations under the Bank Secrecy Act (BSA) and authorizes the requirement for financial institutions to file SARs. It also oversees FinCEN.",
+    "category": "regulatory",
+    "difficulty": "medium",
+    "entity_ids": ["ORG_002", "REG_001", "REG_003"]
+  },
+  {
+    "id": 47,
+    "question": "What is insider trading as described in Section III of Notice 19-18?",
+    "answer": "Trading based on material non-public information. It is flagged when a customer is known to have friends or family who work at or for a securities issuer, which may be a red flag for potential insider trading or unlawful sales of unregistered securities.",
+    "category": "aml_concepts",
+    "difficulty": "medium",
+    "entity_ids": ["RISK_008", "SEC_004"]
+  },
+  {
+    "id": 48,
+    "question": "What transaction pattern in Section IV is described as potentially indicative of using a securities account as a conduit?",
+    "answer": "When a securities account is used for payments or outgoing wire transfers with little or no securities activities, i.e., the account appears to be used as a depository account or a conduit for transfers, which may be purported to be for business operating needs.",
+    "category": "red_flags",
+    "difficulty": "hard",
+    "entity_ids": ["TXN_002"]
+  },
+  {
+    "id": 49,
+    "question": "What Section III red flag relates to trading ahead of a significant announcement?",
+    "answer": "A customer makes a large purchase or sale of a security, or option on a security, shortly before news or a significant announcement is issued that affects the price of the security.",
+    "category": "red_flags",
+    "difficulty": "medium",
+    "entity_ids": []
+  },
+  {
+    "id": 50,
+    "question": "What is a 'nostro account' or 'correspondent account' as referenced in Section IV red flag #24?",
+    "answer": "An account held by a bank in a foreign currency at another bank to facilitate foreign exchange transactions. It is flagged when a customer requests that payments be routed through such accounts held by a financial intermediary instead of its own accounts, for no apparent business purpose.",
+    "category": "aml_concepts",
+    "difficulty": "hard",
+    "entity_ids": ["FIN_004"]
+  }
+]

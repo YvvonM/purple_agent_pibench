@@ -11,4 +11,6 @@ chromadb
 langchain-chroma
 langchain-classic
 langchain-groq
+deepeval 
 rank_bm25
+pytest
