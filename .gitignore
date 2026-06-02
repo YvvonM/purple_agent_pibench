@@ -2,3 +2,4 @@
 .env
 chroma/
 .deepeval/
+__pycache__/
