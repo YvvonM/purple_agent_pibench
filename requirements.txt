@@ -3,3 +3,12 @@ python-dotenv
 google-genai
 openai
 neo4j
+langchain-core
+langchain
+langchain-community
+sentence-transformers
+chromadb
+langchain-chroma
+langchain-classic
+langchain-groq
+rank_bm25
