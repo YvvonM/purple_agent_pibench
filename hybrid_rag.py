@@ -73,7 +73,8 @@ def make_prediction(query: str):
     llm = ChatGroq(
         model = "qwen/qwen3-32b",
         api_key = VDB_API_KEY,
-        temperature = 0.1
+        temperature = 0.1,
+        reasoning_format="hidden" 
     )
 
     prompt = ChatPromptTemplate.from_messages(
@@ -100,11 +101,11 @@ def make_prediction(query: str):
         | llm
         | StrOutputParser()
     )
-
+    docs = final_retriever.invoke(query)
     response = rag_chain.invoke(query)
-    return response
+    return response, [d.page_content for d in docs]
   
 if __name__ == "__main__":
     query = "What is the title of FINRA Regulatory Notice 19-18?"
-    answer = make_prediction(query)
+    rag_answer, retrieved_context = make_prediction(query)
     print(answer)
