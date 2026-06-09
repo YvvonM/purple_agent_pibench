@@ -1,0 +1,17 @@
+[
+  {
+    "input": "What is the title of FINRA Regulatory Notice 19-18?",
+    "expected_output": "FINRA Provides Guidance to Firms Regarding Suspicious Activity Monitoring and Reporting Obligations"
+  },
+  {
+    "input": "When was FINRA Regulatory Notice 19-18 published?",
+    "expected_output": "May 6, 2019"
+  },
+  {
+    "input": "What FINRA rule governs Anti-Money Laundering Compliance Programs?",
+    "expected_output": "FINRA Rule 3310"
+  },
+  {
+    "input": "What does FINRA Rule 3310 require member firms to develop?",
+    "expected_output": "FINRA Rule 3310 requires each member firm to develop and implement a written anti-money laundering (AML) program reasonably designed to achieve and monitor the firm's compliance with the requirements of the Bank Secrecy Act and its implementing regulations."
+  }]
