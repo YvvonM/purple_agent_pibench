@@ -136,6 +136,4 @@ python neo4j_db_connection_test.py
 - The graph schema is designed around `Entity` nodes, regulatory relationships, and compliance concepts.
 - The pipeline is intentionally hybrid: it blends keyword search, semantic search, and structured graph reasoning.
 
-## License
 
-No license is specified in this repository. Add one if you want to make the project open source.
