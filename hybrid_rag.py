@@ -2,6 +2,8 @@
 import os
 import asyncio
 import pickle
+import time
+import json
 from typing import List, Tuple
 from dotenv import load_dotenv
 
@@ -209,14 +211,29 @@ def make_prediction(query: str) -> Tuple[str, List[str], str]:
 
 
 if __name__ == "__main__":
-    query = "What is the title of FINRA Regulatory Notice 19-18?"
-    rag_answer, retrieved_context, full_context = make_prediction(query)
-    print(f"ANSWER: {rag_answer}")
-    print(f"\n{'*'*50}")
-    print("RETRIEVED DOCUMENTS:")
-    for ctx in retrieved_context:
-        print(ctx[:200] + "...")
-        print("-" * 30)
-    print(f"{'*'*50}")
-    print(f"\nFULL CONTEXT (with graph):")
-    print(full_context[:2000] + "..." if len(full_context) > 2000 else full_context)
+    with open("Data_cleaning/evaluation_dataset/goldens.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+    answers  =  []
+    for d in data:
+        query = d["input"]
+        rag_answer, retrieved_context, full_context = make_prediction(query)
+        result = {
+            "query": query,
+            "answer": rag_answer,
+            "retrieved_context": retrieved_context,
+            "full_context": full_context
+        
+        }
+        answers.append(result)
+        print(f"QUERY: {query}")
+        print(f"ANSWER: {rag_answer}")
+        print(f"\n{'*'*50}")
+        print("RETRIEVED DOCUMENTS:")
+        for ctx in retrieved_context:
+            print(ctx[:200] + "...")
+            print("-" * 30)
+        
+        with open("Data_cleaning/evaluation_dataset/rag_answers.json", "w", encoding="utf-8") as f:
+            json.dump(answers, f)
+            time.sleep(20)
+    print(f"All done! {len(answers)} answers saved to rag_answers.json")
