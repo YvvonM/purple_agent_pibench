@@ -59,15 +59,20 @@ Write a Cypher query to answer this. Return ONLY the Cypher query, no backticks.
 
 async def execute_cypher(session: ClientSession, cypher: str, params: Dict = None) -> List[Dict]:
     """Execute Cypher via MCP and return results."""
+    result = None
     try:
-        result = await session.call_tool(
+        raw = await session.call_tool(
             "read_neo4j_cypher",
             {
                 "query": cypher,
                 "params": params or {}
             }
         )
+        result = raw.content[0].text
         
+        print(f"Raw Cypher Result: {result}")
+        print("*"*50)
+        print(f"Type of result: {type(result)}")
         content = getattr(result, 'content', result)
         
         if isinstance(content, list):
