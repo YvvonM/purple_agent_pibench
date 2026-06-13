@@ -1,0 +1,58 @@
+[
+  {
+    "question_num": 1,
+    "question": "What is the title of FINRA Regulatory Notice 19-18?",
+    "metric": "Contextual Precision",
+    "score": null,
+    "passed": false,
+    "reason": "module 'litellm' has no attribute 'generate'"
+  },
+  {
+    "question_num": 1,
+    "question": "What is the title of FINRA Regulatory Notice 19-18?",
+    "metric": "Contextual Recall",
+    "score": null,
+    "passed": false,
+    "reason": "module 'litellm' has no attribute 'generate'"
+  },
+  {
+    "question_num": 1,
+    "question": "What is the title of FINRA Regulatory Notice 19-18?",
+    "metric": "Contextual Relevancy",
+    "score": 0.09090909090909091,
+    "passed": false,
+    "reason": "The score is 0.09 because the retrieval context is largely irrelevant to the input, as it either doesn't mention 'FINRA Regulatory Notice 19-18' or mentions unrelated information like 'Notice to Members 02-21' or 'FINRA Rule 3310'. Although 'Regulatory Notice 19-18' is mentioned, it's not sufficient"
+  },
+  {
+    "question_num": 1,
+    "question": "What is the title of FINRA Regulatory Notice 19-18?",
+    "metric": "Answer Relevancy",
+    "score": null,
+    "passed": false,
+    "reason": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+  },
+  {
+    "question_num": 1,
+    "question": "What is the title of FINRA Regulatory Notice 19-18?",
+    "metric": "Faithfulness",
+    "score": 1.0,
+    "passed": true,
+    "reason": "The score is 1.00 because there are no contradictions, indicating the actual output perfectly aligns with the retrieval context."
+  },
+  {
+    "question_num": 2,
+    "question": "When was FINRA Regulatory Notice 19-18 published?",
+    "metric": "Contextual Precision",
+    "score": 0,
+    "passed": false,
+    "reason": "The score is 0.00 because all nodes in retrieval contexts are irrelevant and they are not distinguished from one another in terms of relevance, with all 5 nodes ranked equally, despite providing similar reasons for not being useful, i.e., not providing the publication date of FINRA Regulatory Notice"
+  },
+  {
+    "question_num": 2,
+    "question": "When was FINRA Regulatory Notice 19-18 published?",
+    "metric": "Contextual Recall",
+    "score": null,
+    "passed": false,
+    "reason": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model."
+  }
+]
