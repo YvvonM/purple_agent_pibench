@@ -20,7 +20,7 @@ def gen_account_id(customer_id: str, seq: int) -> str:
     return cust_id
 
 def gen_transaction_id(prefix: str = "TXN") -> str:
-    """TXN_20260613_A7K3M9 — includes date and random suffix."""
+    """TXN_20260613_A7K3M9 - includes date and random suffix."""
     date_str = datetime.now().strftime("%Y%m%d")
     suffix  = "".join(random.choices(string.ascii_uppercase + string.digits, k=6))
     txn_id = f"{prefix}_{date_str}_{suffix}"
