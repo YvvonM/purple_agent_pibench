@@ -38,6 +38,7 @@ def export_to_json(
     cases: List[Any],
     securities: List[Any],
     events: List[Any],
+    output_dir: str = None,
     decisions: List[Any] = None,
     employees: List[Any] = None,
 ) -> None:

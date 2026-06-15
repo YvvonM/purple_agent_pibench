@@ -1,0 +1,394 @@
+[
+  {
+    "created_at": "2026-06-11T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0001",
+    "customer_id": "CUST_margaret_chen",
+    "case_type": "EDD",
+    "status": "open",
+    "summary": "Enhanced due diligence review for dormant account reactivation. Account inactive 18 months. Customer requesting $150K wire to foreign bank. Source of funds and purpose verification required.",
+    "linked_alert_ids": [
+      "ALERT_20260615_0001"
+    ],
+    "linked_account_ids": [
+      "ACCT_margaret_chen_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Senior Analyst Maria Chen",
+    "closed_at": null,
+    "closed_reason": null
+  },
+  {
+    "created_at": "2026-06-11T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0002",
+    "customer_id": "CUST_victor_kowalski",
+    "case_type": "FRAUD",
+    "status": "open",
+    "summary": "Investigation into potential microcap securities manipulation. Customer deposited 50,000 shares VMCP via physical certificate and immediately requested market liquidation. Reviewing for pump-and-dump or unregistered distribution.",
+    "linked_alert_ids": [
+      "ALERT_20260615_0002"
+    ],
+    "linked_account_ids": [
+      "ACCT_victor_kowalski_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Fraud Specialist David Park",
+    "closed_at": null,
+    "closed_reason": null
+  },
+  {
+    "created_at": "2026-06-11T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0003",
+    "customer_id": "CUST_patricia_delgado",
+    "case_type": "FRAUD",
+    "status": "open",
+    "summary": "Pattern of annuity cancellations within free-look period. Three cancellations in 12 months suggest potential churning or fee avoidance scheme. Reviewing with legal and compliance.",
+    "linked_alert_ids": [
+      "ALERT_20260615_0003"
+    ],
+    "linked_account_ids": [
+      "ACCT_patricia_delgado_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Compliance Officer Lisa Thompson",
+    "closed_at": null,
+    "closed_reason": null
+  },
+  {
+    "created_at": "2026-06-11T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0004",
+    "customer_id": "CUST_patricia_delgado",
+    "case_type": "FRAUD",
+    "status": "open",
+    "summary": "Pattern of annuity cancellations within free-look period. Three cancellations in 12 months suggest potential churning or fee avoidance scheme. Reviewing with legal and compliance.",
+    "linked_alert_ids": [
+      "ALERT_20260615_0004"
+    ],
+    "linked_account_ids": [
+      "ACCT_patricia_delgado_CUST_002"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Compliance Officer Lisa Thompson",
+    "closed_at": null,
+    "closed_reason": null
+  },
+  {
+    "created_at": "2025-08-15T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0005",
+    "customer_id": "CUST_BG_0014",
+    "case_type": "OTHER",
+    "status": "closed",
+    "summary": "Routine compliance review. No findings. Case closed.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0014_CUST_002"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Williams",
+    "closed_at": "2026-06-10T11:00:00",
+    "closed_reason": "Escalated to law enforcement"
+  },
+  {
+    "created_at": "2025-07-24T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0006",
+    "customer_id": "CUST_BG_0018",
+    "case_type": "SAR_REVIEW",
+    "status": "closed",
+    "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0018_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Rodriguez",
+    "closed_at": "2026-05-25T11:00:00",
+    "closed_reason": "Escalated to law enforcement"
+  },
+  {
+    "created_at": "2025-10-13T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0007",
+    "customer_id": "CUST_BG_0023",
+    "case_type": "OTHER",
+    "status": "closed",
+    "summary": "Routine compliance review. No findings. Case closed.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0023_CUST_003"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Williams",
+    "closed_at": "2026-05-30T11:00:00",
+    "closed_reason": "Escalated to law enforcement"
+  },
+  {
+    "created_at": "2025-11-21T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0008",
+    "customer_id": "CUST_BG_0026",
+    "case_type": "OTHER",
+    "status": "closed",
+    "summary": "Routine compliance review. No findings. Case closed.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0026_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Williams",
+    "closed_at": "2026-06-07T11:00:00",
+    "closed_reason": "No suspicious activity found \u2014 case closed"
+  },
+  {
+    "created_at": "2026-04-16T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0009",
+    "customer_id": "CUST_BG_0030",
+    "case_type": "SAR_REVIEW",
+    "status": "closed",
+    "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
+    "linked_alert_ids": [
+      "ALERT_20260615_0022"
+    ],
+    "linked_account_ids": [
+      "ACCT_BG_0030_CUST_002"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Johnson",
+    "closed_at": "2026-06-09T11:00:00",
+    "closed_reason": "SAR filed with FinCEN"
+  },
+  {
+    "created_at": "2026-04-02T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0010",
+    "customer_id": "CUST_BG_0036",
+    "case_type": "SAR_REVIEW",
+    "status": "closed",
+    "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
+    "linked_alert_ids": [
+      "ALERT_20260615_0027"
+    ],
+    "linked_account_ids": [
+      "ACCT_BG_0036_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Williams",
+    "closed_at": "2026-05-20T11:00:00",
+    "closed_reason": "Customer provided satisfactory documentation"
+  },
+  {
+    "created_at": "2026-01-08T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0011",
+    "customer_id": "CUST_BG_0045",
+    "case_type": "EDD",
+    "status": "closed",
+    "summary": "Enhanced due diligence for high-risk customer. Documentation verified. Case closed.",
+    "linked_alert_ids": [
+      "ALERT_20260615_0031"
+    ],
+    "linked_account_ids": [
+      "ACCT_BG_0045_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Williams",
+    "closed_at": "2026-06-09T11:00:00",
+    "closed_reason": "SAR filed with FinCEN"
+  },
+  {
+    "created_at": "2025-06-20T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0012",
+    "customer_id": "CUST_BG_0056",
+    "case_type": "EDD",
+    "status": "closed",
+    "summary": "Enhanced due diligence for high-risk customer. Documentation verified. Case closed.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0056_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Johnson",
+    "closed_at": "2026-05-14T11:00:00",
+    "closed_reason": "SAR filed with FinCEN"
+  },
+  {
+    "created_at": "2025-10-14T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0013",
+    "customer_id": "CUST_BG_0059",
+    "case_type": "SAR_REVIEW",
+    "status": "closed",
+    "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0059_CUST_002"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Johnson",
+    "closed_at": "2026-06-09T11:00:00",
+    "closed_reason": "Customer provided satisfactory documentation"
+  },
+  {
+    "created_at": "2026-05-12T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0014",
+    "customer_id": "CUST_BG_0062",
+    "case_type": "SAR_REVIEW",
+    "status": "closed",
+    "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0062_CUST_002"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Williams",
+    "closed_at": "2026-06-03T11:00:00",
+    "closed_reason": "No suspicious activity found \u2014 case closed"
+  },
+  {
+    "created_at": "2025-09-27T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0015",
+    "customer_id": "CUST_BG_0070",
+    "case_type": "SAR_REVIEW",
+    "status": "closed",
+    "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0070_CUST_002"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Rodriguez",
+    "closed_at": "2026-05-14T11:00:00",
+    "closed_reason": "No suspicious activity found \u2014 case closed"
+  },
+  {
+    "created_at": "2025-12-18T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0016",
+    "customer_id": "CUST_BG_0088",
+    "case_type": "EDD",
+    "status": "closed",
+    "summary": "Enhanced due diligence for high-risk customer. Documentation verified. Case closed.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0088_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Johnson",
+    "closed_at": "2026-05-26T11:00:00",
+    "closed_reason": "Customer provided satisfactory documentation"
+  },
+  {
+    "created_at": "2026-01-25T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0017",
+    "customer_id": "CUST_BG_0093",
+    "case_type": "SAR_REVIEW",
+    "status": "closed",
+    "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0093_CUST_002"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Williams",
+    "closed_at": "2026-05-28T11:00:00",
+    "closed_reason": "Customer provided satisfactory documentation"
+  },
+  {
+    "created_at": "2026-02-25T11:00:00",
+    "updated_at": "2026-06-11T11:00:00",
+    "created_by": "system",
+    "updated_by": "system",
+    "deleted_at": null,
+    "is_active": true,
+    "case_id": "CASE_20260615_0018",
+    "customer_id": "CUST_BG_0099",
+    "case_type": "OTHER",
+    "status": "closed",
+    "summary": "Routine compliance review. No findings. Case closed.",
+    "linked_alert_ids": [],
+    "linked_account_ids": [
+      "ACCT_BG_0099_CUST_001"
+    ],
+    "linked_transaction_ids": [],
+    "assigned_to": "Analyst Johnson",
+    "closed_at": "2026-05-19T11:00:00",
+    "closed_reason": "SAR filed with FinCEN"
+  }
+]

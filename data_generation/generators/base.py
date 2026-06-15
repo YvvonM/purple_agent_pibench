@@ -6,13 +6,23 @@ from decimal import Decimal, ROUND_HALF_UP
 from faker import Faker
 
 _faker = Faker("en_US")
-Faker.seed_instance(42)
+_faker.seed_instance(42)
+_request_seq = 0
+_customer_seq = 0
+_account_seq = 0
+_txn_seq = 0
+_alert_seq = 0
+_case_seq = 0
+_event_seq = 0
+_employee_seq = 0
+_decision_seq = 0
 
 def gen_customer_id(name: str) -> str:
     """CUST_FIRST_LAST or CUST_FIRST_LAST_N"""
     clean = name.lower().replace(" ", "_").replace("-", "_")
-    clean = "".join(c for c in clean if c.isalnum or c == "_")
+    clean = "".join(c for c in clean if c.isalnum() or c == "_")
     name = f"CUST_{clean[:20]}"
+    return name
 
 def gen_account_id(customer_id: str, seq: int) -> str:
     """ACCT_CUST_001, ACCT_CUST_002, etc."""
@@ -21,56 +31,65 @@ def gen_account_id(customer_id: str, seq: int) -> str:
 
 def gen_transaction_id(prefix: str = "TXN") -> str:
     """TXN_20260613_A7K3M9 - includes date and random suffix."""
+    global _txn_seq
+    _txn_seq += 1
     date_str = datetime.now().strftime("%Y%m%d")
     suffix  = "".join(random.choices(string.ascii_uppercase + string.digits, k=6))
-    txn_id = f"{prefix}_{date_str}_{suffix}"
+    txn_id = f"{prefix}_{date_str}_{suffix}_{_txn_seq:04d}"
     return txn_id
 
 def gen_alert_id() -> str:
     """ALERT_20260613_001, ALERT_20260613_002"""
+    global _alert_seq
+    _alert_seq += 1
     date_str = datetime.now().strftime("%Y%m%d")
-    seq = random.randint(1,999)
-    alert_id = f"ALART_{date_str}_{seq:03d}"
+    alert_id = f"ALERT_{date_str}_{_alert_seq:04d}" 
     return alert_id 
 
 def gen_case_id() -> str:
     """CASE_20260613_001, CASE_20260613_002"""
+    global _case_seq
+    _case_seq += 1
     date_str = datetime.now().strftime("%Y%m%d")
-    seq = random.randint(1, 999)
-    case_id = f"CASE_{date_str}_{seq:03d}"
+    case_id = f"CASE_{date_str}_{_case_seq:04d}"
     return case_id
 
 def gen_request_id() -> str:
     """REQ_20260613_001, REQ_20260613_002"""
+    global _request_seq
+    _request_seq += 1
     date_str = datetime.now().strftime("%Y%m%d")
-    seq = random.randint(1, 999)
-    req_id = f"REQ_{date_str}_{seq:03d}"
+    req_id = f"REQ_{date_str}_{_request_seq:04d}"
     return req_id
 
 def gen_event_id() -> str:
     """EVT_20260613_001, EVT_20260613_002"""
+    global _event_seq
+    _event_seq += 1
     date_str = datetime.now().strftime("%Y%m%d")
-    seq = random.randint(1, 999)
-    evt_id = f"EVT_{date_str}_{seq:03d}"
+    evt_id = f"EVT_{date_str}_{_event_seq:04d}"
     return evt_id
 
 def gen_decision_id() -> str:
     """DEC_20260613_002, DEC_20260613_002"""
+    global _decision_seq
+    _decision_seq += 1
     date_str = datetime.now().strftime("%Y%m%d")
-    seq = random.randint(1, 999)
-    dec_id = f"DEC_{date_str}_{seq:03d}"
+    dec_id = f"DEC_{date_str}_{_decision_seq:04d}"
     return dec_id
 
 def gen_employee_id() -> str:
     """EMP_001, EMP_002"""
-    seq = random.randint(1, 999)
-    emp_id = f"EMP_{seq:03d}"
+    global _employee_seq
+    _employee_seq += 1
+    emp_id = f"EMP_{_employee_seq:03d}"
     return emp_id 
 
-def random_date_between(start: datetimez, end: datetime) -> datetime:
+def random_date_between(start: datetime, end: datetime) -> datetime:
     delta = end - start 
     random_seconds = random.randint(0, int(delta.total_seconds()))
     time = start + timedelta(seconds = random_seconds)
+    return time
 
 def random_past_date(days_back: int, from_date: Optional[datetime] = None) -> datetime:
     ref = from_date or datetime.now()

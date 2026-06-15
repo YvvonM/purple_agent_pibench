@@ -1,6 +1,6 @@
 import sqlite3 
 import json 
-from typing import List, Dict
+from typing import List, Dict, Any
 from decimal import Decimal 
 from pathlib import Path 
 from datetime import datetime 
@@ -268,7 +268,7 @@ CREATE INDEX IF NOT EXISTS idx_decisions_customer ON compliance_decisions(custom
 def _insert_customer(cursor: sqlite3.Cursor, customer: Customer) -> None:
     cursor.execute("""
         INSERT INTO customers VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
         )
     """,(
         customer.customer_id,
@@ -305,8 +305,8 @@ def _insert_customer(cursor: sqlite3.Cursor, customer: Customer) -> None:
 def _insert_account(cursor: sqlite3.Cursor, account: Account) -> None:
     cursor.execute("""
         INSERT INTO accounts VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-        )
+             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )
     """, (
         account.account_id,
         account.customer_id,
@@ -332,8 +332,8 @@ def _insert_account(cursor: sqlite3.Cursor, account: Account) -> None:
 def _insert_transaction(cursor: sqlite3.Cursor, txn: Transaction) -> None:
     cursor.execute("""
         INSERT INTO transactions VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-        )
+             ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )
     """, (
         txn.transaction_id,
         txn.account_id,
@@ -365,8 +365,8 @@ def _insert_transaction(cursor: sqlite3.Cursor, txn: Transaction) -> None:
 def _insert_request(cursor: sqlite3.Cursor, req: PendingRequest) -> None:
     cursor.execute("""
         INSERT INTO pending_requests VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-        )
+           ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )
     """, (
         req.request_id,
         req.customer_id,
@@ -391,8 +391,8 @@ def _insert_request(cursor: sqlite3.Cursor, req: PendingRequest) -> None:
 def _insert_alert(cursor: sqlite3.Cursor, alert: Alert) -> None:
     cursor.execute("""
         INSERT INTO alerts VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-        )
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )
     """, (
         alert.alert_id,
         alert.account_id,
@@ -416,8 +416,8 @@ def _insert_alert(cursor: sqlite3.Cursor, alert: Alert) -> None:
 def _insert_case(cursor: sqlite3.Cursor, case: Case) -> None:
     cursor.execute("""
         INSERT INTO cases VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-        )
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )
     """, (
         case.case_id,
         case.customer_id,
@@ -460,8 +460,8 @@ def _insert_security(cursor: sqlite3.Cursor, sec: Security) -> None:
 def _insert_event(cursor: sqlite3.Cursor, event: AccountEvent) -> None:
     cursor.execute("""
         INSERT INTO account_events VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-        )
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )
     """, (
         event.event_id,
         event.account_id,
@@ -484,8 +484,8 @@ def _insert_event(cursor: sqlite3.Cursor, event: AccountEvent) -> None:
 def _insert_decision(cursor: sqlite3.Cursor, decision: ComplianceDecision) -> None:
     cursor.execute("""
         INSERT INTO compliance_decisions VALUES (
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-        )
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )
     """, (
         decision.decision_id,
         decision.request_id,
