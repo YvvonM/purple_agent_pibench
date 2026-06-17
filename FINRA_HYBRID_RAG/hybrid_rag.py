@@ -221,7 +221,7 @@ def make_prediction(query: str) -> Tuple[str, List[str], str]:
 
 
 if __name__ == "__main__":
-    with open("Data_cleaning/evaluation_dataset/goldens.json", "r", encoding="utf-8") as f:
+    with open("Data_cleaning/evaluation_dataset/goldens1.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     answers = []
@@ -244,7 +244,7 @@ if __name__ == "__main__":
             print(ctx[:200] + "...")
             print("-" * 30)
 
-        with open("Data_cleaning/evaluation_dataset/rag_answers.json", "w", encoding="utf-8") as f:
+        with open("Data_cleaning/evaluation_dataset/rag_answers2.json", "w", encoding="utf-8") as f:
             json.dump(answers, f)
 
         time.sleep(20)
