@@ -1,4 +1,4 @@
-from dataclasses import dataclasses 
+from dataclasses import dataclass 
 from typing import List, Dict, Any 
 from datetime import datetime, timedelta
 
@@ -18,7 +18,7 @@ TXN_COUNTS = {
     "problematic": (20, 60),
 }
 
-ARCHETYPE_WEIGHTS = {
+BACKGROUND_ARCHETYPE_WEIGHTS = {
     "routine_retail": 20,
     "small_business": 10,
     "high_net_worth": 8,

@@ -138,7 +138,7 @@ def _make_background_alert(account: Account) -> Alert:
     }
     
     return Alert(
-        created_at=random_recent_date(days_back=180),  
+        created_at=random_past_date(days_back=180),  
         updated_at=SIMULATION_NOW,
         alert_id=gen_alert_id(),
         account_id=account.account_id,
