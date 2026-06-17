@@ -3,15 +3,16 @@ from typing import List, Dict, Any, Optional
 from datetime import datetime
 from decimal import Decimal
 
-@dataclass
+@dataclass(kw_only=True)
 class AuditTable:
     created_at: datetime = field(default_factory=datetime.now)
     updated_at: datetime = field(default_factory=datetime.now)
     created_by: str = "system"
     updated_by: str = "system"
     deleted_at: Optional[datetime] = None
+    is_active: bool = True
 
-@dataclass
+@dataclass(kw_only=True)
 class Customer(AuditTable):
     customer_id: str 
     display_name: str 
@@ -37,7 +38,7 @@ class Customer(AuditTable):
     archetype: Optional[str] = None      
     scenario_id: Optional[str] = None
 
-@dataclass
+@dataclass(kw_only=True)
 class Account(AuditTable):
     account_id: str
     customer_id: str 
@@ -53,7 +54,7 @@ class Account(AuditTable):
     investigation_hold: bool = False
     account_opened_date: Optional[datetime] = None
 
-@dataclass
+@dataclass(kw_only=True)
 class Transaction(AuditTable):
     transaction_id: str
     account_id: str
@@ -77,7 +78,7 @@ class Transaction(AuditTable):
     timestamp: datetime = field(default_factory=datetime.now)
     fulfilled_request_id: Optional[str] = None
 
-@dataclass
+@dataclass(kw_only=True)
 class PendingRequest(AuditTable):
     request_id: str
     customer_id: str
@@ -93,7 +94,7 @@ class PendingRequest(AuditTable):
     decision_recorded_at: Optional[datetime] = None
     decision_rationale: Optional[str] = None
 
-@dataclass
+@dataclass(kw_only=True)
 class Alert(AuditTable):
     alert_id: str
     account_id: str
@@ -109,7 +110,7 @@ class Alert(AuditTable):
     dismissed_reason: Optional[str] = None
 
 
-@dataclass
+@dataclass(kw_only=True)
 class Case(AuditTable):
     case_id: str
     customer_id: str
@@ -123,7 +124,7 @@ class Case(AuditTable):
     closed_at: Optional[datetime] = None
     closed_reason: Optional[str] = None
 
-@dataclass
+@dataclass(kw_only=True)
 class Security(AuditTable):
     ticker: str
     name: str
@@ -137,7 +138,7 @@ class Security(AuditTable):
     recent_price_action_note: Optional[str] = None
     recent_30_day_change_pct: Optional[float] = None
 
-@dataclass
+@dataclass(kw_only=True)
 class AccountEvent(AuditTable):
     event_id: str
     account_id: str
@@ -150,7 +151,7 @@ class AccountEvent(AuditTable):
     old_value: Optional[str] = None
     new_value: Optional[str] = None
 
-@dataclass
+@dataclass(kw_only=True)
 class ComplianceDecision(AuditTable):
     decision_id: str
     request_id: Optional[str] = None
@@ -165,7 +166,7 @@ class ComplianceDecision(AuditTable):
     analyst_id: Optional[str] = None
     recorded_at: datetime = field(default_factory=datetime.now)
 
-@dataclass
+@dataclass(kw_only=True)
 class Employee(AuditTable):
     employee_id: str
     name: str

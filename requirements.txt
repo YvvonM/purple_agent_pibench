@@ -2,6 +2,7 @@ spacy
 python-dotenv
 google-genai
 openai
+faker
 neo4j
 langchain-core
 langchain

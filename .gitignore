@@ -3,3 +3,4 @@
 chroma/
 .deepeval/
 __pycache__/
+compliance_data.db
