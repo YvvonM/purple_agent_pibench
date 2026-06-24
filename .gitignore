@@ -4,3 +4,4 @@ chroma/
 .deepeval/
 __pycache__/
 compliance_data.db
+TEXT_TO_SQL_AGENT/FINRA_HYBRID_RAG/chroma

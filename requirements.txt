@@ -18,4 +18,5 @@ mcp-neo4j-cypher
 uv
 langchain-mcp-adapters
 litellm
+mcp
 pytest

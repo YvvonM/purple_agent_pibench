@@ -17,7 +17,7 @@ from langchain_core.output_parsers import StrOutputParser
 from pathlib import Path
 from typing import List, Tuple
 import pickle
-from prompts import SQL_GENERATION_PROMPT
+from prompts import SQL_GENERATION_PROMPT, SQL_TO_TEXT_PROMPT
 from sqlite_connection import execute_sql, extract_sql
 
 load_dotenv()
@@ -147,11 +147,29 @@ async def retrieve_relevant_tables(query: str) -> List[Document]:
 
     return response
 
-def generate_sql(query: str) -> str:
-    return asyncio.run(retrieve_relevant_tables(query))
+async def generate_sql(query: str) -> str:
+    return await retrieve_relevant_tables(query)
 
-def main(query: str):
-    sql_query = generate_sql(query)
+async def sql_to_text(query:str, sql_query:str, result: List) -> str:
+    prompt = ChatPromptTemplate.from_messages(
+        [("system", SQL_TO_TEXT_PROMPT),
+        ("human", "{query}"),
+        ])
+    rag_chain = (
+        {
+            "query": lambda _: query,
+            "sql": lambda _: sql_query,
+            "results": lambda _: result,
+        }
+        | prompt
+        | llm
+        | StrOutputParser()
+    )
+    answer = await rag_chain.ainvoke(query)
+    return answer
+
+async def run_pipeline(query: str):
+    sql_query = await generate_sql(query)
     print("*"* 80)
     print("Generated SQL Query:")
     print(sql_query)
@@ -160,15 +178,16 @@ def main(query: str):
     print("*"*80)
     print("\nExecution Result:")
     print(execution_result)
+    print("*"*80)
+    text_answer = await sql_to_text(query, sql_query, execution_result['results'])
     return {
         "question": query,
         "sql": sql_query,
         "results": execution_result['results'],
+        "text_answer": text_answer
     }
 
 if __name__ == "__main__":
-    test_query = "Has customer CUST_DIANA_VOSS had any wire transfers over $10,000 in the last 30 days?"
     test_query1 = "Show me the 5 most recent transactions for customer CUST_DIANA_VOSS"
-    sql_query = main(test_query1)
-    print("answer:", sql_query)
-    
+    result = asyncio.run(run_pipeline(test_query1))
+    print("answer:", result)

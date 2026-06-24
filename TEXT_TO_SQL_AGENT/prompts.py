@@ -64,3 +64,14 @@ Now answer the following question using the schema context provided above.
 User question: {question}
 
 SQLite query:"""
+
+SQL_TO_TEXT_PROMPT="""You are a compliance analyst explaining database results to a non-technical stakeholder.
+
+Question: {query}
+SQL query: {sql}
+Results: {results}
+
+Write a 1-2 sentence plain English answer. Be specific with numbers and names from the results. If no results were found, state that clearly. Do not mention SQL, tables, or technical terms.
+
+Answer:"""
+
