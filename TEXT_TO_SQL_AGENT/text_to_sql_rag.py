@@ -23,10 +23,9 @@ from sqlite_connection import execute_sql, extract_sql
 load_dotenv()
 
 SCRIPT_DIR = Path(__file__).parent.resolve()
-DB_PATH = Path("FINRA_HYBRID_RAG/chroma")
+DB_PATH = SCRIPT_DIR / "FINRA_HYBRID_RAG" / "chroma"
 COLLECTION_NAME = "tables_schema"
-
-with open("FINRA_HYBRID_RAG/chroma/title_chunks.pkl", "rb") as f:
+with open(DB_PATH / "title_chunks.pkl", "rb") as f:
     docs = pickle.load(f)
 
 class KeyRotator:
@@ -86,11 +85,18 @@ class BGEEmbeddings(Embeddings):
 
 
 embedding_fn = BGEEmbeddings()
-llm = ChatGroq(
-    model="qwen/qwen3-32b",
-    api_key=rotator.get_and_advance(),
-    temperature=0.0,
-    reasoning_format="hidden",)
+# llm = ChatGroq(
+#     model="qwen/qwen3-32b",
+#     api_key=rotator.get_and_advance(),
+#     temperature=0.0,
+#     reasoning_format="hidden",)
+def _get_llm() ->ChatGroq:
+    return ChatGroq(
+        model="qwen/qwen3-32b",
+        api_key=rotator.get_and_advance(),
+        temperature=0.0,
+        reasoning_format="hidden",
+    )
 
 vectorstore = Chroma(
     persist_directory = str(DB_PATH),
@@ -119,7 +125,7 @@ _ensemble_retriever = EnsembleRetriever(
         retrievers=[_bm25_retriever, _sim_retriever],
         weights=[0.6, 0.4],
     )
-_final_retriever = ContextualCompressionRetriever(
+final_retriever = ContextualCompressionRetriever(
         base_retriever=_ensemble_retriever,
         base_compressor=_reranker_compressor,
     )
@@ -130,7 +136,7 @@ _prompt = ChatPromptTemplate.from_messages(
         ])
     
 async def retrieve_relevant_tables(query: str) -> List[Document]:
-    answer = await _final_retriever.ainvoke(query)
+    answer = await final_retriever.ainvoke(query)
     formatted_answer = format_context(answer)
 
     rag_chain = (
@@ -139,7 +145,7 @@ async def retrieve_relevant_tables(query: str) -> List[Document]:
         "question": RunnablePassthrough(),
     }
     | _prompt
-    | llm
+    | _get_llm()
     | StrOutputParser()
 )
     print("\nGenerating answer...")
@@ -162,7 +168,7 @@ async def sql_to_text(query:str, sql_query:str, result: List) -> str:
             "results": lambda _: result,
         }
         | prompt
-        | llm
+        | _get_llm()
         | StrOutputParser()
     )
     answer = await rag_chain.ainvoke(query)

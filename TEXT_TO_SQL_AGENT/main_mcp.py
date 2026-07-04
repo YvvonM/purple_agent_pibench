@@ -12,7 +12,7 @@ from mcp.server.stdio import stdio_server
 from mcp.client.stdio import stdio_client
 from mcp.types import Tool, TextContent 
 from text_to_sql_rag import (sql_to_text, extract_sql, execute_sql,
-    format_context, embedding_fn, vectorstore, _final_retriever, generate_sql, run_pipeline) 
+    format_context, embedding_fn, vectorstore, final_retriever, generate_sql, run_pipeline) 
 
 from mcp import ClientSession 
 import asyncio
@@ -43,16 +43,22 @@ TOOLS = [
         name="execute_sql",
         description=(
             "Execute a SQLite SELECT query against the compliance database. "
+            "Accepts either raw SQL or a natural language question. "
+            "If 'sql' is provided, executes it directly. "
+            "If 'query' is provided, generates SQL first then executes. "
             "Safety-filtered: only SELECT queries allowed. Returns results or error."
         ),
         inputSchema={"type": "object",
             "properties": {
+                "sql": {
+                    "type": "string",
+                    "description": "Raw SQL SELECT statement to execute directly."
+                },
                 "query": {
                     "type": "string",
-                    "description": "Clean SQL SELECT statement to execute."
+                    "description": "Natural language question. SQL will be generated automatically."
                 }
             },
-            "required": ["query"]
         }
     ),
     Tool(
@@ -72,13 +78,9 @@ TOOLS = [
                 "sql": {
                     "type": "string",
                     "description": "The SQL query that was executed."
-                },
-                "results": {
-                    "type": "array",
-                    "description": "List of result rows from execute_sql."
                 }
             },
-            "required": ["query", "sql", "results"]
+        
         }
     ),
     Tool(
@@ -134,21 +136,32 @@ async def call_tool(name: str, arguments: Dict[str, str]) -> List[TextContent]:
         return [TextContent(type="text", text=clean_sql)]
 
     elif name == "execute_sql":
+        raw_sql = arguments.get("sql", "")
         query = arguments.get("query", "")
-        if not query:
-            return [TextContent(type="text", text="Error: 'query' is required.")]
-        sql = await generate_sql(query)
-        clean_sql = extract_sql(sql)
+        if not raw_sql and not  query:
+            return [TextContent(type="text", text="Error: 'sql' or 'query' is required.")]
+        if raw_sql:
+            clean_sql = extract_sql(raw_sql)
+            print(f"executing the following sql: {clean_sql}")
+        else:
+            sql = await generate_sql(query)
+            clean_sql = extract_sql(sql)
+            print(f"executing the following sql: {clean_sql}")
         execution_result = execute_sql(clean_sql)
         return [TextContent(type="text", text=json.dumps(execution_result, indent=2))]
 
     elif name == "sql_to_text":
         query = arguments.get("query", "")
-        if not query:
-            return [TextContent(type="text", text="Error: 'query' is required.")]
-        sql = await generate_sql(query)
-        clean_sql = extract_sql(sql)
-        execution_result = execute_sql(clean_sql)
+        raw_sql = arguments.get("sql", "")
+        if not query and not raw_sql:
+            return [TextContent(type="text", text="Error: 'sql' or 'query' is required.")]
+        if raw_sql:
+            clean_sql = extract_sql(raw_sql)
+            execution_result = execute_sql(clean_sql)
+        else:
+            sql = await generate_sql(query)
+            clean_sql = extract_sql(sql)
+            execution_result = execute_sql(clean_sql)
         text_answer = await sql_to_text(query, clean_sql, execution_result['results'])
         return [TextContent(type="text", text=json.dumps(text_answer, indent=2))]
 
@@ -163,7 +176,7 @@ async def call_tool(name: str, arguments: Dict[str, str]) -> List[TextContent]:
         query = arguments.get("query", "")
         if not query:
             return [TextContent(type="text", text="Error: 'query' is required.")]
-        vectordb_context = format_context(await _final_retriever.ainvoke(query))
+        vectordb_context = format_context(await final_retriever.ainvoke(query))
         return [TextContent(type="text", text=vectordb_context)]
 
     else:

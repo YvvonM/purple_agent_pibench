@@ -4,9 +4,34 @@ import re
 
 
 DB_PATH = Path("/workspaces/purple_agent_pibench/TEXT_TO_SQL_AGENT/data_generation/compliance_data.db")
+DB_READONLY_URI = f"file:{DB_PATH}?mode=ro"
+
+_DISALLOWED_KEYWORDS = re.compile(
+    r'\b(DROP|DELETE|UPDATE|INSERT|ALTER|CREATE|TRUNCATE|REPLACE|ATTACH|DETACH|PRAGMA|VACUUM|REINDEX)\b',
+    re.IGNORECASE,
+)
+
+def _is_safe_select(sql: str) -> tuple[bool, str]:
+    no_comments = re.sub(r'--.*?$', '', sql, flags=re.MULTILINE)
+    no_comments = re.sub(r'/\*.*?\*/', '', no_comments, flags=re.DOTALL)
+    body = no_comments.strip().rstrip(';').strip()
+
+    if not body:
+        return False, "Empty SQL statement."
+
+    if ';' in body:
+        return False, "Multiple SQL statements are not allowed."
+
+    if not re.match(r'^\s*(SELECT|WITH)\b', body, re.IGNORECASE):
+        return False, "Only SELECT statements are permitted."
+
+    if _DISALLOWED_KEYWORDS.search(body):
+        return False, "Statement contains a disallowed keyword."
+
+    return True, ""
 
 def execute_sql(sql: str) -> dict:
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_READONLY_URI, uri=True)
     conn.row_factory = sqlite3.Row  
     cursor = conn.cursor()
 

@@ -6,13 +6,13 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0001",
+    "case_id": "CASE_20260702_0001",
     "customer_id": "CUST_margaret_chen",
     "case_type": "EDD",
     "status": "open",
     "summary": "Enhanced due diligence review for dormant account reactivation. Account inactive 18 months. Customer requesting $150K wire to foreign bank. Source of funds and purpose verification required.",
     "linked_alert_ids": [
-      "ALERT_20260615_0001"
+      "ALERT_20260702_0001"
     ],
     "linked_account_ids": [
       "ACCT_margaret_chen_CUST_001"
@@ -29,13 +29,13 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0002",
+    "case_id": "CASE_20260702_0002",
     "customer_id": "CUST_victor_kowalski",
     "case_type": "FRAUD",
     "status": "open",
     "summary": "Investigation into potential microcap securities manipulation. Customer deposited 50,000 shares VMCP via physical certificate and immediately requested market liquidation. Reviewing for pump-and-dump or unregistered distribution.",
     "linked_alert_ids": [
-      "ALERT_20260615_0002"
+      "ALERT_20260702_0002"
     ],
     "linked_account_ids": [
       "ACCT_victor_kowalski_CUST_001"
@@ -52,13 +52,13 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0003",
+    "case_id": "CASE_20260702_0003",
     "customer_id": "CUST_patricia_delgado",
     "case_type": "FRAUD",
     "status": "open",
     "summary": "Pattern of annuity cancellations within free-look period. Three cancellations in 12 months suggest potential churning or fee avoidance scheme. Reviewing with legal and compliance.",
     "linked_alert_ids": [
-      "ALERT_20260615_0003"
+      "ALERT_20260702_0003"
     ],
     "linked_account_ids": [
       "ACCT_patricia_delgado_CUST_001"
@@ -75,13 +75,13 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0004",
+    "case_id": "CASE_20260702_0004",
     "customer_id": "CUST_patricia_delgado",
     "case_type": "FRAUD",
     "status": "open",
     "summary": "Pattern of annuity cancellations within free-look period. Three cancellations in 12 months suggest potential churning or fee avoidance scheme. Reviewing with legal and compliance.",
     "linked_alert_ids": [
-      "ALERT_20260615_0004"
+      "ALERT_20260702_0004"
     ],
     "linked_account_ids": [
       "ACCT_patricia_delgado_CUST_002"
@@ -98,7 +98,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0005",
+    "case_id": "CASE_20260702_0005",
     "customer_id": "CUST_BG_0014",
     "case_type": "OTHER",
     "status": "closed",
@@ -119,7 +119,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0006",
+    "case_id": "CASE_20260702_0006",
     "customer_id": "CUST_BG_0018",
     "case_type": "SAR_REVIEW",
     "status": "closed",
@@ -140,7 +140,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0007",
+    "case_id": "CASE_20260702_0007",
     "customer_id": "CUST_BG_0023",
     "case_type": "OTHER",
     "status": "closed",
@@ -161,7 +161,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0008",
+    "case_id": "CASE_20260702_0008",
     "customer_id": "CUST_BG_0026",
     "case_type": "OTHER",
     "status": "closed",
@@ -182,13 +182,13 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0009",
+    "case_id": "CASE_20260702_0009",
     "customer_id": "CUST_BG_0030",
     "case_type": "SAR_REVIEW",
     "status": "closed",
     "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
     "linked_alert_ids": [
-      "ALERT_20260615_0022"
+      "ALERT_20260702_0022"
     ],
     "linked_account_ids": [
       "ACCT_BG_0030_CUST_002"
@@ -205,13 +205,13 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0010",
+    "case_id": "CASE_20260702_0010",
     "customer_id": "CUST_BG_0036",
     "case_type": "SAR_REVIEW",
     "status": "closed",
     "summary": "Review of unusual wire pattern. SAR filed after 90-day review period.",
     "linked_alert_ids": [
-      "ALERT_20260615_0027"
+      "ALERT_20260702_0027"
     ],
     "linked_account_ids": [
       "ACCT_BG_0036_CUST_001"
@@ -228,13 +228,13 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0011",
+    "case_id": "CASE_20260702_0011",
     "customer_id": "CUST_BG_0045",
     "case_type": "EDD",
     "status": "closed",
     "summary": "Enhanced due diligence for high-risk customer. Documentation verified. Case closed.",
     "linked_alert_ids": [
-      "ALERT_20260615_0031"
+      "ALERT_20260702_0031"
     ],
     "linked_account_ids": [
       "ACCT_BG_0045_CUST_001"
@@ -251,7 +251,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0012",
+    "case_id": "CASE_20260702_0012",
     "customer_id": "CUST_BG_0056",
     "case_type": "EDD",
     "status": "closed",
@@ -272,7 +272,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0013",
+    "case_id": "CASE_20260702_0013",
     "customer_id": "CUST_BG_0059",
     "case_type": "SAR_REVIEW",
     "status": "closed",
@@ -293,7 +293,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0014",
+    "case_id": "CASE_20260702_0014",
     "customer_id": "CUST_BG_0062",
     "case_type": "SAR_REVIEW",
     "status": "closed",
@@ -314,7 +314,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0015",
+    "case_id": "CASE_20260702_0015",
     "customer_id": "CUST_BG_0070",
     "case_type": "SAR_REVIEW",
     "status": "closed",
@@ -335,7 +335,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0016",
+    "case_id": "CASE_20260702_0016",
     "customer_id": "CUST_BG_0088",
     "case_type": "EDD",
     "status": "closed",
@@ -356,7 +356,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0017",
+    "case_id": "CASE_20260702_0017",
     "customer_id": "CUST_BG_0093",
     "case_type": "SAR_REVIEW",
     "status": "closed",
@@ -377,7 +377,7 @@
     "updated_by": "system",
     "deleted_at": null,
     "is_active": true,
-    "case_id": "CASE_20260615_0018",
+    "case_id": "CASE_20260702_0018",
     "customer_id": "CUST_BG_0099",
     "case_type": "OTHER",
     "status": "closed",
