@@ -5,7 +5,7 @@ import time
 import json
 from typing import List, Tuple
 from dotenv import load_dotenv
-
+from pathlib import Path
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_core.embeddings import Embeddings
@@ -20,6 +20,7 @@ from prompts import VECTOR_DB_RETRIEVER_PROMPT
 from langchain_core.runnables import RunnablePassthrough
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
+import sys
 
 from cypher_rag import (
     neo4j_mcp_server,
@@ -33,7 +34,8 @@ from mcp.client.stdio import stdio_client
 
 load_dotenv()
 
-
+BASE_DIR = Path(__file__).resolve().parent
+CHROMA_DIR = BASE_DIR / "chroma"
 
 class KeyRotator:
     """Rotates through API keys, switching after `questions_per_key` calls."""
@@ -56,7 +58,7 @@ class KeyRotator:
         if self._count >= self.questions_per_key:
             self._count = 0
             self._index = (self._index + 1) % len(self.keys)
-            print(f"[KeyRotator] Switched to key index {self._index}")
+            print(f"[KeyRotator] Switched to key index {self._index}", file=sys.stderr)
 
     def get_and_advance(self) -> str:
         """Return the current key, then advance the counter."""
@@ -95,15 +97,15 @@ class BGEEmbeddings(Embeddings):
 embedding_fn = BGEEmbeddings()
 
 vectorstore = Chroma(
-    persist_directory="./chroma",
+    persist_directory=str(CHROMA_DIR),
     embedding_function=embedding_fn,
     collection_name="FINRA",
 )
 
-with open("./chroma/bm25_chunks.pkl", "rb") as f:
+with open(CHROMA_DIR/"bm25_chunks.pkl", "rb") as f:
     all_chunks = pickle.load(f)
 
-print(f"Collection count: {vectorstore._collection.count()}")
+print(f"Collection count: {vectorstore._collection.count()}", file=sys.stderr)
 
 
 
@@ -130,13 +132,13 @@ def format_context(docs: List[Document], graph_text: str = "") -> str:
 async def make_prediction_async(query: str) -> Tuple[str, List[str], str]:
     """Hybrid RAG: Ensemble + Reranker + Graph (via MCP). Uses rotated API key."""
 
-    print(f"\n{'='*60}")
-    print(f"QUERY: {query}")
-    print(f"{'='*60}")
+    print(f"\n{'='*60}", file=sys.stderr)
+    print(f"QUERY: {query}", file=sys.stderr)
+    print(f"{'='*60}", file=sys.stderr)
 
     
     api_key = rotator.get_and_advance()
-    print(f"[KeyRotator] Using key: ...{api_key[-6:]}")
+    print(f"[KeyRotator] Using key: ...{api_key[-6:]}", file=sys.stderr)
 
     sim_retriever = vectorstore.as_retriever(
         search_type="similarity",
@@ -154,35 +156,35 @@ async def make_prediction_async(query: str) -> Tuple[str, List[str], str]:
         base_compressor=reranker_compressor,
     )
 
-    print("\nRetrieving documents...")
+    print("\nRetrieving documents...", file=sys.stderr)
     docs = final_retriever.invoke(query)
-    print(f"Retrieved {len(docs)} documents after reranking")
+    print(f"Retrieved {len(docs)} documents after reranking", file=sys.stderr)
 
     entity_ids = extract_entity_ids(docs)
-    print(f"   Entities found: {entity_ids[:5]}")
+    print(f"   Entities found: {entity_ids[:5]}", file=sys.stderr)
 
     graph_context = ""
     if entity_ids:
-        print("\nConnecting to Neo4j Aura via MCP...")
+        print("\nConnecting to Neo4j Aura via MCP...", file=sys.stderr)
         try:
             async with stdio_client(neo4j_mcp_server) as (read, write):
                 async with ClientSession(read, write) as session:
                     await session.initialize()
-                    print("Generating Cypher...")
+                    print("Generating Cypher...", file=sys.stderr)
                     try:
                         cypher = await generate_cypher(session, query, entity_ids)
                         records = await execute_cypher(session, cypher)
                         graph_context = format_graph_results(records)
                         if graph_context:
-                            print(f"Graph: {len(records)} records")
+                            print(f"Graph: {len(records)} records", file=sys.stderr)
                     except Exception as e:
-                        print(f"Cypher failed: {e}")
-                        print("Falling back to entity expansion...")
+                        print(f"Cypher failed: {e}", file=sys.stderr)
+                        print("Falling back to entity expansion...", file=sys.stderr)
                         graph_context = await get_entity_expansion(session, entity_ids)
                         if graph_context:
-                            print("Graph: fallback expansion")
+                            print("Graph: fallback expansion", file=sys.stderr)
         except Exception as e:
-            print(f"MCP connection failed: {e}")
+            print(f"MCP connection failed: {e}", file=sys.stderr)
             graph_context = ""
 
     context_string = format_context(docs, graph_context)
@@ -209,7 +211,7 @@ async def make_prediction_async(query: str) -> Tuple[str, List[str], str]:
         | StrOutputParser()
     )
 
-    print("\nGenerating answer...")
+    print("\nGenerating answer...", file=sys.stderr)
     response = await rag_chain.ainvoke(query)
 
     return response, [d.page_content for d in docs], context_string
@@ -236,17 +238,17 @@ if __name__ == "__main__":
         }
         answers.append(result)
 
-        print(f"QUERY: {query}")
-        print(f"ANSWER: {rag_answer}")
+        print(f"QUERY: {query}", file=sys.stderr)
+        print(f"ANSWER: {rag_answer}", file=sys.stderr)
         print(f"\n{'*'*50}")
         print("RETRIEVED DOCUMENTS:")
         for ctx in retrieved_context:
-            print(ctx[:200] + "...")
-            print("-" * 30)
+            print(ctx[:200] + "...", file=sys.stderr)
+            print("-" * 30, file=sys.stderr)
 
         with open("Data_cleaning/evaluation_dataset/rag_answers2.json", "w", encoding="utf-8") as f:
             json.dump(answers, f)
 
         time.sleep(20)
 
-    print(f"All done! {len(answers)} answers saved to rag_answers.json")
+    print(f"All done! {len(answers)} answers saved to rag_answers.json", file=sys.stderr)

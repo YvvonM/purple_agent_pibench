@@ -52,7 +52,7 @@ Write a Cypher query to answer this. Return ONLY the Cypher query, no backticks.
     cypher = response.content.strip()
     cypher = cypher.replace("```cypher", "").replace("```", "").strip()
     
-    print(f"\nGenerated Cypher:\n{cypher}")
+    print(f"\nGenerated Cypher:\n{cypher}", file=sys.stderr)
     return cypher
 
 
@@ -69,10 +69,10 @@ async def execute_cypher(session: ClientSession, cypher: str, params: Dict = Non
         )
         result = raw.content[0].text
         
-        print(f"Raw Cypher Result: {result}")
-        print("*"*50)
-        print(f"Type of result: {type(result)}")
-        content = getattr(result, 'content', result)
+        print(f"Raw Cypher Result: {result}", file=sys.stderr)
+        print("*"*50, file=sys.stderr)
+        print(f"Type of result: {type(result)}", file=sys.stderr)
+        content = getattr(result, 'content', result, file=sys.stderr)
         
         if isinstance(content, list):
             return [dict(r) if hasattr(r, 'items') else r for r in content]
@@ -85,7 +85,7 @@ async def execute_cypher(session: ClientSession, cypher: str, params: Dict = Non
             return [{"raw": str(content)}]
             
     except Exception as e:
-        print(f"Cypher execution failed: {e}")
+        print(f"Cypher execution failed: {e}", file=sys.stderr)
         return []
 
 
