@@ -92,7 +92,18 @@ class DataAgent:
 
     async def _handle_task(self, task:str) -> Dict[str, Any]:
         reframed_query = await self._reframe(task)
+        print(reframed_query)
+        if not reframed_query:
+            return {
+            "task": task,
+            "reframed_query": reframed_query,
+            "sql": None,
+            "results": None,
+            "row_count": 0,
+            "error": f"Reframe step returned empty output for task: {task!r}",
+            }
         tool_result = await self.mcp_client.call_tool("execute_sql", {"query": reframed_query})
+        print(tool_result)
         raw_text = tool_result["content"][0] if tool_result["content"] else "{}"
         try:
             payload = json.loads(raw_text)
