@@ -16,6 +16,7 @@ from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from pathlib import Path
 from typing import List, Tuple
+import sys
 import pickle
 from prompts import SQL_GENERATION_PROMPT, SQL_TO_TEXT_PROMPT
 from sqlite_connection import execute_sql, extract_sql

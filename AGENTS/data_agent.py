@@ -1,6 +1,8 @@
 from typing import Any, List, Dict, Optional
 import asyncio
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).parent / "session_db"))
 from langchain_groq import ChatGroq 
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -8,6 +10,8 @@ from mcp_client import MCPClient
 from dotenv import load_dotenv
 import json
 from prompt import REFRAME_SYSTEM_PROMPT
+from memory import SessionMemory
+
 import os
 
 load_dotenv()
@@ -90,8 +94,21 @@ class DataAgent:
         reframed = await chain.ainvoke({'task':task})
         return reframed.strip()
 
-    async def _handle_task(self, task:str) -> Dict[str, Any]:
+    async def _handle_task(self, task:str, memory: SessionMemory = None, session_id: str = None, turn_index: int = 0, step_base: int = 0) -> Dict[str, Any]:
+        step = step_base
         reframed_query = await self._reframe(task)
+        step +=1
+        if memory and session_id:
+            memory.log_reasoning_step(
+                session_id=session_id,
+                turn_index = turn_index,
+                step_number=step,
+                agent_name="data_agent",
+                step_type="reframe",
+                description=f"Reframed data task: '{task}' -> '{reframed_query}'",
+                input_context={"original_task": task},
+                output_action={"reframed_query": reframed_query})
+         
         print(reframed_query)
         if not reframed_query:
             return {
@@ -103,6 +120,17 @@ class DataAgent:
             "error": f"Reframe step returned empty output for task: {task!r}",
             }
         tool_result = await self.mcp_client.call_tool("execute_sql", {"query": reframed_query})
+        step +=1
+        if memory and session_id:
+            memory.log_tool_call(
+                session_id=session_id,
+                turn_index = turn_index,
+                step_number=step,
+                agent_name="data_agent",
+                tool_name="main_mcp",
+                arguments={"query": reframed_query},
+                result={"content": tool_result["content"][0][:500]} 
+            )
         print(tool_result)
         raw_text = tool_result["content"][0] if tool_result["content"] else "{}"
         try:
@@ -110,6 +138,22 @@ class DataAgent:
 
         except json.JSONDecodeError:
             payload = {"sql": None, "results": None, "row_count": 0, "error": raw_text}
+        step +=1
+        if memory and session_id:
+            memory.log_reasoning_step(
+                session_id=session_id,
+                turn_index = turn_index,
+                step_number=step,
+                agent_name="data_agent",
+                step_type="observe",
+                description=f" sqlite db retrieval returned {payload.get('retrieved_count', 0)} sources",
+                input_context={"reframed_query": reframed_query},
+                output_action={"answer_preview": payload.get("answer", "")[:200] if payload.get("answer") else None,
+                    "retrieved_count": payload.get("retrieved_count", 0),
+                    "has_error": bool(payload.get("error"))}
+
+            )
+
 
         return{
             "task": task,
@@ -120,12 +164,13 @@ class DataAgent:
             "error": payload.get("error"),
         }
 
-    async def run(self, data_tasks:List[str]) -> List[Dict[str, Any]]:
+    async def run(self, data_tasks:List[str], memory: SessionMemory = None, session_id: str = None, turn_index: int = 0) -> List[Dict[str, Any]]:
         await self.start()
         try:
             results = []
-            for task in data_tasks:
-                result = await self._handle_task(task)
+            for i, task in enumerate(data_tasks):
+                result = await self._handle_task(task= task, memory=memory, 
+                session_id=session_id, turn_index=turn_index, step_base=i * 10)
                 print("*" * 80)
                 print(result)
                 print("*" * 80)
@@ -135,13 +180,26 @@ class DataAgent:
             await self.stop()
 
 async def _demo():
+    mem = SessionMemory()
+    sid = mem.create_session(
+        scenario_id="SCEN_010_LOCKUP_DENIAL_GROUNDING",
+        customer_id="CUST_DIANA_VOSS"
+    )
+    print(f"\nCreated session: {sid}\n")
+
+
     data_tasks = [
         "Get pending request REQ_010_1",
         "Get account ACCT_DIANA_INV_001 status",
     ]
 
     agent = DataAgent()
-    answer = await agent.run(data_tasks)
+    answer = await agent.run(data_tasks=data_tasks,
+        memory=mem,
+        session_id=sid,
+        turn_index=0)
+    print("\n")
+    mem.print_trace(sid)
     print(json.dumps(answer, indent=2, default=str))
 
 if __name__ == "__main__":

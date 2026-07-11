@@ -2,7 +2,7 @@ import os
 import json
 from typing import List, Dict
 from dotenv import load_dotenv
-
+import sys
 from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage
 from mcp import ClientSession, StdioServerParameters
@@ -72,8 +72,9 @@ async def execute_cypher(session: ClientSession, cypher: str, params: Dict = Non
         print(f"Raw Cypher Result: {result}", file=sys.stderr)
         print("*"*50, file=sys.stderr)
         print(f"Type of result: {type(result)}", file=sys.stderr)
-        content = getattr(result, 'content', result, file=sys.stderr)
-        
+        #content = getattr(result, 'content', result, file=sys.stderr)
+        content = result
+        print(f"Content: {content}", file=sys.stderr)
         if isinstance(content, list):
             return [dict(r) if hasattr(r, 'items') else r for r in content]
         elif isinstance(content, str):

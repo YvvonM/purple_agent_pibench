@@ -5,3 +5,5 @@ chroma/
 __pycache__/
 compliance_data.db
 TEXT_TO_SQL_AGENT/FINRA_HYBRID_RAG/chroma
+AGENTS/session_db/sessions.db
+TEXT_TO_SQL_AGENT/YOUR_DB_PATH.db

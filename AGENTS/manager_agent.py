@@ -8,6 +8,10 @@ import asyncio
 from dotenv import load_dotenv
 from data_agent import DataAgent
 from policy_agent import PolicyAgent
+from pathlib import Path
+import sys 
+sys.path.insert(0, str(Path(__file__).parent / "session_db"))
+from memory import SessionMemory
 from prompt import (INTENT_PROMPT,
     ADAPTIVE_PROMPT)
 load_dotenv()
@@ -84,46 +88,90 @@ class Worker(Protocol):
     async def run(self, tasks: List[str]) -> List[Dict[str, Any]]: ...
 
 class ManagerAgent:
-    def __init__(self):
+    def __init__(self, memory: SessionMemory = None):
         self._data_agent = DataAgent()
         self._policy_agent = PolicyAgent()
+        self.memory = memory or SessionMemory()
 
-    async def _parse_intent(self, user_message: str) -> Dict[str, Any]:
+
+    async def _parse_intent(self, user_message: str, session_id: str, turn_index: int) -> Dict[str, Any]:
         chain = _intent_prompt | _get_llm() | StrOutputParser()
         raw = await chain.ainvoke({"user_message": user_message})
         print("*"* 80)
         print(raw)
         print("*"* 80)
         result = _extract_json(raw)
+        self.memory.log_reasoning_step(
+            session_id=session_id,
+            turn_index=turn_index,
+            step_number=1,
+            agent_name="manager",
+            step_type="plan",
+            description=f"Parsed intent: {result.get('goal', 'unknown')}",
+            input_context={"raw_message": user_message},
+            output_action={"intent": result}
+        )
         return result
 
-    async def _plan_adaptive(self, goal: str, data_facts: List[Dict[str, Any]]) -> Dict[str, Any]:
+    async def _plan_adaptive(self, goal: str, data_facts: List[Dict[str, Any]], session_id: str, turn_index: int) -> Dict[str, Any]:
         chain = _adaptive_prompt | _get_llm() | StrOutputParser()
         raw = await chain.ainvoke({"goal": goal, "data_facts": json.dumps(data_facts, indent=2, default=str)})
         print("*"* 80)
         print(raw)
         print("*"* 80)
         result = _extract_json(raw)
+        self.memory.log_reasoning_step(
+            session_id=session_id,
+            turn_index=turn_index,
+            step_number=3,
+            agent_name="manager",
+            step_type="plan",
+            description="Adaptive planning based on data findings",
+            input_context={"data_facts": data_facts},
+            output_action={"policy_tasks": result.get("policy_tasks", []),
+                          "followup_data_tasks": result.get("followup_data_tasks", [])}
+        )
         return result
 
-    async def run(self, user_message: str) -> Dict[str, Any]:
-        intent = await self._parse_intent(user_message)
+    async def run(self, user_message: str, scenario_id: str = None, customer_id: str = None) -> Dict[str, Any]:
+        session_id = self.memory.create_session(
+            scenario_id=scenario_id,
+            customer_id=customer_id
+        )
+        turn_index = 0
+        
+        self.memory.log_message(session_id, turn_index, "user", user_message)
+        intent = await self._parse_intent(user_message, session_id, turn_index)
         initial_data_tasks = intent.get("initial_data_tasks", [])
 
-        data_facts = await self._data_agent.run(initial_data_tasks)
-        adaptive_plan = await self._plan_adaptive(intent.get("goal", ""), data_facts)
+        data_facts = await self._data_agent.run(initial_data_tasks,
+            memory=self.memory,
+            session_id=session_id,
+            turn_index=turn_index)
+        adaptive_plan = await self._plan_adaptive(intent.get("goal", ""), data_facts, session_id, turn_index)
         policy_tasks = adaptive_plan.get("policy_tasks", [])
         followup_data_tasks = adaptive_plan.get("followup_data_tasks", [])
         policy_facts, followup_facts = await asyncio.gather(
-            self._policy_agent.run(policy_tasks) if policy_tasks else _empty(),
-            self._data_agent.run(followup_data_tasks) if followup_data_tasks else _empty(),
+            self._policy_agent.run(policy_tasks, memory=self.memory,
+                session_id=session_id,
+                turn_index=turn_index) if policy_tasks else _empty(),
+            self._data_agent.run(followup_data_tasks, memory=self.memory,
+                session_id=session_id,
+                turn_index=turn_index) if followup_data_tasks else _empty(),
         )
+        all_data_facts = data_facts + followup_facts
+        self.memory.save_research_facts(session_id, 
+            data_facts={"facts": all_data_facts},
+            policy_facts={"facts": policy_facts}
+        )
+        
 
         return {
             "user_message": user_message,
             "intent": intent,
-            "data_facts": data_facts + followup_facts,
+            "data_facts": all_data_facts,
             "policy_facts": policy_facts,
+            "session_id": session_id,
         }
 
 
@@ -131,13 +179,20 @@ async def _empty() -> List[Dict[str, Any]]:
     return []
 
 async def _demo():
+    mem = SessionMemory()
+    
     user_message = (
         "Hi, I need to wire $500,000 from my investment account to my family "
         "trust at Northern Trust. The request should already be in the system "
         "— REQ_010_1."
     )
-    manager = ManagerAgent()
-    result = await manager.run(user_message)
+    manager = ManagerAgent(memory = mem)
+    result = await manager.run(user_message,
+    scenario_id="SCEN_010_LOCKUP_DENIAL_GROUNDING", 
+    customer_id="CUST_DIANA_VOSS")
+    sid = result["session_id"]
+    print(f"\nCreated session: {sid}\n")
+    mem.print_trace(sid)
     print(json.dumps(result, indent=2, default=str))
 
 

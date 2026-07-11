@@ -6,9 +6,13 @@ from mcp_client import MCPClient
 from langchain_groq import ChatGroq 
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+import sys
 from dotenv import load_dotenv
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent / "session_db"))
 from prompt import POLICY_REFRAME_SYSTEM_PROMPT
+from memory import SessionMemory
+
 load_dotenv()
 
 SERVER_PATH = os.path.join(os.path.dirname(__file__), "..", "FINRA_HYBRID_RAG", "finra_rag_mcp_server.py")
@@ -80,20 +84,58 @@ class PolicyAgent:
     async def stop(self):
         await self.mcp_client.close()
 
-    async def _reframe(self, task:str) -> str:
+    async def _reframe(self, task:str,) -> str:
         chain = _reframe_prompt | _get_llm() | StrOutputParser()
         reframed = await chain.ainvoke({'task':task})
         return reframed.strip()
 
-    async def _handle_task(self, task:str) -> Dict[str, Any]:
+    async def _handle_task(self, task:str, memory: SessionMemory = None, session_id: str = None, turn_index: int = 0, step_base: int = 0) -> Dict[str, Any]:
+        step = step_base
         reframed_query = await self._reframe(task)
+        step += 1
+        if memory and session_id:
+            memory.log_reasoning_step(
+                session_id=session_id,
+                turn_index = turn_index,
+                step_number=step,
+                agent_name="policy_agent",
+                step_type="reframe",
+                description=f"Reframed policy task: '{task}' -> '{reframed_query}'",
+                input_context={"original_task": task},
+                output_action={"reframed_query": reframed_query})
         tool_result = await self.mcp_client.call_tool("query_finra_regulations", {"query": reframed_query})
+        step += 1
+        if memory and session_id:
+            memory.log_tool_call(
+                session_id=session_id,
+                turn_index = turn_index,
+                step_number=step,
+                agent_name="policy_agent",
+                tool_name="query_finra_regulations",
+                arguments={"query": reframed_query},
+                result={"content": tool_result["content"][0][:500]})
         raw_text = tool_result["content"][0] if tool_result["content"] else "{}"
         try:
             payload = json.loads(raw_text)
 
         except json.JSONDecodeError:
             payload = {"answer": None, "retrieved_count": 0, "sources": None, "error": raw_text}
+
+        step += 1
+        if memory and session_id:
+            memory.log_reasoning_step(
+                session_id=session_id,
+                turn_index = turn_index,
+                step_number=step,
+                agent_name="policy_agent",
+                step_type="observe",
+                description=f"Policy retrieval returned {payload.get('retrieved_count', 0)} sources",
+                input_context={"reframed_query": reframed_query},
+                output_action={"answer_preview": payload.get("answer", "")[:200] if payload.get("answer") else None,
+                    "retrieved_count": payload.get("retrieved_count", 0),
+                    "has_error": bool(payload.get("error"))}
+
+            )
 
         return {
             "task": task,
@@ -105,12 +147,13 @@ class PolicyAgent:
             }
         
 
-    async def run(self, data_tasks:List[str]) -> List[Dict[str, Any]]:
+    async def run(self, policy_tasks:List[str], memory: SessionMemory = None, session_id: str = None, turn_index: int = 0) -> List[Dict[str, Any]]:
         await self.start()
         try:
             results = []
-            for task in data_tasks:
-                result = await self._handle_task(task)
+            for i, task in enumerate(policy_tasks):
+                result = await self._handle_task(task=task, memory=memory, 
+                session_id=session_id, turn_index=turn_index, step_base=i * 10)
                 print("*" * 80)
                 print(result)
                 print("*" * 80)
@@ -120,14 +163,37 @@ class PolicyAgent:
             await self.stop()
 
 async def _demo():
+    # Create memory
+    mem = SessionMemory()
+
+    # Create session
+    sid = mem.create_session(
+        scenario_id="SCEN_010_LOCKUP_DENIAL_GROUNDING",
+        customer_id="CUST_DIANA_VOSS"
+    )
+    print(f"\nCreated session: {sid}\n")
+
     policy_tasks = [
-        "What is the SAR filing threshold?",
-        "Who enforces FINRA Rule 3310?",
+        "Find rules about wire transfers during lock-up periods",
+        "Find communication requirements for lock-up denials",
     ]
 
     agent = PolicyAgent()
-    answer = await agent.run(policy_tasks)
-    print(json.dumps(answer, indent=2, default=str))
+    answers = await agent.run(
+        policy_tasks=policy_tasks,
+        memory=mem,
+        session_id=sid,
+        turn_index=0
+    )
+
+    # Print trace
+    print("\n")
+    mem.print_trace(sid)
+
+    # Cleanup (optional — keep for inspection)
+    # import os
+    # os.unlink(mem.db_path)
+
 
 if __name__ == "__main__":
     asyncio.run(_demo())
