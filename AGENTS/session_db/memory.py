@@ -230,6 +230,14 @@ class SessionMemory:
             ).fetchone()
             return dict(row) if row else None
 
+    def get_next_turn_index(self, session_id: str) -> int:
+        with sqlite3.connect(self.db_path) as conn:
+            row = conn.execute(
+                "SELECT MAX(turn_index) FROM messages WHERE session_id = ?",
+                (session_id,)
+            ).fetchone()
+            return (row[0] + 1) if row[0] is not None else 0
+
 
     def get_full_trace(self, session_id:str) -> Dict[str,Any]:
         with sqlite3.connect(self.db_path) as conn:

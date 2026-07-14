@@ -133,13 +133,17 @@ class ManagerAgent:
         )
         return result
 
-    async def run(self, user_message: str, scenario_id: str = None, customer_id: str = None) -> Dict[str, Any]:
-        session_id = self.memory.create_session(
-            scenario_id=scenario_id,
-            customer_id=customer_id
-        )
-        turn_index = 0
+    async def run(self, user_message: str, session_id: str = None,  scenario_id: str = None, customer_id: str = None, turn_index: int = None) -> Dict[str, Any]:
         
+        if session_id is None:
+            session_id = self.memory.create_session(
+                scenario_id=scenario_id,
+                customer_id=customer_id
+            )
+            turn_index = 0
+        else:
+            turn_index = turn_index or self.memory.get_next_turn_index(session_id)
+
         self.memory.log_message(session_id, turn_index, "user", user_message)
         intent = await self._parse_intent(user_message, session_id, turn_index)
         initial_data_tasks = intent.get("initial_data_tasks", [])
