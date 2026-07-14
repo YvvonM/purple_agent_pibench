@@ -425,6 +425,6 @@ For issues, feature requests, or questions:
 
 ---
 
-**Last Updated**: 2024
+**Last Updated**: 2026
 **Python Version**: 3.10+
 **Status**: Production-Ready with Benchmarks
